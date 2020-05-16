@@ -1,0 +1,6 @@
+{
+    "variants": 
+	{
+        "": { "model": "continfblocklib:block/warding_beacon" }
+    }
+}

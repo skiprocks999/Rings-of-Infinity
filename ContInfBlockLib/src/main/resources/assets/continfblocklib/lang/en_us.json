@@ -1,0 +1,25 @@
+{
+	#Creative Tab
+	"itemGroup.ContInfBlockLibItemGroupTab": "Contained Infinity Blocks",
+	
+	#OVERWORLD BLOCKS
+	
+	#OVERWORLD BUILDING BLOCKS
+	"block.continfblocklib.marble": "Marble",
+	"block.continfblocklib.gneiss": "Gneiss",
+	"block.continfblocklib.breccia": "Breccia",
+	"block.continfblocklib.siltstone": "Siltstone",
+	#OVERWORLD ORES
+	"block.continfblocklib.rose_gold_ore": "Rose Gold Ore",
+	"block.continfblocklib.carbon_infused_iron_ore": "Carbon-Infused Iron Ore",
+	"block.continfblocklib.lignite_coal_ore": "Lignite Coal Ore",
+	"block.continfblocklib.sapphire_ore": "Sapphire Ore",
+	"block.continfblocklib.bauxite_ore": "Bauxite Ore",
+	"block.continfblocklib.ruby_ore": "Ruby Ore",
+	"block.continfblocklib.sulphur_ore": "Sulphur Ore",
+	#OVERWORLD FUNCTIONAL BLOCKS
+	"block.continfblocklib.alloy_forge": "Alloy Forge",
+	"block.continfblocklib.warding_beacon": "Warding Beacon"
+	
+	#NETHER BLOCKS
+}

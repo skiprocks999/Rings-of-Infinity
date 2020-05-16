@@ -1,0 +1,6 @@
+{
+    "variants": 
+	{
+        "": { "model": "continfblocklib:block/carbon_infused_iron_ore" }
+    }
+}
