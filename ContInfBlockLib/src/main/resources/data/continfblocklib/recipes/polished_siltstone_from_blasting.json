@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "continfblocklib:siltstone"
+  },
+  "result": "continfblocklib:polished_siltstone",
+  "experience": 0.7,
+  "cookingtime": 100
+}

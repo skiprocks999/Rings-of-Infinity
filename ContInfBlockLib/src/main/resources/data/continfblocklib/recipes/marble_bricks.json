@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "mm",
+    "mm"
+  ],
+  "key": {
+    "m": {
+      "item": "continfblocklib:marble"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:marble_bricks",
+    "count": 4
+  }
+}

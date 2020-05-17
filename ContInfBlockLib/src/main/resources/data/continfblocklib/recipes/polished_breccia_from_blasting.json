@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "continfblocklib:breccia"
+  },
+  "result": "continfblocklib:polished_breccia",
+  "experience": 0.7,
+  "cookingtime": 100
+}

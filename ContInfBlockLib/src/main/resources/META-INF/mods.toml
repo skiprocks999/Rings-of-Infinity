@@ -44,10 +44,3 @@ This mod contains all blocks found in the ContainedInfinity. It will expand as m
     versionRange="[1.15.2]"
     ordering="NONE"
     side="BOTH"
-    
-[[dependencies.continfblocklib]]
-    modId="ContInfItemLib"
-    mandatory=true
-    versionRange="[0.1]"
-    ordering="NONE"
-    side="BOTH"

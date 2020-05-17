@@ -1,6 +1,9 @@
 {
-    "parent": "block/cube_all",
+    "parent": "block/orientable",
     "textures": {
-        "all": "continfblocklib:blocks/warding_beacon"
+    	"top": "continfblocklib:blocks/warding_beacon_top",
+    	"front":"continfblocklib:blocks/warding_beacon_side",
+        "side": "continfblocklib:blocks/warding_beacon_side",
+        "bottom":"continfblocklib:blocks/obsidian"
     }
 }

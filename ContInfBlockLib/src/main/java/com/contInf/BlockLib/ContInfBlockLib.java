@@ -10,16 +10,24 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.contInf.BlockLib.init.BlockInit;
+
+import net.minecraft.item.BlockItem;
+import net.minecraft.item.Item;
+import net.minecraft.item.Item.Properties;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+import net.minecraftforge.registries.IForgeRegistry;
 
 //tags forge to tell this is a mod
 @Mod("continfblocklib")
@@ -55,6 +63,7 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
  * @author skip999
  *
  */
+@Mod.EventBusSubscriber(modid = "continfblocklib", bus = Mod.EventBusSubscriber.Bus.MOD)
 public class ContInfBlockLib {
 	
 	//Instance of the mod for external use
@@ -75,11 +84,35 @@ public class ContInfBlockLib {
 		modEventBus.addListener(this::setup);
 		modEventBus.addListener(this::clientRegistries);
 		
+		//Initilizes blocks
+		BlockInit.BLOCKS.register(modEventBus);
+		
 		//Creates an instance of the mod
 		instance = this;
 		
 		//registers event bus
 		MinecraftForge.EVENT_BUS.register(this);
+	}
+	
+	
+	/**
+	 * Creates BlockItems for blocks
+	 * @param event
+	 */
+	@SubscribeEvent
+	public static void onRegisterItems(final RegistryEvent.Register<Item> event) {
+				
+		final IForgeRegistry<Item> registry = event.getRegistry();
+		
+		BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block ->   {
+			final Item.Properties properties = 
+					new Item.Properties().group(ContInfBlockLibItemGroup.itemGroupInstance);
+			final BlockItem blockItem = new BlockItem(block,properties);
+			blockItem.setRegistryName(block.getRegistryName());
+			registry.register(blockItem);
+		});
+		
+		logger.debug("Registered BlockItems");
 	}
 	
 	/**
@@ -136,7 +169,7 @@ public class ContInfBlockLib {
 		 */
 		@Override
 		public ItemStack createIcon() {
-			return new ItemStack(BlockInit.marble);
+			return new ItemStack(BlockInit.marble.get());
 		}
 		
 	}

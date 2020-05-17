@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "continfblocklib:marble"
+  },
+  "result": "continfblocklib:polished_marble",
+  "experience": 0.7,
+  "cookingtime": 100
+}

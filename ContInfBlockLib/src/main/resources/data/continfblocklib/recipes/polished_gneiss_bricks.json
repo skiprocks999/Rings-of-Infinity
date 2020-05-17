@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "GG",
+    "GG"
+  ],
+  "key": {
+    "G": {
+      "item": "continfblocklib:polished_gneiss"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:polished_gneiss_bricks",
+    "count": 4
+  }
+}

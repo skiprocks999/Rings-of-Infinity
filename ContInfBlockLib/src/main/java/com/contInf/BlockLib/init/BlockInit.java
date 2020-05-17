@@ -5,210 +5,138 @@
 package com.contInf.BlockLib.init;
 
 import com.contInf.BlockLib.ContInfBlockLib;
-import com.contInf.BlockLib.ContInfBlockLib.ContInfBlockLibItemGroup;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.WallBlock;
 import net.minecraft.block.material.Material;
-import net.minecraft.item.BlockItem;
-import net.minecraft.item.Item;
-import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.eventbus.api.SubscribeEvent;
-import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.registries.ObjectHolder;
+import net.minecraftforge.fml.RegistryObject;
+import net.minecraftforge.registries.DeferredRegister;
+import net.minecraftforge.registries.ForgeRegistries;
 
-@ObjectHolder(ContInfBlockLib.modID)
-@Mod.EventBusSubscriber(modid = ContInfBlockLib.modID, bus = Mod.EventBusSubscriber.Bus.MOD)
 public class BlockInit {
 
-	//Overworld building blocks
-	public static final Block marble = null;
-	public static final Block gneiss = null;
-	public static final Block breccia = null;
-	public static final Block siltstone = null;
+	//Blocks DeferredRegister
+	public static final DeferredRegister<Block> BLOCKS = 
+			new DeferredRegister<>(ForgeRegistries.BLOCKS , ContInfBlockLib.modID);
+	
+	/*OVERWORLD BLOCKS*/
+	
+	//Overworld base building blocks
+	
+	//marble
+	public static final RegistryObject<Block> marble = 
+			BLOCKS.register("marble", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//gneiss
+	public static final RegistryObject<Block> gneiss = 
+			BLOCKS.register("gneiss", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//breccia
+	public static final RegistryObject<Block> breccia = 
+			BLOCKS.register("breccia", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//siltstone
+	public static final RegistryObject<Block> siltstone = 
+			BLOCKS.register("siltstone", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	
+	//Overworld crafted building blocks
+	
+	//marble bricks
+	public static final RegistryObject<Block> marble_bricks = 
+			BLOCKS.register("marble_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//gneiss bricks
+	public static final RegistryObject<Block> gneiss_bricks = 
+			BLOCKS.register("gneiss_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//breccia bricks
+	public static final RegistryObject<Block> breccia_bricks = 
+			BLOCKS.register("breccia_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//siltstone bricks
+	public static final RegistryObject<Block> siltstone_bricks = 
+			BLOCKS.register("siltstone_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished marble
+	public static final RegistryObject<Block> polished_marble = 
+			BLOCKS.register("polished_marble", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished gneiss
+	public static final RegistryObject<Block> polished_gneiss = 
+			BLOCKS.register("polished_gneiss", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished breccia
+	public static final RegistryObject<Block> polished_breccia = 
+			BLOCKS.register("polished_breccia", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished siltstone
+	public static final RegistryObject<Block> polished_siltstone = 
+			BLOCKS.register("polished_siltstone", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished marble bricks
+	public static final RegistryObject<Block> polished_marble_bricks = 
+			BLOCKS.register("polished_marble_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished gneiss bricks
+	public static final RegistryObject<Block> polished_gneiss_bricks = 
+			BLOCKS.register("polished_gneiss_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished breccia bricks
+	public static final RegistryObject<Block> polished_breccia_bricks = 
+			BLOCKS.register("polished_breccia_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished siltstone bricks
+	public static final RegistryObject<Block> polished_siltstone_bricks = 
+			BLOCKS.register("polished_siltstone_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
 		
 	//Overworld ores
-	public static final Block rose_gold_ore = null;
-	public static final Block carbon_infused_iron_ore = null;
-	public static final Block lignite_coal_ore = null;
-	public static final Block sapphire_ore = null;
-	public static final Block bauxite_ore = null;
-	public static final Block ruby_ore = null;
-	public static final Block sulphur_ore = null;
+	
+	//rose gold ore
+	public static final RegistryObject<Block> rose_gold_ore = 
+			BLOCKS.register("rose_gold_ore", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//carbon infused iron ore
+	public static final RegistryObject<Block> carbon_infused_iron_ore = 
+			BLOCKS.register("carbon_infused_iron_ore", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//lignite coal ore
+	public static final RegistryObject<Block> lignite_coal_ore = 
+			BLOCKS.register("lignite_coal_ore", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//sapphire ore
+	public static final RegistryObject<Block> sapphire_ore = 
+			BLOCKS.register("sapphire_ore", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//bauxite ore
+	public static final RegistryObject<Block> bauxite_ore = 
+			BLOCKS.register("bauxite_ore", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//ruby ore
+	public static final RegistryObject<Block> ruby_ore = 
+			BLOCKS.register("ruby_ore", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//sulphur ore
+	public static final RegistryObject<Block> sulphur_ore = 
+			BLOCKS.register("sulphur_ore", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
 		
 	//Overworld functional blocks
-	public static final Block alloy_forge = null;
-	public static final Block warding_beacon = null;
+	
+	//alloy forge
+	public static final RegistryObject<Block> alloy_forge = 
+			BLOCKS.register("alloy_forge", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//warding beacon
+	public static final RegistryObject<Block> warding_beacon = 
+			BLOCKS.register("warding_beacon", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	
+	//Overworld Walls
+	
+	public static final WallBlock marble_wall = null;
 	
 	
-	/**
-	 * registers Blocks
-	 * @param event
-	 */
-	@SubscribeEvent
-	public static void registerBlocks(final RegistryEvent.Register<Block> event) {
-	
-		/*OVERWORLD BLOCKS*/
-		
-		//OVERWORLD BUILDING BLOCKS
-		//Defines marble Block characteristics
-		event.getRegistry().register(
-			new Block(Block.Properties.create(Material.IRON).
-				hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE))
-				.setRegistryName("marble")
-		);
-		//Defines gneiss Block characteristics
-		event.getRegistry().register(
-			new Block(Block.Properties.create(Material.IRON).
-				hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE))
-				.setRegistryName("gneiss")
-		);
-		//Defines breccia Block characteristics
-		event.getRegistry().register(
-			new Block(Block.Properties.create(Material.IRON).
-				hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE))
-				.setRegistryName("breccia")		
-		);
-		//Defines siltstone Block characteristics
-		event.getRegistry().register(
-			new Block(Block.Properties.create(Material.IRON).
-				hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE))
-				.setRegistryName("siltstone")				
-		);
-		
-		//OVERWORLD ORES
-		//Defines rose_gold_ore Block characteristics
-		event.getRegistry().register(
-			new Block(Block.Properties.create(Material.IRON).
-				hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE))
-				.setRegistryName("rose_gold_ore")	
-		);
-		//Defines carbon_infused_iron_ore Block characteristics
-		event.getRegistry().register(
-			new Block(Block.Properties.create(Material.IRON).
-				hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE))
-				.setRegistryName("carbon_infused_iron_ore")		
-		);
-		//Defines lignite_coal_ore Block characteristics
-		event.getRegistry().register(
-			new Block(Block.Properties.create(Material.IRON).
-				hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE))
-				.setRegistryName("lignite_coal_ore")														
-		);
-		//Defines sapphire_ore Block characteristics
-		event.getRegistry().register(
-			new Block(Block.Properties.create(Material.IRON).
-				hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE))
-				.setRegistryName("sapphire_ore")								
-		);
-		//Defines bauxite_ore Block characteristics
-		event.getRegistry().register(
-			new Block(Block.Properties.create(Material.IRON).
-				hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE))
-				.setRegistryName("bauxite_ore")							
-		);
-		//Defines ruby_ore Block characteristics
-		event.getRegistry().register(
-			new Block(Block.Properties.create(Material.IRON).
-				hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE))
-				.setRegistryName("ruby_ore")											
-		);
-		//Defines sulphur_ore Block characteristics
-		event.getRegistry().register(
-			new Block(Block.Properties.create(Material.IRON).
-				hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE))
-				.setRegistryName("sulphur_ore")		
-		);
-		
-		//OVERWORLD FUNCTIONAL BLOCKS
-		//Defines alloy_forge Block characteristics
-		event.getRegistry().register(
-			new Block(Block.Properties.create(Material.IRON).
-				hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE))
-				.setRegistryName("alloy_forge")											
-		);
-		//Defines warding_beacon block characteristics
-		event.getRegistry().register(
-			new Block(Block.Properties.create(Material.IRON).
-				hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE))
-				.setRegistryName("warding_beacon")			
-		);
-		
-		
-		
-		/*NETHER BLOCKS*/
-		
-	}
-	
-	
-	/**
-	 * registers BlockItems
-	 * @param event
-	 */
-	@SubscribeEvent
-	public static void registerBlockItems(final RegistryEvent.Register<Item> event) {
-		
-		/*OVERWORLD BLOCKS*/
-		
-		//OVERWORLD BUILDING BLOCKS
-		//Defines marble BlockItem characteristics
-		event.getRegistry().register(new BlockItem(marble, new Item.Properties().maxStackSize(64)
-			.group(ContInfBlockLibItemGroup.itemGroupInstance)).setRegistryName("marble")
-		);
-		//Defines gneiss BlockItem characteristics
-		event.getRegistry().register(new BlockItem(gneiss, new Item.Properties().maxStackSize(64)
-			.group(ContInfBlockLibItemGroup.itemGroupInstance)).setRegistryName("gneiss")	
-		);
-		//Defines breccia BlockItem characteristics
-		event.getRegistry().register(new BlockItem(breccia, new Item.Properties().maxStackSize(64)
-			.group(ContInfBlockLibItemGroup.itemGroupInstance)).setRegistryName("breccia")		
-		);
-		//Defines siltstone BlockItem characteristics
-		event.getRegistry().register(new BlockItem(siltstone, new Item.Properties().maxStackSize(64)
-			.group(ContInfBlockLibItemGroup.itemGroupInstance)).setRegistryName("siltstone")				
-		);
-		
-		//OVERWORLD ORES
-		//Defines rose_gold_ore BlockItem characteristics
-		event.getRegistry().register(new BlockItem(rose_gold_ore, new Item.Properties().maxStackSize(64)
-			.group(ContInfBlockLibItemGroup.itemGroupInstance)).setRegistryName("rose_gold_ore")				
-		);
-		//Defines carbon_infused_iron_ore BlockItem characteristics
-		event.getRegistry().register(new BlockItem(carbon_infused_iron_ore, new Item.Properties().maxStackSize(64)
-			.group(ContInfBlockLibItemGroup.itemGroupInstance)).setRegistryName("carbon_infused_iron_ore")		
-		);
-		//Defines lignite_coal_ore BlockItem characteristics
-		event.getRegistry().register(new BlockItem(lignite_coal_ore, new Item.Properties().maxStackSize(64)
-			.group(ContInfBlockLibItemGroup.itemGroupInstance)).setRegistryName("lignite_coal_ore")		
-		);
-		//Defines sapphire_ore BlockItem characteristics
-		event.getRegistry().register(new BlockItem(sapphire_ore, new Item.Properties().maxStackSize(64)
-			.group(ContInfBlockLibItemGroup.itemGroupInstance)).setRegistryName("sapphire_ore")								
-		);
-		//Defines bauxite_ore BlockItem characteristics
-		event.getRegistry().register(new BlockItem(bauxite_ore, new Item.Properties().maxStackSize(64)
-			.group(ContInfBlockLibItemGroup.itemGroupInstance)).setRegistryName("bauxite_ore")				
-		);
-		//Defines ruby_ore BlockItem characteristics
-		event.getRegistry().register(new BlockItem(ruby_ore, new Item.Properties().maxStackSize(64)
-			.group(ContInfBlockLibItemGroup.itemGroupInstance)).setRegistryName("ruby_ore")		
-		);
-		//Defines sulphur_ore BlockItem characteristics
-		event.getRegistry().register(new BlockItem(sulphur_ore, new Item.Properties().maxStackSize(64)
-			.group(ContInfBlockLibItemGroup.itemGroupInstance)).setRegistryName("sulphur_ore")		
-		);
-		
-		//OVERWORLD FUNCTIONAL BLOCKS
-		//Defines alloy_forge BlockItem characteristics
-		event.getRegistry().register(new BlockItem(alloy_forge, new Item.Properties().maxStackSize(64)
-			.group(ContInfBlockLibItemGroup.itemGroupInstance)).setRegistryName("alloy_forge")		
-		);
-		//Defines warding_beacon BlockItem characteristics
-		event.getRegistry().register(new BlockItem(warding_beacon, new Item.Properties().maxStackSize(64)
-			.group(ContInfBlockLibItemGroup.itemGroupInstance)).setRegistryName("warding_beacon")	
-		);
-
-			
-		/*NETHER BLOCKS*/	
-	}
 }

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bb",
+    "bb"
+  ],
+  "key": {
+    "b": {
+      "item": "continfblocklib:breccia"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:breccia_bricks",
+    "count": 4
+  }
+}
