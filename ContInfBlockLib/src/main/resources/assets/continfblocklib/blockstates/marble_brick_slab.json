@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "continfblocklib:block/marble_brick_slab" },
+        "type=top": { "model": "continfblocklib:block/marble_brick_slab_top" },
+        "type=double": { "model": "continfblocklib:block/marble_bricks" }
+    }
+}

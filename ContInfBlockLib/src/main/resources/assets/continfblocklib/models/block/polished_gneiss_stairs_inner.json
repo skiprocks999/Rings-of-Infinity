@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "continfblocklib:blocks/polished_gneiss",
+        "top": "continfblocklib:blocks/polished_gneiss",
+        "side": "continfblocklib:blocks/polished_gneiss"
+    }
+}

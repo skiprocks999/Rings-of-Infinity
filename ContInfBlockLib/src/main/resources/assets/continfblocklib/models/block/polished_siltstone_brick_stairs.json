@@ -1,0 +1,8 @@
+{
+    "parent": "block/stairs",
+    "textures": {
+        "bottom": "continfblocklib:blocks/polished_siltstone_bricks",
+        "top": "continfblocklib:blocks/polished_siltstone_bricks",
+        "side": "continfblocklib:blocks/polished_siltstone_bricks"
+    }
+}

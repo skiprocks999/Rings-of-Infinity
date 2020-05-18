@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "continfblocklib:blocks/breccia_bricks",
+        "top": "continfblocklib:blocks/breccia_bricks",
+        "side": "continfblocklib:blocks/breccia_bricks"
+    }
+}

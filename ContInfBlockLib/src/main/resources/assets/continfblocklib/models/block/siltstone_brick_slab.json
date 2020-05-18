@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "continfblocklib:blocks/siltstone_bricks",
+        "top": "continfblocklib:blocks/siltstone_bricks",
+        "side": "continfblocklib:blocks/siltstone_bricks"
+    }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "b  ",
+    "bb ",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "continfblocklib:marble_bricks"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:marble_brick_stairs",
+    "count": 6
+  }
+}

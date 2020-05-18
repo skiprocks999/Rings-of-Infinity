@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "continfblocklib:block/siltstone_slab" },
+        "type=top": { "model": "continfblocklib:block/siltstone_slab_top" },
+        "type=double": { "model": "continfblocklib:block/siltstone" }
+    }
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "continfblocklib:blocks/gneiss",
+        "top": "continfblocklib:blocks/gneiss",
+        "side": "continfblocklib:blocks/gneiss"
+    }
+}

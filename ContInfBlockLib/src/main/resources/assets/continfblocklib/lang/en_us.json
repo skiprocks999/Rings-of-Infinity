@@ -1,27 +1,80 @@
 {
-	#Creative Tab
+	//Creative Tab
 	"itemGroup.ContInfBlockLibItemGroupTab": "Contained Infinity Blocks",
 	
-	#OVERWORLD BLOCKS
+	//OVERWORLD BLOCKS
 	
-	#OVERWORLD BUILDING BLOCKS
+	//OVERWORLD BUILDING BLOCKS
+	//MARBLE
 	"block.continfblocklib.marble": "Marble",
-	"block.continfblocklib.gneiss": "Gneiss",
-	"block.continfblocklib.breccia": "Breccia",
-	"block.continfblocklib.siltstone": "Siltstone",
 	"block.continfblocklib.marble_bricks": "Marble Bricks",
-	"block.continfblocklib.gneiss_bricks": "Gneiss Bricks",
-	"block.continfblocklib.breccia_bricks": "Breccia Bricks",
-	"block.continfblocklib.siltstone_bricks": "Siltstone Bricks",
 	"block.continfblocklib.polished_marble": "Polished Marble",
-	"block.continfblocklib.polished_gneiss": "Polished Gneiss",
-	"block.continfblocklib.polished_breccia": "Polished Breccia",
-	"block.continfblocklib.polished_siltstone": "Polished Siltstone",
 	"block.continfblocklib.polished_marble_bricks": "Polished Marble Bricks",
+	"block.continfblocklib.marble_stairs": "Marble Stairs",
+	"block.continfblocklib.marble_brick_stairs": "Marble Brick Stairs",
+	"block.continfblocklib.polished_marble_stairs": "Polished Marble Stairs",
+	"block.continfblocklib.polished_marble_brick_stairs": "Polished Marble Brick Stairs",
+	"block.continfblocklib.marble_slab": "Marble Slab",
+	"block.continfblocklib.marble_brick_slab": "Marble Brick Slab", 
+	"block.continfblocklib.polished_marble_slab": "Polished Marble Slab",
+	"block.continfblocklib.polished_marble_brick_slab": "Polished Marble Brick Slab",
+	"block.continfblocklib.marble_wall": "Marble Wall",
+	"block.continfblocklib.marble_brick_wall": "Marble Brick Wall",
+	"block.continfblocklib.polished_marble_wall": "Polished Marble Wall",
+	"block.continfblocklib.polished_marble_brick_wall": "Polished Marble Brick Wall",
+	//GNEISS
+	"block.continfblocklib.gneiss": "Gneiss",
+	"block.continfblocklib.gneiss_bricks": "Gneiss Bricks",
+	"block.continfblocklib.polished_gneiss": "Polished Gneiss",
 	"block.continfblocklib.polished_gneiss_bricks": "Polished Gneiss Bricks",
+	"block.continfblocklib.gneiss_stairs": "Gneiss Stairs",
+	"block.continfblocklib.gneiss_brick_stairs": "Gneiss Brick Stairs",
+	"block.continfblocklib.polished_gneiss_stairs": "Polished Gneiss Stairs",
+	"block.continfblocklib.polished_gneiss_brick_stairs": "Polished Gneiss Brick Stairs",
+	"block.continfblocklib.gneiss_slab": "Gneiss Slab",
+	"block.continfblocklib.gneiss_brick_slab": "Gneiss Brick Slab", 
+	"block.continfblocklib.polished_gneiss_slab": "Polished Gneiss Slab",
+	"block.continfblocklib.polished_gneiss_brick_slab": "Polished Gneiss Brick Slab",
+	"block.continfblocklib.gneiss_wall": "Gneiss Wall",
+	"block.continfblocklib.gneiss_brick_wall": "Gneiss Brick Wall",
+	"block.continfblocklib.polished_gneiss_wall": "Polished Gneiss Wall",
+	"block.continfblocklib.polished_gneiss_brick_wall": "Polished Gneiss Brick Wall",
+	//BRECCIA
+	"block.continfblocklib.breccia": "Breccia",
+	"block.continfblocklib.breccia_bricks": "Breccia Bricks",
+	"block.continfblocklib.polished_breccia": "Polished Breccia",
 	"block.continfblocklib.polished_breccia_bricks": "Polished Breccia Bricks",
+	"block.continfblocklib.breccia_stairs": "Breccia Stairs",
+	"block.continfblocklib.breccia_brick_stairs": "Breccia Brick Stairs",
+	"block.continfblocklib.polished_breccia_stairs": "Polished Breccia Stairs",
+	"block.continfblocklib.polished_breccia_brick_stairs": "Polished Breccia Brick Stairs",
+	"block.continfblocklib.breccia_slab": "Breccia Slab",
+	"block.continfblocklib.breccia_brick_slab": "Breccia Brick Slab", 
+	"block.continfblocklib.polished_breccia_slab": "Polished Breccia Slab",
+	"block.continfblocklib.polished_breccia_brick_slab": "Polished Breccia Brick Slab",
+	"block.continfblocklib.breccia_wall": "Breccia Wall",
+	"block.continfblocklib.breccia_brick_wall": "Breccia Brick Wall",
+	"block.continfblocklib.polished_breccia_wall": "Polished Breccia Wall",
+	"block.continfblocklib.polished_breccia_brick_wall": "Polished Breccia Brick Wall",
+	//SILTSTONE
+	"block.continfblocklib.siltstone": "Siltstone",
+	"block.continfblocklib.siltstone_bricks": "Siltstone Bricks",
+	"block.continfblocklib.polished_siltstone": "Polished Siltstone",
 	"block.continfblocklib.polished_siltstone_bricks": "Polished Siltstone Bricks",
-	#OVERWORLD ORES
+	"block.continfblocklib.siltstone_stairs": "Siltstone Stairs",
+	"block.continfblocklib.siltstone_brick_stairs": "Siltstone Brick Stairs",
+	"block.continfblocklib.polished_siltstone_stairs": "Polished Siltstone Stairs",
+	"block.continfblocklib.polished_siltstone_brick_stairs": "Polished Siltstone Brick Stairs",
+	"block.continfblocklib.siltstone_slab": "Siltstone Slab",
+	"block.continfblocklib.siltstone_brick_slab": "Siltstone Brick Slab", 
+	"block.continfblocklib.polished_siltstone_slab": "Polished Siltstone Slab",
+	"block.continfblocklib.polished_siltstone_brick_slab": "Polished Siltstone Brick Slab",
+	"block.continfblocklib.siltstone_wall": "Siltstone Wall",
+	"block.continfblocklib.siltstone_brick_wall": "Siltstone Brick Wall",
+	"block.continfblocklib.polished_siltstone_wall": "Polished Siltstone Wall",
+	"block.continfblocklib.polished_siltstone_brick_wall": "Polished Siltstone Brick Wall",
+	
+	//OVERWORLD ORES
 	"block.continfblocklib.rose_gold_ore": "Rose Gold Ore",
 	"block.continfblocklib.carbon_infused_iron_ore": "Carbon-Infused Iron Ore",
 	"block.continfblocklib.lignite_coal_ore": "Lignite Coal Ore",
@@ -29,9 +82,10 @@
 	"block.continfblocklib.bauxite_ore": "Bauxite Ore",
 	"block.continfblocklib.ruby_ore": "Ruby Ore",
 	"block.continfblocklib.sulphur_ore": "Sulphur Ore",
-	#OVERWORLD FUNCTIONAL BLOCKS
+	
+	//OVERWORLD FUNCTIONAL BLOCKS
 	"block.continfblocklib.alloy_forge": "Alloy Forge",
 	"block.continfblocklib.warding_beacon": "Warding Beacon"
 	
-	#NETHER BLOCKS
+	//NETHER BLOCKS
 }

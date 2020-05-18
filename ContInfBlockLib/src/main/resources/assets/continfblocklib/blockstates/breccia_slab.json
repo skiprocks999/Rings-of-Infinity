@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "continfblocklib:block/breccia_slab" },
+        "type=top": { "model": "continfblocklib:block/breccia_slab_top" },
+        "type=double": { "model": "continfblocklib:block/breccia" }
+    }
+}

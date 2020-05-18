@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "continfblocklib:block/polished_siltstone_brick_slab" },
+        "type=top": { "model": "continfblocklib:block/polished_siltstone_brick_slab_top" },
+        "type=double": { "model": "continfblocklib:block/polished_siltstone_bricks" }
+    }
+}

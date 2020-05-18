@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "continfblocklib:block/gneiss_slab" },
+        "type=top": { "model": "continfblocklib:block/gneiss_slab_top" },
+        "type=double": { "model": "continfblocklib:block/gneiss" }
+    }
+}

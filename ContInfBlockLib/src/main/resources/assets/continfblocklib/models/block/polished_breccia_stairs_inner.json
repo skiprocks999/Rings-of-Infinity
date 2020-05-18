@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "continfblocklib:blocks/polished_breccia",
+        "top": "continfblocklib:blocks/polished_breccia",
+        "side": "continfblocklib:blocks/polished_breccia"
+    }
+}
