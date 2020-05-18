@@ -1,22 +1,22 @@
 {
-	#Creative Tab
+	//Creative Tab
 	"itemGroup.ContInfItemLibItemGroupTab": "Contained Infinity Items",
 	
-	#OVERWORLD ITEMS
+	//OVERWORLD ITEMS
 	
-	#Overworld Gems
+	//Overworld Gems
 	"item.continfitemlib.lignite_coal":"Lignite Coal",
 	"item.continfitemlib.sapphire":"Sapphire",
 	"item.continfitemlib.ruby":"Ruby",
-	"item.continfitemlib.sulphur":"Sulphur",
+	"item.continfitemlib.sulphur":"Sulphur Dust",
 	
-	#Overworld Ingots
+	//Overworld Ingots
 	"item.continfitemlib.rose_gold_ingot":"Rose Gold Ingot",
 	"item.continfitemlib.blister_steel_ingot":"Blister Steel Ingot",
 	"item.continfitemlib.aluminum_ingot":"Aluminum Ingot",
 	"item.continfitemlib.ferroallide_steel_ingot":"Ferroallide Steel Ingot",
 	
-	#Overworld Misc.
+	//Overworld Misc.
 	"item.continfitemlib.cocain":"Cocain"
 	
 

@@ -21,7 +21,7 @@ import com.continf.itemlib.init.ItemInit;
 
 
 /**
- * This is the item librart for ContainedInfinity
+ * This is the item library for ContainedInfinity
  * Currently, the items implemented are:
  * 
  * Oveworld
@@ -53,11 +53,16 @@ public class ContInfItemLib
 
     public ContInfItemLib() {
         
+    	//adds listeners to startup methods
     	final IEventBus modEventBus = FMLJavaModLoadingContext.get().getModEventBus();
         modEventBus.addListener(this::setup);
         modEventBus.addListener(this::doClientStuff);
 
+        //registers items
+        ItemInit.ITEMS.register(modEventBus);
         
+        //creates instance of mod for external use
+        instance = this;
         
         // Register ourselves for server and other game events we are interested in
         MinecraftForge.EVENT_BUS.register(this);
@@ -89,8 +94,9 @@ public class ContInfItemLib
 
 		@Override
 		public ItemStack createIcon() {
-			return new ItemStack(ItemInit.ruby);
+			return new ItemStack(ItemInit.ruby.get());
 		}
        
     }
+    
 }
