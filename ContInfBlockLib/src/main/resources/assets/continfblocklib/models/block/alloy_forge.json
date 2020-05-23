@@ -2,9 +2,8 @@
     "parent": "block/orientable",
     "textures": {
 		"top": "continfblocklib:blocks/alloy_forge_top",
+		"bottom":"continfblocklib:blocks/alloy_forge_bottom",
         "front": "continfblocklib:blocks/alloy_forge_front",
-		"side":"continfblocklib:blocks/alloy_forge_side",
-		"bottom":"continfblocklib:blocks/alloy_forge_bottom"
-	
+		"side":"continfblocklib:blocks/alloy_forge_side"
     }
 }

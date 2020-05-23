@@ -5,6 +5,8 @@
 package com.contInf.BlockLib.init;
 
 import com.contInf.BlockLib.ContInfBlockLib;
+import com.contInf.BlockLib.objects.blocks.AlloyForge;
+import com.contInf.BlockLib.objects.blocks.WardingBeacon;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SlabBlock;
@@ -386,15 +388,53 @@ public class BlockInit {
 			BLOCKS.register("sulphur_ore", () -> new Block(Block.Properties.create(Material.IRON).
 			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
 		
+	//Overworld Ingot Blocks
+	
+	//blister steel ingot block
+	public static final RegistryObject<Block> block_of_blister_steel = 
+			BLOCKS.register("block_of_blister_steel", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.METAL)));
+	//rose gold ingot block
+	public static final RegistryObject<Block> block_of_rose_gold = 
+			BLOCKS.register("block_of_rose_gold", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.METAL)));
+	//aluminum ingot block
+	public static final RegistryObject<Block> block_of_aluminum = 
+			BLOCKS.register("block_of_aluminum", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.METAL)));
+	//ferroallide steel ingot block
+	public static final RegistryObject<Block> block_of_ferroallide_steel = 
+			BLOCKS.register("block_of_ferroallide_steel", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.METAL)));
+	
+	//Overworld Gem Blocks
+	
+	//ruby block
+	public static final RegistryObject<Block> block_of_ruby = 
+			BLOCKS.register("block_of_ruby", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.METAL)));
+	//sapphire block
+	public static final RegistryObject<Block> block_of_sapphire = 
+			BLOCKS.register("block_of_sapphire", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.METAL)));
+	//lignite coal block
+	public static final RegistryObject<Block> block_of_lignite_coal = 
+			BLOCKS.register("block_of_lignite_coal", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.METAL)));
+	//sulphur block
+	public static final RegistryObject<Block> block_of_sulphur = 
+			BLOCKS.register("block_of_sulphur", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.METAL)));
+	
 	//Overworld functional blocks
 	
 	//alloy forge
 	public static final RegistryObject<Block> alloy_forge = 
-			BLOCKS.register("alloy_forge", () -> new Block(Block.Properties.create(Material.IRON).
+			BLOCKS.register("alloy_forge", () -> new AlloyForge(Block.Properties.create(Material.IRON).
 			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
 	//warding beacon
 	public static final RegistryObject<Block> warding_beacon = 
-			BLOCKS.register("warding_beacon", () -> new Block(Block.Properties.create(Material.IRON).
+			BLOCKS.register("warding_beacon", () -> new WardingBeacon(Block.Properties.create(Material.IRON).
 			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
 
 

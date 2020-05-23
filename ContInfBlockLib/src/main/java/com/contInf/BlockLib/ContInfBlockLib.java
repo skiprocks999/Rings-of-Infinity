@@ -33,7 +33,7 @@ import net.minecraftforge.registries.IForgeRegistry;
 @Mod("continfblocklib")
 /**
  * This library contains all blocks currently in the ContainedInfinity Mod Library.
- * Currently there are X blocks, which are listed below:
+ * Currently there are 19 functioning blocks, which are listed below:
  * 
  * Overworld:
  * 
@@ -48,6 +48,15 @@ import net.minecraftforge.registries.IForgeRegistry;
  * >Bauxite Ore
  * >Ruby Ore
  * >Sulphur Ore
+ * >Sapphire Block
+ * >Ruby Block
+ * >Rose Gold Block
+ * >Lignite Coal Block
+ * >Blister Steel Block
+ * >Ferroallide Block
+ * >Aluminum Block
+ * >Sulphur Block
+ * WIP:
  * >Alloy Forge
  * >Warding Beacon
  * 

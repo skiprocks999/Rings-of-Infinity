@@ -1,15 +1,22 @@
 {
   "type": "minecraft:crafting_shaped",
   "pattern": [
-    "bbb"
+    "bbb",
+    "bBi",
+    "iii"
   ],
   "key": {
     "b": {
-      "item": "continfblocklib:breccia_bricks"
+      "item": "minecraft:bricks"
+    },
+    "B": {
+      "item": "minecraft:blast_furnace"
+    },
+    "i": {
+      "item": "minecraft:iron_block"
     }
   },
   "result": {
-    "item": "continfblocklib:breccia_brick_slab",
-    "count": 6
+    "item": "continfblocklib:alloy_forge"
   }
 }

@@ -83,6 +83,18 @@
 	"block.continfblocklib.ruby_ore": "Ruby Ore",
 	"block.continfblocklib.sulphur_ore": "Sulphur Ore",
 	
+	//OVERWORLD INGOT BLOCKS
+	"block.continfblocklib.block_of_rose_gold": "Block of Rose Gold",
+	"block.continfblocklib.block_of_blister_steel": "Block of Blister Steel",
+	"block.continfblocklib.block_of_aluminum": "Block of Aluminum",
+	"block.continfblocklib.block_of_ferroallide_steel": "Block of Ferroallide Steel",
+	
+	//OVERWORLD GEM BLOCKS
+	"block.continfblocklib.block_of_lignite_coal": "Block of Lignite Coal",
+	"block.continfblocklib.block_of_sapphire": "Block of Sapphire",
+	"block.continfblocklib.block_of_ruby": "Block of Ruby",
+	"block.continfblocklib.block_of_sulphur": "Block of Sulphur",
+	
 	//OVERWORLD FUNCTIONAL BLOCKS
 	"block.continfblocklib.alloy_forge": "Alloy Forge",
 	"block.continfblocklib.warding_beacon": "Warding Beacon"

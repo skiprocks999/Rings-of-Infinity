@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bbb",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "continfblocklib:marble_bricks"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:marble_brick_wall",
+    "count": 6
+  }
+}
