@@ -38,7 +38,7 @@ import com.continf.itemlib.init.ItemInit;
  * 
  * 
  * @author skip999
- *
+ * @author Searobber69
  */
 @Mod("continfitemlib")
 public class ContInfItemLib
@@ -94,6 +94,24 @@ public class ContInfItemLib
 
 		@Override
 		public ItemStack createIcon() {
+			return new ItemStack(ItemInit.ruby.get());
+		}
+       
+    }
+
+    // Tools group for ContInfItemLib
+    public static class ContInfToolsLibItemGroup extends ItemGroup {
+
+    	public static final ContInfItemLibItemGroup itemGroupInstance = 
+    			new ContInfItemLibItemGroup(ItemGroup.GROUPS.length, "ContInfItemLibItemGroupTab");
+    	
+		public ContInfToolsLibItemGroup(int index, String label) {
+			super(index, label);
+		}
+
+		@Override
+		public ItemStack createIcon() {
+            // TODO Change icon to unique icon for tools tab
 			return new ItemStack(ItemInit.ruby.get());
 		}
        
