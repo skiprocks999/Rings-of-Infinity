@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "continfblocklib:blocks/polished_scoria_bricks",
+        "top": "continfblocklib:blocks/polished_scoria_bricks",
+        "side": "continfblocklib:blocks/polished_scoria_bricks"
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "continfblocklib:bauxite_ore"
+  },
+  "result": "continfitemlib:aluminum_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
+}

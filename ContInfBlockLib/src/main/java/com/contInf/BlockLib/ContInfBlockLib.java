@@ -62,9 +62,9 @@ import net.minecraftforge.registries.IForgeRegistry;
  * 
  * Nether:
  * 
- * 
- * 
- * 
+ * >Basalt
+ * >Scoria
+ * >Diabase
  * 
  * 
  * 
@@ -166,11 +166,11 @@ public class ContInfBlockLib {
 
 		//Instance of ItemGroup
 		public static final ContInfBlockLibItemGroup itemGroupInstance = 
-				new ContInfBlockLibItemGroup(ItemGroup.GROUPS.length, "ContInfBlockLibItemGroupTab");
+				new ContInfBlockLibItemGroup("ContInfBlockLibItemGroupTab");
 				
 				
-		private ContInfBlockLibItemGroup(int index, String label) {
-			super(index, label);
+		private ContInfBlockLibItemGroup(String label) {
+			super(label);
 		}
 
 		/**

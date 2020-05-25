@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bbb",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "continfblocklib:scoria"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:scoria_wall",
+    "count": 6
+  }
+}

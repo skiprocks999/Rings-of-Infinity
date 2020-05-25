@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bb",
+    "bb"
+  ],
+  "key": {
+    "b": {
+      "item": "continfblocklib:basalt"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:basalt_bricks",
+    "count": 4
+  }
+}

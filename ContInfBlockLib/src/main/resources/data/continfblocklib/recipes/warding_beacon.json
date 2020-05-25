@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "rSr",
+    "rBr",
+    "OOO"
+  ],
+  "key": {
+    "r": {
+      "item": "continfitemlib:ruby"
+    },
+    "S": {
+      "item": "continfblocklib:block_of_sapphire"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "B": {
+      "item": "minecraft:beacon"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:warding_beacon"
+  }
+}

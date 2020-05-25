@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "continfblocklib:block/polished_diabase_slab" },
+        "type=top": { "model": "continfblocklib:block/polished_diabase_slab_top" },
+        "type=double": { "model": "continfblocklib:block/polished_diabase" }
+    }
+}

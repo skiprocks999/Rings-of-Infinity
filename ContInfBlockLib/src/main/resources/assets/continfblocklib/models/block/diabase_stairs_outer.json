@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "continfblocklib:blocks/diabase",
+        "top": "continfblocklib:blocks/diabase",
+        "side": "continfblocklib:blocks/diabase"
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "continfblocklib:diabase"
+  },
+  "result": "continfblocklib:polished_diabase",
+  "experience": 0.7,
+  "cookingtime": 100
+}

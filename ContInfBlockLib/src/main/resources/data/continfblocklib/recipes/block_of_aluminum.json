@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "iii",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "continfitemlib:aluminum_ingot"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:block_of_aluminum"
+  }
+}

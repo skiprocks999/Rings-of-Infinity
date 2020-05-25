@@ -16,6 +16,18 @@
     "continfblocklib:siltstone_wall",
     "continfblocklib:siltstone_brick_wall",
     "continfblocklib:polished_siltstone_wall",
-    "continfblocklib:polished_siltstone_brick_wall"
+    "continfblocklib:polished_siltstone_brick_wall",
+    "continfblocklib:basalt_wall",
+    "continfblocklib:basalt_brick_wall",
+    "continfblocklib:polished_basalt_wall",
+    "continfblocklib:polished_basalt_brick_wall",
+    "continfblocklib:scoria_wall",
+    "continfblocklib:scoria_brick_wall",
+    "continfblocklib:polished_scoria_wall",
+    "continfblocklib:polished_scoria_brick_wall",
+    "continfblocklib:diabase_wall",
+    "continfblocklib:diabase_brick_wall",
+    "continfblocklib:polished_diabase_wall",
+    "continfblocklib:polished_diabase_brick_wall"
   ]
 }

@@ -435,10 +435,258 @@ public class BlockInit {
 	//warding beacon
 	public static final RegistryObject<Block> warding_beacon = 
 			BLOCKS.register("warding_beacon", () -> new WardingBeacon(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.STONE)));
+
+
+	/*NETHER BLOCKS*/
+	
+	//NETHER BUILDING BLOCKS
+	
+	//BASALT
+	//basalt
+	public static final RegistryObject<Block> basalt = 
+			BLOCKS.register("basalt", () -> new Block(Block.Properties.create(Material.IRON).
 			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
-
-
-
-
-
+	//basalt Bricks
+	public static final RegistryObject<Block> basalt_bricks = 
+			BLOCKS.register("basalt_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished Basalt
+	public static final RegistryObject<Block> polished_basalt = 
+			BLOCKS.register("polished_basalt", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished Basalt Bricks
+	public static final RegistryObject<Block> polished_basalt_bricks = 
+			BLOCKS.register("polished_basalt_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//basalt stairs
+	public static final RegistryObject<Block> basalt_stairs = 
+			BLOCKS.register("basalt_stairs", () -> new StairsBlock(
+				() -> BlockInit.basalt.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//basalt brick stairs
+	public static final RegistryObject<Block> basalt_brick_stairs = 
+			BLOCKS.register("basalt_brick_stairs", () -> new StairsBlock(
+				() -> BlockInit.basalt_bricks.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//polished basalt stairs
+	public static final RegistryObject<Block> polished_basalt_stairs = 
+			BLOCKS.register("polished_basalt_stairs", () -> new StairsBlock(
+				() -> BlockInit.polished_basalt.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//polished basalt brick stairs
+	public static final RegistryObject<Block> polished_basalt_brick_stairs = 
+			BLOCKS.register("polished_basalt_brick_stairs", () -> new StairsBlock(
+				() -> BlockInit.polished_basalt_bricks.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//basalt slab
+	public static final RegistryObject<Block> basalt_slab = 
+			BLOCKS.register("basalt_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//basalt brick slab
+	public static final RegistryObject<Block> basalt_brick_slab = 
+			BLOCKS.register("basalt_brick_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//polished basalt slab
+	public static final RegistryObject<Block> polished_basalt_slab = 
+			BLOCKS.register("polished_basalt_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//polished basalt brick slab
+	public static final RegistryObject<Block> polished_basalt_brick_slab = 
+			BLOCKS.register("polished_basalt_brick_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//basalt wall
+	public static final RegistryObject<Block> basalt_wall = 
+			BLOCKS.register("basalt_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//basalt brick wall
+	public static final RegistryObject<Block> basalt_brick_wall = 
+			BLOCKS.register("basalt_brick_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//polished basalt wall
+	public static final RegistryObject<Block> polished_basalt_wall = 
+			BLOCKS.register("polished_basalt_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//polished basalt brick wall
+	public static final RegistryObject<Block> polished_basalt_brick_wall = 
+			BLOCKS.register("polished_basalt_brick_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );	
+	
+	//SCORIA
+	//scoria
+	public static final RegistryObject<Block> scoria = 
+			BLOCKS.register("scoria", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//scoria Bricks
+	public static final RegistryObject<Block> scoria_bricks = 
+			BLOCKS.register("scoria_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished scoria
+	public static final RegistryObject<Block> polished_scoria = 
+			BLOCKS.register("polished_scoria", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished scoria Bricks
+	public static final RegistryObject<Block> polished_scoria_bricks = 
+			BLOCKS.register("polished_scoria_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//scoria stairs
+	public static final RegistryObject<Block> scoria_stairs = 
+			BLOCKS.register("scoria_stairs", () -> new StairsBlock(
+				() -> BlockInit.scoria.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//scoria brick stairs
+	public static final RegistryObject<Block> scoria_brick_stairs = 
+			BLOCKS.register("scoria_brick_stairs", () -> new StairsBlock(
+				() -> BlockInit.scoria_bricks.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//polished scoria stairs
+	public static final RegistryObject<Block> polished_scoria_stairs = 
+			BLOCKS.register("polished_scoria_stairs", () -> new StairsBlock(
+				() -> BlockInit.polished_scoria.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//polished scoria brick stairs
+	public static final RegistryObject<Block> polished_scoria_brick_stairs = 
+			BLOCKS.register("polished_scoria_brick_stairs", () -> new StairsBlock(
+				() -> BlockInit.polished_scoria_bricks.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//scoria slab
+	public static final RegistryObject<Block> scoria_slab = 
+			BLOCKS.register("scoria_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//scoria brick slab
+	public static final RegistryObject<Block> scoria_brick_slab = 
+			BLOCKS.register("scoria_brick_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//scoria basalt slab
+	public static final RegistryObject<Block> polished_scoria_slab = 
+			BLOCKS.register("polished_scoria_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//polished scoria brick slab
+	public static final RegistryObject<Block> polished_scoria_brick_slab = 
+			BLOCKS.register("polished_scoria_brick_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//scoria wall
+	public static final RegistryObject<Block> scoria_wall = 
+			BLOCKS.register("scoria_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//scoria brick wall
+	public static final RegistryObject<Block> scoria_brick_wall = 
+			BLOCKS.register("scoria_brick_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//polished scoria wall
+	public static final RegistryObject<Block> polished_scoria_wall = 
+			BLOCKS.register("polished_scoria_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//polished scoria brick wall
+	public static final RegistryObject<Block> polished_scoria_brick_wall = 
+			BLOCKS.register("polished_scoria_brick_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );	
+	
+	//DIABASE
+	//diabase
+	public static final RegistryObject<Block> diabase = 
+			BLOCKS.register("diabase", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//diabase Bricks
+	public static final RegistryObject<Block> diabase_bricks = 
+			BLOCKS.register("diabase_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished diabase
+	public static final RegistryObject<Block> polished_diabase = 
+			BLOCKS.register("polished_diabase", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished diabase Bricks
+	public static final RegistryObject<Block> polished_diabase_bricks = 
+			BLOCKS.register("polished_diabase_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//diabase stairs
+	public static final RegistryObject<Block> diabase_stairs = 
+			BLOCKS.register("diabase_stairs", () -> new StairsBlock(
+				() -> BlockInit.diabase.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//diabase brick stairs
+	public static final RegistryObject<Block> diabase_brick_stairs = 
+			BLOCKS.register("diabase_brick_stairs", () -> new StairsBlock(
+				() -> BlockInit.diabase_bricks.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//polished diabase stairs
+	public static final RegistryObject<Block> polished_diabase_stairs = 
+			BLOCKS.register("polished_diabase_stairs", () -> new StairsBlock(
+				() -> BlockInit.polished_diabase.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//polished diabase brick stairs
+	public static final RegistryObject<Block> polished_diabase_brick_stairs = 
+			BLOCKS.register("polished_diabase_brick_stairs", () -> new StairsBlock(
+				() -> BlockInit.polished_diabase_bricks.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//diabase slab
+	public static final RegistryObject<Block> diabase_slab = 
+			BLOCKS.register("diabase_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//diabase brick slab
+	public static final RegistryObject<Block> diabase_brick_slab = 
+			BLOCKS.register("diabase_brick_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//polished diabase slab
+	public static final RegistryObject<Block> polished_diabase_slab = 
+			BLOCKS.register("polished_diabase_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//polished diabase brick slab
+	public static final RegistryObject<Block> polished_diabase_brick_slab = 
+			BLOCKS.register("polished_diabase_brick_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//diabase wall
+	public static final RegistryObject<Block> diabase_wall = 
+			BLOCKS.register("diabase_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//diabase brick wall
+	public static final RegistryObject<Block> diabase_brick_wall = 
+			BLOCKS.register("diabase_brick_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//diabase scoria wall
+	public static final RegistryObject<Block> polished_diabase_wall = 
+			BLOCKS.register("polished_diabase_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//polished diabase brick wall
+	public static final RegistryObject<Block> polished_diabase_brick_wall = 
+			BLOCKS.register("polished_diabase_brick_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );	
+	
+	
 }

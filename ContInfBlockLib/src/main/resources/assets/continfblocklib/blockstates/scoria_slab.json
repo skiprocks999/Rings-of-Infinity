@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "continfblocklib:block/scoria_slab" },
+        "type=top": { "model": "continfblocklib:block/scoria_slab_top" },
+        "type=double": { "model": "continfblocklib:block/scoria" }
+    }
+}

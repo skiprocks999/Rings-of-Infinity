@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "continfblocklib:carbon_infused_iron_ore"
+  },
+  "result": "continfitemlib:blister_steel_ingot",
+  "experience": 0.7,
+  "cookingtime": 100
+}

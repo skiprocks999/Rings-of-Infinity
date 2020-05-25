@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "continfblocklib:blocks/diabase",
+        "top": "continfblocklib:blocks/diabase",
+        "side": "continfblocklib:blocks/diabase"
+    }
+}

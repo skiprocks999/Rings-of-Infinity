@@ -97,7 +97,64 @@
 	
 	//OVERWORLD FUNCTIONAL BLOCKS
 	"block.continfblocklib.alloy_forge": "Alloy Forge",
-	"block.continfblocklib.warding_beacon": "Warding Beacon"
+	"block.continfblocklib.warding_beacon": "Warding Beacon",
+	
+	
 	
 	//NETHER BLOCKS
+	
+	//NETHER BUILDING BLOCKS
+	//BASALT
+	"block.continfblocklib.basalt": "Basalt",
+	"block.continfblocklib.basalt_bricks": "Basalt Bricks",
+	"block.continfblocklib.polished_basalt": "Polished Basalt",
+	"block.continfblocklib.polished_basalt_bricks": "Polished Basalt Bricks",
+	"block.continfblocklib.basalt_stairs": "Basalt Stairs",
+	"block.continfblocklib.basalt_brick_stairs": "Basalt Brick Stairs",
+	"block.continfblocklib.polished_basalt_stairs": "Polished Basalt Stairs",
+	"block.continfblocklib.polished_basalt_brick_stairs": "Polished Basalt Brick Stairs",
+	"block.continfblocklib.basalt_slab": "Basalt Slab",
+	"block.continfblocklib.basalt_brick_slab": "Basalt Brick Slab", 
+	"block.continfblocklib.polished_basalt_slab": "Polished Basalt Slab",
+	"block.continfblocklib.polished_basalt_brick_slab": "Polished Basalt Brick Slab",
+	"block.continfblocklib.basalt_wall": "Basalt Wall",
+	"block.continfblocklib.basalt_brick_wall": "Basalt Brick Wall",
+	"block.continfblocklib.polished_basalt_wall": "Polished Basalt Wall",
+	"block.continfblocklib.polished_basalt_brick_wall": "Polished Basalt Brick Wall",
+	//SCORIA
+	"block.continfblocklib.scoria": "Scoria",
+	"block.continfblocklib.scoria_bricks": "Scoria Bricks",
+	"block.continfblocklib.polished_scoria": "Polished Scoria",
+	"block.continfblocklib.polished_scoria_bricks": "Polished Scoria Bricks",
+	"block.continfblocklib.scoria_stairs": "Scoria Stairs",
+	"block.continfblocklib.scoria_brick_stairs": "Scoria Brick Stairs",
+	"block.continfblocklib.polished_scoria_stairs": "Polished Scoria Stairs",
+	"block.continfblocklib.polished_scoria_brick_stairs": "Polished Scoria Brick Stairs",
+	"block.continfblocklib.scoria_slab": "Scoria Slab",
+	"block.continfblocklib.scoria_brick_slab": "Scoria Brick Slab", 
+	"block.continfblocklib.polished_scoria_slab": "Polished Scoria Slab",
+	"block.continfblocklib.polished_scoria_brick_slab": "Polished Scoria Brick Slab",
+	"block.continfblocklib.scoria_wall": "Scoria Wall",
+	"block.continfblocklib.scoria_brick_wall": "Scoria Brick Wall",
+	"block.continfblocklib.polished_scoria_wall": "Polished Scoria Wall",
+	"block.continfblocklib.polished_scoria_brick_wall": "Polished Scoria Brick Wall",
+	//DIABASE
+	"block.continfblocklib.diabase": "Diabase",
+	"block.continfblocklib.diabase_bricks": "Diabase Bricks",
+	"block.continfblocklib.polished_diabase": "Polished Diabase",
+	"block.continfblocklib.polished_diabase_bricks": "Polished Diabase Bricks",
+	"block.continfblocklib.diabase_stairs": "Diabase Stairs",
+	"block.continfblocklib.diabase_brick_stairs": "Diabase Brick Stairs",
+	"block.continfblocklib.polished_diabase_stairs": "Polished Diabase Stairs",
+	"block.continfblocklib.polished_diabase_brick_stairs": "Polished Diabase Brick Stairs",
+	"block.continfblocklib.diabase_slab": "Diabase Slab",
+	"block.continfblocklib.diabase_brick_slab": "Diabase Brick Slab", 
+	"block.continfblocklib.polished_diabase_slab": "Polished Diabase Slab",
+	"block.continfblocklib.polished_diabase_brick_slab": "Polished Diabase Brick Slab",
+	"block.continfblocklib.diabase_wall": "Diabase Wall",
+	"block.continfblocklib.diabase_brick_wall": "Diabase Brick Wall",
+	"block.continfblocklib.polished_diabase_wall": "Polished Diabase Wall",
+	"block.continfblocklib.polished_diabase_brick_wall": "Polished Diabase Brick Wall"
+	
+	
 }

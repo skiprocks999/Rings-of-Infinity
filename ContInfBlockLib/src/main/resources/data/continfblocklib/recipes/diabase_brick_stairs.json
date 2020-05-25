@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "b  ",
+    "bb ",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "continfblocklib:diabase_bricks"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:diabase_brick_stairs",
+    "count": 6
+  }
+}

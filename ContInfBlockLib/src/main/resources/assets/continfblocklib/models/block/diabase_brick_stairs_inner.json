@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "continfblocklib:blocks/diabase_bricks",
+        "top": "continfblocklib:blocks/diabase_bricks",
+        "side": "continfblocklib:blocks/diabase_bricks"
+    }
+}

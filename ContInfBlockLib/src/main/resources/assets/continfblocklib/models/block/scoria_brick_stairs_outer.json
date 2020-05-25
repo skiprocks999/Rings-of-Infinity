@@ -1,0 +1,8 @@
+{
+    "parent": "block/outer_stairs",
+    "textures": {
+        "bottom": "continfblocklib:blocks/scoria_bricks",
+        "top": "continfblocklib:blocks/scoria_bricks",
+        "side": "continfblocklib:blocks/scoria_bricks"
+    }
+}

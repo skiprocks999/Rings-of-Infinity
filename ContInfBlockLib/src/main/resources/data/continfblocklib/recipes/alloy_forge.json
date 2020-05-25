@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bbb",
+    "bBi",
+    "iii"
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:bricks"
+    },
+    "B": {
+      "item": "minecraft:blast_furnace"
+    },
+    "i": {
+      "item": "minecraft:iron_block"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:alloy_forge"
+  }
+}
