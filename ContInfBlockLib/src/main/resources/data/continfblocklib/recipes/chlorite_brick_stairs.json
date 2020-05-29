@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "b  ",
+    "bb ",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "continfblocklib:chlorite_bricks"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:chlorite_brick_stairs",
+    "count": 6
+  }
+}

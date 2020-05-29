@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bb",
+    "bb"
+  ],
+  "key": {
+    "b": {
+      "item": "continfblocklib:polished_chlorite"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:polished_chlorite_bricks",
+    "count": 4
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "continfblocklib:blocks/polished_chlorite_bricks",
+        "top": "continfblocklib:blocks/polished_chlorite_bricks",
+        "side": "continfblocklib:blocks/polished_chlorite_bricks"
+    }
+}

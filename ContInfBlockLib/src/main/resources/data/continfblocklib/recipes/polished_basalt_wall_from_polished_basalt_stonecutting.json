@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "continfblocklib:polished_basalt"
+  },
+  "result": "continfblocklib:polished_basalt_wall",
+  "count": 1
+}

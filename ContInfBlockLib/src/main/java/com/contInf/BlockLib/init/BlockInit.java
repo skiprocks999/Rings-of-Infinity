@@ -677,7 +677,7 @@ public class BlockInit {
 			BLOCKS.register("diabase_brick_wall", () -> new WallBlock(
 					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
 					.sound(SoundType.STONE)) );
-	//diabase scoria wall
+	//polished diabase wall
 	public static final RegistryObject<Block> polished_diabase_wall = 
 			BLOCKS.register("polished_diabase_wall", () -> new WallBlock(
 					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
@@ -687,6 +687,90 @@ public class BlockInit {
 			BLOCKS.register("polished_diabase_brick_wall", () -> new WallBlock(
 					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
 					.sound(SoundType.STONE)) );	
+	
+	//CHLORITE
+	//chlorite
+	public static final RegistryObject<Block> chlorite = 
+			BLOCKS.register("chlorite", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//chlorite Bricks
+	public static final RegistryObject<Block> chlorite_bricks = 
+			BLOCKS.register("chlorite_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished chlorite
+	public static final RegistryObject<Block> polished_chlorite = 
+			BLOCKS.register("polished_chlorite", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//polished chlorite Bricks
+	public static final RegistryObject<Block> polished_chlorite_bricks = 
+			BLOCKS.register("polished_chlorite_bricks", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//chlorite stairs
+	public static final RegistryObject<Block> chlorite_stairs = 
+			BLOCKS.register("chlorite_stairs", () -> new StairsBlock(
+				() -> BlockInit.chlorite.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//chlorite brick stairs
+	public static final RegistryObject<Block> chlorite_brick_stairs = 
+			BLOCKS.register("chlorite_brick_stairs", () -> new StairsBlock(
+				() -> BlockInit.chlorite_bricks.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//polished chlorite stairs
+	public static final RegistryObject<Block> polished_chlorite_stairs = 
+			BLOCKS.register("polished_chlorite_stairs", () -> new StairsBlock(
+				() -> BlockInit.polished_chlorite.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//polished chlorite brick stairs
+	public static final RegistryObject<Block> polished_chlorite_brick_stairs = 
+			BLOCKS.register("polished_chlorite_brick_stairs", () -> new StairsBlock(
+				() -> BlockInit.polished_chlorite_bricks.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//chlorite slab
+	public static final RegistryObject<Block> chlorite_slab = 
+			BLOCKS.register("chlorite_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//chlorite brick slab
+	public static final RegistryObject<Block> chlorite_brick_slab = 
+			BLOCKS.register("chlorite_brick_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//polished chlorite slab
+	public static final RegistryObject<Block> polished_chlorite_slab = 
+			BLOCKS.register("polished_chlorite_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//polished chlorite brick slab
+	public static final RegistryObject<Block> polished_chlorite_brick_slab = 
+			BLOCKS.register("polished_chlorite_brick_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//chlorite wall
+	public static final RegistryObject<Block> chlorite_wall = 
+			BLOCKS.register("chlorite_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//chlorite brick wall
+	public static final RegistryObject<Block> chlorite_brick_wall = 
+			BLOCKS.register("chlorite_brick_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//polished chlorite wall
+	public static final RegistryObject<Block> polished_chlorite_wall = 
+			BLOCKS.register("polished_chlorite_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//polished chlorite brick wall
+	public static final RegistryObject<Block> polished_chlorite_brick_wall = 
+			BLOCKS.register("polished_chlorite_brick_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );	
+	
+	
 	
 	
 }

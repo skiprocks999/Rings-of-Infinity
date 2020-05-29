@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "continfblocklib:polished_chlorite"
+  },
+  "result": "continfblocklib:polished_chlorite_stairs",
+  "count": 1
+}

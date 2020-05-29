@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "continfblocklib:chlorite"
+  },
+  "result": "continfblocklib:polished_chlorite",
+  "experience": 0.1,
+  "cookingtime": 100
+}

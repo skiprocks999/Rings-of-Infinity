@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "continfblocklib:basalt"
+  },
+  "result": "continfblocklib:basalt_stairs",
+  "count": 1
+}

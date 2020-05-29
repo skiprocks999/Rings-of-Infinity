@@ -154,7 +154,34 @@
 	"block.continfblocklib.diabase_wall": "Diabase Wall",
 	"block.continfblocklib.diabase_brick_wall": "Diabase Brick Wall",
 	"block.continfblocklib.polished_diabase_wall": "Polished Diabase Wall",
-	"block.continfblocklib.polished_diabase_brick_wall": "Polished Diabase Brick Wall"
+	"block.continfblocklib.polished_diabase_brick_wall": "Polished Diabase Brick Wall",
+	//CHLORITE
+	"block.continfblocklib.chlorite": "Chlorite",
+	"block.continfblocklib.chlorite_bricks": "Chlorite Bricks",
+	"block.continfblocklib.polished_chlorite": "Polished Chlorite",
+	"block.continfblocklib.polished_chlorite_bricks": "Polished Chlorite Bricks",
+	"block.continfblocklib.chlorite_stairs": "Chlorite Stairs",
+	"block.continfblocklib.chlorite_brick_stairs": "Chlorite Brick Stairs",
+	"block.continfblocklib.polished_chlorite_stairs": "Polished Chlorite Stairs",
+	"block.continfblocklib.polished_chlorite_brick_stairs": "Polished Chlorite Brick Stairs",
+	"block.continfblocklib.chlorite_slab": "Chlorite Slab",
+	"block.continfblocklib.chlorite_brick_slab": "Chlorite Brick Slab", 
+	"block.continfblocklib.polished_chlorite_slab": "Polished Chlorite Slab",
+	"block.continfblocklib.polished_chlorite_brick_slab": "Polished Chlorite Brick Slab",
+	"block.continfblocklib.chlorite_wall": "Chlorite Wall",
+	"block.continfblocklib.chlorite_brick_wall": "Chlorite Brick Wall",
+	"block.continfblocklib.polished_chlorite_wall": "Polished Chlorite Wall",
+	"block.continfblocklib.polished_chlorite_brick_wall": "Polished Chlorite Brick Wall"
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+		
 	
 }

@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "continfblocklib:polished_gneiss"
+  },
+  "result": "continfblocklib:polished_gneiss_brick_stairs",
+  "count": 1
+}

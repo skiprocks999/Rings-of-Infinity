@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "continfblocklib:diabase_bricks"
+  },
+  "result": "continfblocklib:diabase_brick_wall",
+  "count": 1
+}

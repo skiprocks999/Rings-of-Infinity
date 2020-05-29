@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "continfblocklib:breccia_bricks"
+  },
+  "result": "continfblocklib:breccia_brick_slab",
+  "count": 2
+}

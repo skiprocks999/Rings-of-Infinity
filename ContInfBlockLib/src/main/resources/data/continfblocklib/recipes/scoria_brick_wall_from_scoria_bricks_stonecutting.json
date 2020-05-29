@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "continfblocklib:scoria_bricks"
+  },
+  "result": "continfblocklib:scoria_brick_wall",
+  "count": 1
+}

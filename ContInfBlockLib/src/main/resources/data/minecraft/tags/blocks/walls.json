@@ -28,6 +28,10 @@
     "continfblocklib:diabase_wall",
     "continfblocklib:diabase_brick_wall",
     "continfblocklib:polished_diabase_wall",
-    "continfblocklib:polished_diabase_brick_wall"
+    "continfblocklib:polished_diabase_brick_wall",
+    "continfblocklib:chlorite_wall",
+    "continfblocklib:chlorite_brick_wall",
+    "continfblocklib:polished_chlorite_wall",
+    "continfblocklib:polished_chlorite_brick_wall"
   ]
 }
