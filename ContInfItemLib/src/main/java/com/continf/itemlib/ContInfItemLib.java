@@ -100,19 +100,19 @@ public class ContInfItemLib
     }
 
     // Tools group for ContInfItemLib
-    public static class ContInfToolsLibItemGroup extends ItemGroup {
+    public static class ContInfItemLibToolsGroup extends ItemGroup {
 
-    	public static final ContInfItemLibItemGroup itemGroupInstance = 
-    			new ContInfItemLibItemGroup(ItemGroup.GROUPS.length, "ContInfItemLibItemGroupTab");
+    	public static final ContInfItemLibToolsGroup toolsGroupInstance = 
+    			new ContInfItemLibToolsGroup((ItemGroup.GROUPS.length) , "ContInfItemLibToolGroupTab");
     	
-		public ContInfToolsLibItemGroup(int index, String label) {
-			super(index, label);
+		public ContInfItemLibToolsGroup(int index,String label) {
+			super(index,label);
 		}
 
 		@Override
 		public ItemStack createIcon() {
             // TODO Change icon to unique icon for tools tab
-			return new ItemStack(ItemInit.ruby.get());
+			return new ItemStack(ItemInit.ruby_sword.get());
 		}
        
     }

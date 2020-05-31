@@ -17,7 +17,12 @@ public enum ItemTiers implements IItemTier {
     }),
     FERROALLIDE(4, 1500, 15.0F, 7.0F, 250, () -> {
 		return Ingredient.fromItems(ItemInit.ferroallide_steel_ingot.get());
+	}),
+	BLAST(4, 1500, 15.0F, 7.0F, 250, () -> {
+		return Ingredient.fromItems(ItemInit.ruby.get());
 	});
+
+	
 
 	private final int harvestLevel;
 	private final int maxUses;

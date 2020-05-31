@@ -1,9 +1,45 @@
 {
 	//Creative Tab
 	"itemGroup.ContInfItemLibItemGroupTab": "Contained Infinity Items",
+	"itemGroup.ContInfItemLibToolGroupTab": "Contained Infinity Tools",
 	
 	//OVERWORLD ITEMS
+
+	//Armor
+	"item.continfitemlib.ruby_sword":"Ruby Sword",
+	"item.continfitemlib.ferroallide_sword":"Ferroallide Sword",
+
+	"item.continfitemlib.ruby_helmet":"Ruby Helmet",
+	"item.continfitemlib.ruby_chestplate":"Ruby Chestplate",
+	"item.continfitemlib.ruby_leggings":"Ruby Leggings",
+	"item.continfitemlib.ruby_boots":"Ruby Boots",
+
+	"item.continfitemlib.ferroallide_helmet":"Ferroallide Helmet",
+	"item.continfitemlib.ferroallide_chestplate":"Ferroallide Chestplate",
+	"item.continfitemlib.ferroallide_leggings":"Ferroallide Leggings",
+	"item.continfitemlib.ferroallide_boots":"Ferroallide Boots",
+
+	"item.continfitemlib.slime_boots":"Slime Boots",
+
+	//Tools
+	"item.continfitemlib.ruby_pickaxe":"Ruby Pickaxe",
+	"item.continfitemlib.ruby_axe":"Ruby Axe",
+	"item.continfitemlib.ruby_shovel":"Ruby Shovel",
+	"item.continfitemlib.ruby_hoe":"Ruby Hoe",
+
+	"item.continfitemlib.ferroallide_pickaxe":"Ferroallide Pickaxe",
+	"item.continfitemlib.ferroallide_axe":"Ferroallide Axe",
+	"item.continfitemlib.ferroallide_shovel":"Ferroallide Shovel",
+	"item.continfitemlib.ferroallide_hoe":"Ferroallide Hoe",
+
+	"item.continfitemlib.blast_pickaxe":"Blast Pickaxe",
+	"item.continfitemlib.blast_axe":"Blast Axe",
 	
+	//Misc
+	"item.continfitemlib.amulet_of_scultari":"Amulet Of Scultari",
+	"item.continfitemlib.amulet_of_vulcanus":"Amulet Of Vulcanus",
+	"item.continfitemlib.rod_of_divination":"Rod Of Divination",
+
 	//Overworld Gems
 	"item.continfitemlib.lignite_coal":"Lignite Coal",
 	"item.continfitemlib.sapphire":"Sapphire",
@@ -17,7 +53,33 @@
 	"item.continfitemlib.ferroallide_steel_ingot":"Ferroallide Steel Ingot",
 	
 	//Overworld Misc.
-	"item.continfitemlib.cocain":"Cocain"
+	"item.continfitemlib.cocain":"Cocain",
+	
+	//NETHER ITEMS
+	
+	//Overworld Ingots
+	"item.continfitemlib.cobalt_ingot":"Cobalt Ingot",
+	"item.continfitemlib.nickel_ingot":"Nickel Ingot",
+	"item.continfitemlib.demon_steel_ingot":"Demon Steel Ingot",
+
+	//Nether Gems
+	"item.continfitemlib.black_jade":"Black Jade",
+	"item.continfitemlib.cobra_stone_dust":"Cobra Stone Dust"
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 }
