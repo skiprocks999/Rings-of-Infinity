@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "   ",
+    "f f",
+    "f f"
+  ],
+  "key": {
+    "f": {
+      "item": "continfitemlib:ferroallide_steel_ingot"
+    }
+  },
+  "result": {
+    "item": "continfitemlib:ferroallide_boots",
+    "count": 1
+  }
+}

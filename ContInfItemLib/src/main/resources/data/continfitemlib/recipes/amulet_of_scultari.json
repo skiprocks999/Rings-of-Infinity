@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "dee",
+    "dde",
+    "DNe"
+  ],
+  "key": {
+    "d": {
+      "item": "minecraft:dragon_breath"
+    },
+    "D": {
+      "item": "minecraft:dragon_egg"
+    },
+    "e": {
+      "item": "minecraft:emerald"
+    },
+    "N": {
+      "item": "minecraft:nether_star"
+    }
+  },
+  "result": {
+    "item": "continfitemlib:amulet_of_scultari",
+    "count": 1
+  }
+}

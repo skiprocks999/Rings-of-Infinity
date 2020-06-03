@@ -5,6 +5,7 @@ import com.continf.enums.ItemTiers;
 import com.continf.itemlib.ContInfItemLib;
 import com.continf.itemlib.ContInfItemLib.ContInfItemLibItemGroup;
 import com.continf.itemlib.ContInfItemLib.ContInfItemLibToolsGroup;
+import com.continf.itemlib.objects.items.AmOfScul;
 
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
@@ -90,7 +91,7 @@ public class ItemInit {
 
 	// Slime
 	public static final RegistryObject<Item> slime_boots = ITEMS.register("slime_boots",
-			() -> new ArmorItem(ArmorMaterials.FERROALLIDE,
+			() -> new ArmorItem(ArmorMaterials.SLIME,
 								EquipmentSlotType.FEET, 
 								new Item.Properties().maxStackSize(1).group(ContInfItemLibToolsGroup.toolsGroupInstance)));
 	
@@ -151,7 +152,7 @@ public class ItemInit {
 			() -> new Item(new Item.Properties().maxStackSize(1).group(ContInfItemLibToolsGroup.toolsGroupInstance)));
 
 	public static final RegistryObject<Item> amulet_of_vulcanus = ITEMS.register("amulet_of_vulcanus",
-			() -> new Item(new Item.Properties().maxStackSize(1).group(ContInfItemLibToolsGroup.toolsGroupInstance)));
+			() -> new AmOfScul(new Item.Properties().maxStackSize(1).group(ContInfItemLibToolsGroup.toolsGroupInstance)));
 
 	// Rods
 	public static final RegistryObject<Item> rod_of_divination = ITEMS.register("rod_of_divination",

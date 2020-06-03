@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "r r",
+    "rrr",
+    "rrr"
+  ],
+  "key": {
+    "r": {
+      "item": "continfitemlib:ruby"
+    }
+  },
+  "result": {
+    "item": "continfitemlib:ruby_chestplate",
+    "count": 1
+  }
+}

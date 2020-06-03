@@ -1,5 +1,5 @@
 {
-	"parent":"item/generated",
+	"parent":"item/handheld",
 	"textures":{
 		"layer0":"continfitemlib:item/rod_of_divination"
 	}

@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ff ",
+    " | ",
+    " | "
+  ],
+  "key": {
+    "f": {
+      "item": "continfitemlib:ferroallide_steel_ingot"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    }
+  },
+  "result": {
+    "item": "continfitemlib:ferroallide_hoe",
+    "count": 1
+  }
+}

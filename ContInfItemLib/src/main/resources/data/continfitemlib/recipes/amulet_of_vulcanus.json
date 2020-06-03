@@ -1,0 +1,29 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "FOF",
+    "SAS",
+    "FRF"
+  ],
+  "key": {
+    "F": {
+      "item": "continfitemlib:ferroallide_steel_ingot"
+    },
+    "S": {
+      "item": "continfitemlib:sapphire"
+    },
+    "R": {
+      "item": "continfitemlib:ruby"
+    },
+    "O": {
+      "item": "continfitemlib:rose_gold_ingot"
+    },
+    "A": {
+      "item": "continfitemlib:amulet_of_scultari"
+    }
+  },
+  "result": {
+    "item": "continfitemlib:amulet_of_vulcanus",
+    "count": 1
+  }
+}

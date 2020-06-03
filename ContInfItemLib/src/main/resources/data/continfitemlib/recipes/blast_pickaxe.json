@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "TrT",
+    " | ",
+    " | "
+  ],
+  "key": {
+    "r": {
+      "item": "continfitemlib:ruby"
+    },
+    "|": {
+      "item": "minecraft:stick"
+    },
+    "T": {
+      "item": "minecraft:tnt"
+    }
+  },
+  "result": {
+    "item": "continfitemlib:blast_pickaxe",
+    "count": 1
+  }
+}
