@@ -1,0 +1,23 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " sp",
+    "sSs",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:sugar"
+    },
+    "S": {
+      "item": "continfitemlib:sapphire"
+    },
+    "p": {
+      "item": "minecraft:paper"
+    }
+  },
+  "result": {
+    "item": "continfitemlib:cocain",
+    "count": 4
+  }
+}

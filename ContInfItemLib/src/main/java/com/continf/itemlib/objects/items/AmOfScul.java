@@ -1,14 +1,19 @@
+/* skip999
+ * 6/3/2020
+ * purpose: encapsulate Amulet of Scultari functionality 
+ */
 package com.continf.itemlib.objects.items;
 
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SimpleFoiledItem;
 
-public class AmOfScul extends Item{
+public class AmOfScul extends SimpleFoiledItem{
 
 	public AmOfScul(Properties properties) {
 		super(properties);
 	}
-
+	
+	
 	@Override
 	public ItemStack getContainerItem(ItemStack itemstack) {
 
@@ -26,4 +31,6 @@ public class AmOfScul extends Item{
 	    {
 	        return stack.getDamage()<127;
 	    }
+	
+	
 }

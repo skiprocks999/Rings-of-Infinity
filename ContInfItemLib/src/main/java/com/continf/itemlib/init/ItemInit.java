@@ -6,16 +6,21 @@ import com.continf.itemlib.ContInfItemLib;
 import com.continf.itemlib.ContInfItemLib.ContInfItemLibItemGroup;
 import com.continf.itemlib.ContInfItemLib.ContInfItemLibToolsGroup;
 import com.continf.itemlib.objects.items.AmOfScul;
+import com.continf.itemlib.objects.items.AmOfVulc;
 
+import net.minecraft.client.Minecraft;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
 import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.AxeItem;
+import net.minecraft.item.Food;
 import net.minecraft.item.HoeItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.PickaxeItem;
 import net.minecraft.item.ShovelItem;
 import net.minecraft.item.SwordItem;
+import net.minecraft.potion.EffectInstance;
+import net.minecraft.potion.Effects;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.registries.DeferredRegister;
 import net.minecraftforge.registries.ForgeRegistries;
@@ -148,11 +153,13 @@ public class ItemInit {
 	**************************/
 
 	// Amulets
-	public static final RegistryObject<Item> amulet_of_scultari = ITEMS.register("amulet_of_scultari",
-			() -> new Item(new Item.Properties().maxStackSize(1).group(ContInfItemLibToolsGroup.toolsGroupInstance)));
+	public static final RegistryObject<Item> amulet_of_scultari = 
+			ITEMS.register("amulet_of_scultari",() -> new AmOfScul(new Item.Properties().maxStackSize(1)
+					.group(ContInfItemLibToolsGroup.toolsGroupInstance)));
 
-	public static final RegistryObject<Item> amulet_of_vulcanus = ITEMS.register("amulet_of_vulcanus",
-			() -> new AmOfScul(new Item.Properties().maxStackSize(1).group(ContInfItemLibToolsGroup.toolsGroupInstance)));
+	public static final RegistryObject<Item> amulet_of_vulcanus = 
+			ITEMS.register("amulet_of_vulcanus",() -> new AmOfVulc(new Item.Properties().maxStackSize(1)
+					.group(ContInfItemLibToolsGroup.toolsGroupInstance)));
 
 	// Rods
 	public static final RegistryObject<Item> rod_of_divination = ITEMS.register("rod_of_divination",
@@ -202,9 +209,21 @@ public class ItemInit {
 	//Overworld Misc.
 	
 	//Cocain
+	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> cocain = 
 		ITEMS.register("cocain", () -> new Item(new Item.Properties().maxStackSize(64)
-		.group(ContInfItemLibItemGroup.itemGroupInstance)));
+				.group(ContInfItemLibItemGroup.itemGroupInstance)
+				.food(new Food.Builder().hunger(1).saturation(1f).setAlwaysEdible().fastToEat()
+						//Absorption: 10 hearts for 10 seconds
+						.effect(new EffectInstance(Effects.ABSORPTION, 200, 10), 1f)
+						//Resistance: Resistance X for 10 seconds
+						.effect(new EffectInstance(Effects.RESISTANCE, 200, 10), 1f)
+						//Regeneration: Regeneration V for 10 seconds
+						.effect(new EffectInstance(Effects.REGENERATION, 200, 4), 1f)
+						//Wither: Wither II for 18 seconds
+						.effect(new EffectInstance(Effects.WITHER, 380, 2), 1f)
+					.build())
+				));
 	
 	/*
 	 * NETHER ITEMS
