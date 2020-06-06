@@ -8,10 +8,8 @@ import com.continf.itemlib.ContInfItemLib.ContInfItemLibToolsGroup;
 import com.continf.itemlib.objects.items.AmOfScul;
 import com.continf.itemlib.objects.items.AmOfVulc;
 
-import net.minecraft.client.Minecraft;
 import net.minecraft.inventory.EquipmentSlotType;
 import net.minecraft.item.ArmorItem;
-import net.minecraft.item.ArmorMaterial;
 import net.minecraft.item.AxeItem;
 import net.minecraft.item.Food;
 import net.minecraft.item.HoeItem;
@@ -209,19 +207,18 @@ public class ItemInit {
 	//Overworld Misc.
 	
 	//Cocain
-	@SuppressWarnings("deprecation")
 	public static final RegistryObject<Item> cocain = 
 		ITEMS.register("cocain", () -> new Item(new Item.Properties().maxStackSize(64)
 				.group(ContInfItemLibItemGroup.itemGroupInstance)
 				.food(new Food.Builder().hunger(1).saturation(1f).setAlwaysEdible().fastToEat()
 						//Absorption: 10 hearts for 10 seconds
-						.effect(new EffectInstance(Effects.ABSORPTION, 200, 10), 1f)
+						.effect(() -> new EffectInstance(Effects.ABSORPTION, 200, 10), 1f)
 						//Resistance: Resistance X for 10 seconds
-						.effect(new EffectInstance(Effects.RESISTANCE, 200, 10), 1f)
+						.effect(() -> new EffectInstance(Effects.RESISTANCE, 200, 10), 1f)
 						//Regeneration: Regeneration V for 10 seconds
-						.effect(new EffectInstance(Effects.REGENERATION, 200, 4), 1f)
+						.effect(() -> new EffectInstance(Effects.REGENERATION, 200, 4), 1f)
 						//Wither: Wither II for 18 seconds
-						.effect(new EffectInstance(Effects.WITHER, 380, 2), 1f)
+						.effect(() -> new EffectInstance(Effects.WITHER, 380, 2), 1f)
 					.build())
 				));
 	
