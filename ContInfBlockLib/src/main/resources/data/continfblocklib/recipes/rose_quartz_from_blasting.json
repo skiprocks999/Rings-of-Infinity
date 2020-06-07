@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "continfblocklib:rose_quartz_ore"
+  },
+  "result": "continfitemlib:rose_quartz",
+  "experience": 0.7,
+  "cookingtime": 100
+}

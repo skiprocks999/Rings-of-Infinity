@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "side": "continfblocklib:blocks/chiseled_rose_quartz_block",
+        "end": "continfblocklib:blocks/chiseled_rose_quartz_block_top"
+    }
+}

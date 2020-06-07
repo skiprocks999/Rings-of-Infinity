@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "b  ",
+    "bb ",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "continfblocklib:rose_quartz_pillar"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:rose_quartz_pillar_stairs",
+    "count": 6
+  }
+}

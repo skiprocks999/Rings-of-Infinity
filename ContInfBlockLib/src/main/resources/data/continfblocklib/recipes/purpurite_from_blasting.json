@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "continfblocklib:purpurite_ore"
+  },
+  "result": "continfitemlib:purpurite",
+  "experience": 0.7,
+  "cookingtime": 100
+}

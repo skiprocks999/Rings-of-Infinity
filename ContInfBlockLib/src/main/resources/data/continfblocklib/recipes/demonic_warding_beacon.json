@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "cJc",
+    "cWc",
+    "OOO"
+  ],
+  "key": {
+    "c": {
+      "item": "continfitemlib:cobalt_ingot"
+    },
+    "J": {
+      "item": "continfblocklib:block_of_black_jade"
+    },
+    "O": {
+      "item": "minecraft:obsidian"
+    },
+    "W": {
+      "item": "continfblocklib:warding_beacon"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:demonic_warding_beacon"
+  }
+}

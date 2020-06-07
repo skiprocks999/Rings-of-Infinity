@@ -1,0 +1,9 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+		"top": "continfblocklib:blocks/demonic_alloy_forge_top",
+		"bottom":"continfblocklib:blocks/demonic_alloy_forge_bottom",
+        "front": "continfblocklib:blocks/demonic_alloy_forge_front",
+		"side":"continfblocklib:blocks/demonic_alloy_forge_side"
+    }
+}

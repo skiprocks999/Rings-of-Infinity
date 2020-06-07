@@ -1,0 +1,7 @@
+{
+    "parent": "block/cube_column",
+    "textures": {
+        "end": "continfblocklib:blocks/rose_quartz_pillar_top",
+        "side": "continfblocklib:blocks/rose_quartz_pillar"
+    }
+}

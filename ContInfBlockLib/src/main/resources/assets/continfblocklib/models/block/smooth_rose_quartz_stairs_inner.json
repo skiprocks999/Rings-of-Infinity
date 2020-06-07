@@ -1,0 +1,8 @@
+{
+    "parent": "block/inner_stairs",
+    "textures": {
+        "bottom": "continfblocklib:blocks/rose_quartz_block_bottom",
+        "top": "continfblocklib:blocks/rose_quartz_block_bottom",
+        "side": "continfblocklib:blocks/rose_quartz_block_bottom"
+    }
+}

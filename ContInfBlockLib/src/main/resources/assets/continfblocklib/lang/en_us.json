@@ -171,15 +171,49 @@
 	"block.continfblocklib.chlorite_wall": "Chlorite Wall",
 	"block.continfblocklib.chlorite_brick_wall": "Chlorite Brick Wall",
 	"block.continfblocklib.polished_chlorite_wall": "Polished Chlorite Wall",
-	"block.continfblocklib.polished_chlorite_brick_wall": "Polished Chlorite Brick Wall"
+	"block.continfblocklib.polished_chlorite_brick_wall": "Polished Chlorite Brick Wall",
+	//COBRA STONE
+	"block.continfblocklib.cobra_stone": "Cobra Stone",
+	"block.continfblocklib.cobra_stone_lamp": "Cobra Stone Lamp",
+	//ROSE QUARTZ
+	"block.continfblocklib.block_of_rose_quartz": "Block of Rose Quartz",
+	"block.continfblocklib.smooth_rose_quartz": "Smooth Rose Quartz",
+	"block.continfblocklib.chiseled_rose_quartz": "Chiseled Rose Quartz",
+	"block.continfblocklib.rose_quartz_pillar": "Rose Quartz Pillar",
+	"block.continfblocklib.rose_quartz_stairs": "Rose Quartz Stairs",
+	"block.continfblocklib.smooth_rose_quartz_stairs": "Smooth Rose Quartz Stairs",
+	"block.continfblocklib.rose_quartz_slab": "Rose Quartz Slab",
+	"block.continfblocklib.smooth_rose_quartz_slab": "Smooth Rose Quartz Slab",
+	"block.continfblocklib.rose_quartz_wall": "Rose Quartz Wall",
+	"block.continfblocklib.smooth_rose_quartz_wall": "Smooth Rose Quartz Wall", 
+	
+	//NETHER ORES
+	"block.continfblocklib.rose_quartz_ore": "Rose Quartz Ore",
+	"block.continfblocklib.black_jade_ore": "Black Jade Ore",
+	"block.continfblocklib.cobalt_ore": "Cobalt Ore",
+	"block.continfblocklib.nickel_ore": "Nickel Ore",
+	
+	//OVERWORLD RESOURCE BLOCKS
+	"block.continfblocklib.block_of_black_jade": "Block of Black Jade",
+	"block.continfblocklib.block_of_cobalt": "Block of Cobalt",
+	"block.continfblocklib.block_of_nickel": "Block of Nickel",
+	"block.continfblocklib.block_of_demon_steel": "Block of Demon Steel",
+	
+	//NETHER FUNCTIONAL BLOCKS
+	"block.continfblocklib.demonic_alloy_forge": "Demonic Alloy Forge",
+	"block.continfblocklib.demonic_warding_beacon": "Demonic Warding Beacon",
+	"block.continfblocklib.hellfire_furnace": "Hellfire Furnace",
 	
 	
+	//END BLOCKS
 	
+	//END ORES
+	"block.continfblocklib.pink_topaz_ore": "Pink Topaz Ore",
+	"block.continfblocklib.purpurite_ore": "Purpurite Ore",
 	
-	
-	
-	
-	
+	//END GEM BLOCKS
+	"block.continfblocklib.block_of_pink_topaz": "Block of Pink Topaz",
+	"block.continfblocklib.block_of_purpurite": "Block of Purpurite"
 	
 	
 		

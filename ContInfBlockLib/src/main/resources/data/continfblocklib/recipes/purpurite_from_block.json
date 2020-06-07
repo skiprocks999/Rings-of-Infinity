@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i"
+  ],
+  "key": {
+    "i": {
+      "item": "continfblocklib:block_of_purpurite"
+    }
+  },
+  "result": {
+    "item": "continfitemlib:purpurite",
+    "count":9
+  }
+}

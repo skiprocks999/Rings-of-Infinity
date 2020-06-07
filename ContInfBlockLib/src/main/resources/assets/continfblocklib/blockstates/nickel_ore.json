@@ -1,0 +1,6 @@
+{
+    "variants": 
+	{
+        "": { "model": "continfblocklib:block/nickel_ore" }
+    }
+}

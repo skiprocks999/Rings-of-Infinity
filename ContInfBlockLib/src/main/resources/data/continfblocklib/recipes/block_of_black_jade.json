@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "iii",
+    "iii",
+    "iii"
+  ],
+  "key": {
+    "i": {
+      "item": "continfitemlib:black_jade"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:block_of_black_jade"
+  }
+}

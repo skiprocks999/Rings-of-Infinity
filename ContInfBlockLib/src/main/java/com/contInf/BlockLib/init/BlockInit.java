@@ -6,9 +6,13 @@ package com.contInf.BlockLib.init;
 
 import com.contInf.BlockLib.ContInfBlockLib;
 import com.contInf.BlockLib.objects.blocks.AlloyForge;
+import com.contInf.BlockLib.objects.blocks.DemonicAlloyForge;
+import com.contInf.BlockLib.objects.blocks.DemonicWardingBeacon;
+import com.contInf.BlockLib.objects.blocks.HellfireFurnace;
 import com.contInf.BlockLib.objects.blocks.WardingBeacon;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.StairsBlock;
@@ -769,6 +773,145 @@ public class BlockInit {
 			BLOCKS.register("polished_chlorite_brick_wall", () -> new WallBlock(
 					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
 					.sound(SoundType.STONE)) );	
+	
+	//ROSE QUARTZ
+	//block of rose quartz
+	public static final RegistryObject<Block> block_of_rose_quartz = 
+			BLOCKS.register("block_of_rose_quartz", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//smooth rose quartz
+	public static final RegistryObject<Block> smooth_rose_quartz = 
+			BLOCKS.register("smooth_rose_quartz", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//chiseled rose quartz
+	public static final RegistryObject<Block> chiseled_rose_quartz = 
+			BLOCKS.register("chiseled_rose_quartz", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//rose quartz pillar
+	public static final RegistryObject<Block> rose_quartz_pillar = 
+			BLOCKS.register("rose_quartz_pillar", () -> new RotatedPillarBlock(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//rose quartz stairs
+	public static final RegistryObject<Block> rose_quartz_stairs = 
+			BLOCKS.register("rose_quartz_stairs", () -> new StairsBlock(
+				() -> BlockInit.block_of_rose_quartz.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//smooth rose quartz stairs
+	public static final RegistryObject<Block> smooth_rose_quartz_stairs = 
+			BLOCKS.register("smooth_rose_quartz_stairs", () -> new StairsBlock(
+				() -> BlockInit.block_of_rose_quartz.get().getDefaultState(),
+				Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+				.sound(SoundType.STONE)));
+	//rose quartz slab
+	public static final RegistryObject<Block> rose_quartz_slab = 
+			BLOCKS.register("rose_quartz_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//smooth rose quartz slab
+	public static final RegistryObject<Block> smooth_rose_quartz_slab = 
+			BLOCKS.register("smooth_rose_quartz_slab", () -> new SlabBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//rose quartz wall
+	public static final RegistryObject<Block> rose_quartz_wall = 
+			BLOCKS.register("rose_quartz_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+	//smooth rose quartz wall
+	public static final RegistryObject<Block> smooth_rose_quartz_wall = 
+			BLOCKS.register("smooth_rose_quartz_wall", () -> new WallBlock(
+					Block.Properties.create(Material.IRON).hardnessAndResistance(2.0f, 3.0f)
+					.sound(SoundType.STONE)) );
+
+	//COBRA STONE
+	//cobra stone
+	public static final RegistryObject<Block> cobra_stone = 
+			BLOCKS.register("cobra_stone", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.GLASS).lightValue(15)));
+	//cobra stone lamp
+	public static final RegistryObject<Block> cobra_stone_lamp = 
+			BLOCKS.register("cobra_stone_lamp", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.GLASS).lightValue(15)));
+	
+	//NETHER ORES
+	
+	//rose quartz ore
+	public static final RegistryObject<Block> rose_quartz_ore = 
+			BLOCKS.register("rose_quartz_ore", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//black jade ore
+	public static final RegistryObject<Block> black_jade_ore = 
+			BLOCKS.register("black_jade_ore", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//cobalt ore
+	public static final RegistryObject<Block> cobalt_ore = 
+			BLOCKS.register("cobalt_ore", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//nickel ore
+	public static final RegistryObject<Block> nickel_ore = 
+			BLOCKS.register("nickel_ore", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	
+	//NETHER RESOURCE BLOCKS
+	
+	//block of black jade
+	public static final RegistryObject<Block> block_of_black_jade = 
+			BLOCKS.register("block_of_black_jade", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.METAL)));
+	//block of cobalt
+	public static final RegistryObject<Block> block_of_cobalt = 
+			BLOCKS.register("block_of_cobalt", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.METAL)));
+	//block of nickel
+	public static final RegistryObject<Block> block_of_nickel = 
+			BLOCKS.register("block_of_nickel", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.METAL)));
+	//block of demon steel
+	public static final RegistryObject<Block> block_of_demon_steel = 
+			BLOCKS.register("block_of_demon_steel", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.METAL)));
+
+	//NETHER FUNCTIONAL BLOCKS
+	
+	//demonic alloy forge
+	public static final RegistryObject<Block> demonic_alloy_forge = 
+			BLOCKS.register("demonic_alloy_forge", () -> new DemonicAlloyForge(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//demonic warding beacon
+	public static final RegistryObject<Block> demonic_warding_beacon = 
+			BLOCKS.register("demonic_warding_beacon", () -> new DemonicWardingBeacon(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.STONE)));
+	//hellfire furnace
+	public static final RegistryObject<Block> hellfire_furnace = 
+			BLOCKS.register("hellfire_furnace", () -> new HellfireFurnace(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	
+	
+	/*END BLOCKS*/
+	
+	//END ORES
+	
+	//pink topaz ore
+	public static final RegistryObject<Block> pink_topaz_ore = 
+			BLOCKS.register("pink_topaz_ore", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	//purpurite ore
+	public static final RegistryObject<Block> purpurite_ore = 
+			BLOCKS.register("purpurite_ore", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	
+	//END GEM BLOCKS
+	
+	//block of pink topaz
+	public static final RegistryObject<Block> block_of_pink_topaz = 
+			BLOCKS.register("block_of_pink_topaz", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+	
+	//block of purpurite
+	public static final RegistryObject<Block> block_of_purpurite = 
+			BLOCKS.register("block_of_purpurite", () -> new Block(Block.Properties.create(Material.IRON).
+			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
 	
 	
 	

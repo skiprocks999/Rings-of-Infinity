@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":  { "model": "continfblocklib:block/rose_quartz_pillar" },
+        "axis=z":   { "model": "continfblocklib:block/rose_quartz_pillar", "x": 90 },
+        "axis=x":   { "model": "continfblocklib:block/rose_quartz_pillar", "x": 90, "y": 90 }
+    }
+}

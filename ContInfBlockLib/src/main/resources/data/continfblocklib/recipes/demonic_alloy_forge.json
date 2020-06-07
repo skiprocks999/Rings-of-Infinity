@@ -1,0 +1,22 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bbb",
+    "bBi",
+    "iii"
+  ],
+  "key": {
+    "b": {
+      "item": "minecraft:nether_bricks"
+    },
+    "B": {
+      "item": "continfblocklib:alloy_forge"
+    },
+    "i": {
+      "item": "continfblocklib:block_of_ferroallide_steel"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:demonic_alloy_forge"
+  }
+}

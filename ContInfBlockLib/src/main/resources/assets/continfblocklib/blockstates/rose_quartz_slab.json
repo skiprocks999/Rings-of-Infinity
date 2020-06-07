@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "type=bottom": { "model": "continfblocklib:block/rose_quartz_slab" },
+        "type=top": { "model": "continfblocklib:block/rose_quartz_slab_top" },
+        "type=double": { "model": "continfblocklib:block/block_of_rose_quartz" }
+    }
+}

@@ -32,6 +32,8 @@
     "continfblocklib:chlorite_wall",
     "continfblocklib:chlorite_brick_wall",
     "continfblocklib:polished_chlorite_wall",
-    "continfblocklib:polished_chlorite_brick_wall"
+    "continfblocklib:polished_chlorite_brick_wall",
+    "continfblocklib:rose_quartz_wall",
+    "continfblocklib:smooth_rose_quartz_wall"
   ]
 }

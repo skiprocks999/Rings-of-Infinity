@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:smelting",
+  "ingredient": {
+    "item": "continfblocklib:lignite_coal_ore"
+  },
+  "result": "continfitemlib:lignite_coal",
+  "experience": 0.7,
+  "cookingtime": 200
+}

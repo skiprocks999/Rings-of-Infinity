@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ddd",
+    "dBd",
+    "ddd"
+  ],
+  "key": {
+    "d": {
+      "item": "continfitemlib:demon_steel_ingot"
+    },
+    "B": {
+      "item": "minecraft:blast_furnace"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:hellfire_furnace"
+  }
+}

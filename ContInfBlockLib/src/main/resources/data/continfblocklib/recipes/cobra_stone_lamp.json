@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    " i ",
+    "iGi",
+    " i "
+  ],
+  "key": {
+    "i": {
+      "item": "continfitemlib:cobra_stone_dust"
+    },"G": {
+      "item": "minecraft:glass"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:cobra_stone_lamp"
+  }
+}

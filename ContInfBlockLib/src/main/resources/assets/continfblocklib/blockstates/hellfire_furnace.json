@@ -1,0 +1,9 @@
+{
+    "variants": 
+	{
+        "facing=north": {"model": "continfblocklib:block/hellfire_furnace" },
+        "facing=south": {"model": "continfblocklib:block/hellfire_furnace" , "y" : 180 },
+        "facing=west": {"model": "continfblocklib:block/hellfire_furnace", "y" : 270},
+        "facing=east": {"model": "continfblocklib:block/hellfire_furnace", "y" : 90}   
+    }
+}

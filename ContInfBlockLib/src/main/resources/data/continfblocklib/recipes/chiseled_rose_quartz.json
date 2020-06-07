@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i",
+    "i"
+  ],
+  "key": {
+    "i": {
+      "item": "continfblocklib:rose_quartz_slab"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:chiseled_rose_quartz"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "bbb",
+    "bbb"
+  ],
+  "key": {
+    "b": {
+      "item": "continfblocklib:block_of_rose_quartz"
+    }
+  },
+  "result": {
+    "item": "continfblocklib:rose_quartz_wall",
+    "count": 6
+  }
+}

@@ -1,0 +1,8 @@
+{
+    "parent": "block/slab",
+    "textures": {
+        "bottom": "continfblocklib:blocks/rose_quartz_block_side",
+        "top": "continfblocklib:blocks/rose_quartz_block_side",
+        "side": "continfblocklib:blocks/rose_quartz_block_side"
+    }
+}

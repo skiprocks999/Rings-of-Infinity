@@ -1,0 +1,9 @@
+{
+    "parent": "block/orientable",
+    "textures": {
+		"top": "continfblocklib:blocks/hellfire_furnace_top",
+		"bottom":"continfblocklib:blocks/hellfire_furnace_top",
+        "front": "continfblocklib:blocks/hellfire_furnace_front",
+		"side":"continfblocklib:blocks/hellfire_furnace_side"
+    }
+}

@@ -1,0 +1,9 @@
+{
+  "type": "minecraft:blasting",
+  "ingredient": {
+    "item": "continfblocklib:block_of_rose_quartz"
+  },
+  "result": "continfblocklib:smooth_rose_quartz",
+  "experience": 0.1,
+  "cookingtime": 100
+}

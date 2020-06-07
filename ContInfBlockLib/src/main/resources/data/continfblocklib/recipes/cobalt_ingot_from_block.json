@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "i"
+  ],
+  "key": {
+    "i": {
+      "item": "continfblocklib:block_of_cobalt"
+    }
+  },
+  "result": {
+    "item": "continfitemlib:cobalt_ingot",
+    "count":9
+  }
+}

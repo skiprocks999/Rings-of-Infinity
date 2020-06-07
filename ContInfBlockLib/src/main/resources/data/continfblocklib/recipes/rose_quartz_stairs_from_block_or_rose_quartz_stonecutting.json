@@ -1,0 +1,8 @@
+{
+  "type": "minecraft:stonecutting",
+  "ingredient": {
+    "item": "continfblocklib:block_of_rose_quartz"
+  },
+  "result": "continfblocklib:rose_quartz_stairs",
+  "count": 1
+}
