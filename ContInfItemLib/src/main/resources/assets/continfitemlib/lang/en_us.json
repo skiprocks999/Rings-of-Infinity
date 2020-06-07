@@ -64,12 +64,14 @@
 
 	//Nether Gems
 	"item.continfitemlib.black_jade":"Black Jade",
-	"item.continfitemlib.cobra_stone_dust":"Cobra Stone Dust"
+	"item.continfitemlib.cobra_stone_dust":"Cobra Stone Dust",
+	"item.continfitemlib.rose_quartz": "Rose Quartz",
 	
+	//END ITEMS
 	
-	
-	
-	
+	//End Gems
+	"item.continfitemlib.pink_topaz": "Pink Topaz",
+	"item.continfitemlib.purpurite": "Purpurite"
 	
 	
 	

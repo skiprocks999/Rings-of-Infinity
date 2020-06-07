@@ -251,6 +251,34 @@ public class ItemInit {
 	public static final RegistryObject<Item> cobra_stone_dust = 
 		ITEMS.register("cobra_stone_dust", () -> new Item(new Item.Properties().maxStackSize(64)
 		.group(ContInfItemLibItemGroup.itemGroupInstance)));
+	//Rose Quartz
+	public static final RegistryObject<Item> rose_quartz = 
+			ITEMS.register("rose_quartz", () -> new Item(new Item.Properties().maxStackSize(64)
+			.group(ContInfItemLibItemGroup.itemGroupInstance)));
+	
+	/*
+	 * END ITEMS
+	 */
+	
+	//End Gems
+	
+	//Pink Topaz
+	public static final RegistryObject<Item> pink_topaz = 
+			ITEMS.register("pink_topaz", () -> new Item(new Item.Properties().maxStackSize(64)
+			.group(ContInfItemLibItemGroup.itemGroupInstance)));
+	//Purpurite
+	public static final RegistryObject<Item> purpurite = 
+			ITEMS.register("purpurite", () -> new Item(new Item.Properties().maxStackSize(64)
+			.group(ContInfItemLibItemGroup.itemGroupInstance)));
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }
