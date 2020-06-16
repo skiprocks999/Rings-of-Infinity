@@ -4,16 +4,23 @@
  */
 package com.continf.itemlib;
 
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.NonNullList;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
+import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
+
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
@@ -96,6 +103,29 @@ public class ContInfItemLib
 		public ItemStack createIcon() {
 			return new ItemStack(ItemInit.ruby.get());
 		}
+		
+		//Orders Creative Tab
+		@Override
+	    public void fill(NonNullList<ItemStack> itemStacks){
+			
+			//Converts registryobject entries into an array of objects
+			Object[] listOfItems = ItemInit.ITEMS.getEntries().stream().map(RegistryObject::get).toArray();
+			List<Item> items= new ArrayList<Item>();
+			//adds and casts entries in array to a list of items
+			for(int i = 0; i < listOfItems.length;i++) {
+				items.add((Item)listOfItems[i]);
+			}
+	        itemStacks.clear();
+	        
+	        for (Item item : items)
+	        {
+	            if(item.getCreativeTabs().contains(itemGroupInstance))
+	            {
+	                itemStacks.add(new ItemStack(item));
+	            }
+	        }
+	    }
+		
        
     }
 
@@ -114,6 +144,28 @@ public class ContInfItemLib
             // TODO Change icon to unique icon for tools tab
 			return new ItemStack(ItemInit.ruby_sword.get());
 		}
+		
+		//Orders Creative Tab
+		@Override
+	    public void fill(NonNullList<ItemStack> itemStacks){
+			
+			//Converts registryobject entries into an array of objects
+			Object[] listOfItems = ItemInit.ITEMS.getEntries().stream().map(RegistryObject::get).toArray();
+			List<Item> items= new ArrayList<Item>();
+			//adds and casts entries in array to a list of items
+			for(int i = 0; i < listOfItems.length;i++) {
+				items.add((Item)listOfItems[i]);
+			}
+	        itemStacks.clear();
+	        
+	        for (Item item : items)
+	        {
+	            if(item.getCreativeTabs().contains(toolsGroupInstance))
+	            {
+	                itemStacks.add(new ItemStack(item));
+	            }
+	        }
+	    }
        
     }
     
