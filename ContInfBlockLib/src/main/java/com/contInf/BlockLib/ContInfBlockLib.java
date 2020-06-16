@@ -6,14 +6,18 @@
  */
 package com.contInf.BlockLib;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.contInf.BlockLib.init.BlockInit;
 
+import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
-import net.minecraft.item.Item.Properties;
+import net.minecraft.util.NonNullList;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -22,7 +26,6 @@ import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.RegistryObject;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.event.lifecycle.FMLClientSetupEvent;
 import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraftforge.fml.event.server.FMLServerStartingEvent;
@@ -82,7 +85,6 @@ public class ContInfBlockLib {
 	//Will print messages to log file
 	private static final Logger logger = LogManager.getLogger(modID);
 	
-	
 	/**
 	 * Constructor: Initializes mod with forge files
 	 */
@@ -113,11 +115,14 @@ public class ContInfBlockLib {
 				
 		final IForgeRegistry<Item> registry = event.getRegistry();
 		
+		List<BlockItem> blockItems = new ArrayList<BlockItem>();
+		
 		BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get).forEach(block ->   {
 			final Item.Properties properties = 
 					new Item.Properties().group(ContInfBlockLibItemGroup.itemGroupInstance);
 			final BlockItem blockItem = new BlockItem(block,properties);
 			blockItem.setRegistryName(block.getRegistryName());
+			blockItems.add(blockItem);
 			registry.register(blockItem);
 		});
 		
@@ -180,6 +185,30 @@ public class ContInfBlockLib {
 		public ItemStack createIcon() {
 			return new ItemStack(BlockInit.marble.get());
 		}
+		
+		//Orders Creative Tab
+		@Override
+	    public void fill(NonNullList<ItemStack> itemStacks){
+			
+			//Converts registryobject entries into an array of objects
+			Object[] listOfBlocks = 
+					BlockInit.BLOCKS.getEntries().stream().map(RegistryObject::get).toArray();
+			List<Item> items= new ArrayList<Item>();
+			//adds and casts entries in array to a list of items
+			for(int i = 0; i < listOfBlocks.length;i++) {
+				listOfBlocks[i].getClass();
+				items.add(((Block)(listOfBlocks[i])).asItem());
+			}
+	        itemStacks.clear();
+	        
+	        for (Item item : items)
+	        {
+	            if(item.getCreativeTabs().contains(itemGroupInstance))
+	            {
+	                itemStacks.add(new ItemStack(item));
+	            }
+	        }
+	    }
 		
 	}
 	
