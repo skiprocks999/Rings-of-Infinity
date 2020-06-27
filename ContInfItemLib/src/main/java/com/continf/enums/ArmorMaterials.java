@@ -16,10 +16,10 @@ import net.minecraftforge.api.distmarker.OnlyIn;
 
 public enum ArmorMaterials implements IArmorMaterial {
 
-    RUBY(ContInfItemLib.modID + ":ruby", 5, new int[] { 7, 9, 11, 7 }, 420, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 6.9F, () -> {
+    RUBY(ContInfItemLib.modID + ":ruby", 5, new int[] { 4, 7, 9, 4 }, 420, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 3.2F, () -> {
 		return Ingredient.fromItems(ItemInit.ruby.get());
     }),
-    FERROALLIDE(ContInfItemLib.modID + ":ferroallide", 5, new int[] { 7, 9, 11, 7 }, 420, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 6.9F, () -> {
+    FERROALLIDE(ContInfItemLib.modID + ":ferroallide", 5, new int[] { 3, 6, 8, 3 }, 420, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 2F, () -> {
 		return Ingredient.fromItems(ItemInit.ferroallide_steel_ingot.get());
     }),
     SLIME(ContInfItemLib.modID + ":slime", 5, new int[] { 7, 9, 11, 7 }, 420, SoundEvents.ITEM_ARMOR_EQUIP_GENERIC, 6.9F, () -> {

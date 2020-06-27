@@ -125,8 +125,6 @@ public class ContInfItemLib
 	            }
 	        }
 	    }
-		
-       
     }
 
     // Tools group for ContInfItemLib
