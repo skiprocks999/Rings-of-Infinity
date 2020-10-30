@@ -1,5 +1,9 @@
 package com.contInf.BlockLib.recipes;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.contInf.BlockLib.ContInfBlockLib;
 import com.google.gson.JsonObject;
 
 import net.minecraft.item.ItemStack;
@@ -14,12 +18,18 @@ import net.minecraftforge.registries.ForgeRegistryEntry;
 public class AlloyForgeSerializer extends ForgeRegistryEntry<IRecipeSerializer<?>>
 					implements IRecipeSerializer<AlloyForgeRecipe>{
 
+	
+	private Logger logger = LogManager.getLogger(ContInfBlockLib.modID);
+	
 	@Override
 	public AlloyForgeRecipe read(ResourceLocation recipeId, JsonObject json) {
 		Ingredient input1 = Ingredient.deserialize(JSONUtils.getJsonObject(json, "input1"));
 		Ingredient input2 = Ingredient.deserialize(JSONUtils.getJsonObject(json, "input2"));
 		ItemStack output = 
 				CraftingHelper.getItemStack(JSONUtils.getJsonObject(json, "output"), true);
+		
+		logger.debug(output.toString());
+		
 		
 		return new AlloyForgeRecipe(recipeId,input1, input2, output);
 	}
@@ -29,7 +39,7 @@ public class AlloyForgeSerializer extends ForgeRegistryEntry<IRecipeSerializer<?
 		Ingredient input1 = Ingredient.read(buffer);
 		Ingredient input2 = Ingredient.read(buffer);
 		ItemStack output = buffer.readItemStack();
-		
+		logger.debug(buffer.toString());
 		return new AlloyForgeRecipe(recipeId,input1, input2, output);
 	}
 
@@ -41,6 +51,8 @@ public class AlloyForgeSerializer extends ForgeRegistryEntry<IRecipeSerializer<?
 		input2.write(buffer);
 		
 		buffer.writeItemStack(recipe.getRecipeOutput(),false);
+		
+		logger.debug(buffer.toString());
 	}
 
 }

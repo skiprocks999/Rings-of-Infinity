@@ -63,7 +63,7 @@ public class AlloyForgeContainer extends Container {
 		//Input2
 		this.addSlot(new SlotItemHandler(tile.getInventory(), 1, 46, 54));
 		//Output
-		this.addSlot(new SlotItemHandler(tile.getInventory(), 2, 114, 33));
+		this.addSlot(new SlotItemHandler(tile.getInventory(), 2, 116, 35));
 		
 		this.trackInt(currentSmeltTime = new FunctionalIntReferenceHolder(() -> this.tileEntity.currentSmeltTime,
 				value -> this.tileEntity.currentSmeltTime = value));

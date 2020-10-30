@@ -1,5 +1,9 @@
 package com.contInf.BlockLib.recipes;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
+import com.contInf.BlockLib.ContInfBlockLib;
 import com.contInf.BlockLib.init.RecipeSerializerInit;
 
 import net.minecraft.item.ItemStack;
@@ -12,6 +16,7 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 
 public class AlloyForgeRecipe implements IAlloyForgeRecipe{
 
+	private Logger logger = LogManager.getLogger(ContInfBlockLib.modID);
 	private final ResourceLocation id;
 	private Ingredient input1;
 	private Ingredient input2;
@@ -39,6 +44,11 @@ public class AlloyForgeRecipe implements IAlloyForgeRecipe{
 				return true;
 			}
 		}
+		if(this.input1.test(inv.getStackInSlot(1))) {
+			if(this.input2.test(inv.getStackInSlot(0))) {
+				return true;
+			}
+		}
 		return false;
 	}
 
@@ -49,6 +59,7 @@ public class AlloyForgeRecipe implements IAlloyForgeRecipe{
 
 	@Override
 	public ItemStack getRecipeOutput() {
+		logger.debug("Getting recipe output");
 		return this.output;
 	}
 
