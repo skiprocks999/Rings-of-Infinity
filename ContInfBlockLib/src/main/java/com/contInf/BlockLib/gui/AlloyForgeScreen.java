@@ -1,3 +1,8 @@
+/* Skip999
+ * 10/29/20
+ * Purpose: Contain GUI functionality for AlloyForge
+ */
+
 package com.contInf.BlockLib.gui;
 
 import com.contInf.BlockLib.ContInfBlockLib;
@@ -11,9 +16,11 @@ import net.minecraft.util.text.ITextComponent;
 
 public class AlloyForgeScreen extends ContainerScreen<AlloyForgeContainer>{
 
-
+	/* Fields */
 	private static final ResourceLocation TEXTURE = new ResourceLocation(ContInfBlockLib.modID,
 			"textures/gui/alloy_forge.png");
+	
+	/* Constructors */
 
 	public AlloyForgeScreen(AlloyForgeContainer screenContainer, PlayerInventory inv,
 			ITextComponent titleIn) {
@@ -26,6 +33,10 @@ public class AlloyForgeScreen extends ContainerScreen<AlloyForgeContainer>{
 		this.ySize = 166;
 	}
 
+	
+	/* Functional Methods */
+	
+	/*Draws gui image*/
 	@Override
 	protected void drawGuiContainerBackgroundLayer(float partialTicks, int mouseX, int mouseY) {
 		RenderSystem.color4f(1.0f, 1.0f, 1.0f, 1.0f);
@@ -34,8 +45,12 @@ public class AlloyForgeScreen extends ContainerScreen<AlloyForgeContainer>{
 		
 		this.blit(this.guiLeft + 66, this.guiTop + 14, 176, 15, 
 				this.container.getSmeltProgressionScaled(), 56);
+		
+		//this.blit(this.guiLeft + 9, this.guiTop + 39, 176, 
+				//this.container.getBurnProgressionScaled(), 190, 14);
 	}
 
+	/*Draws mouse and gui text*/
 	@Override
 	protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
 		super.drawGuiContainerForegroundLayer(mouseX, mouseY);
@@ -43,6 +58,8 @@ public class AlloyForgeScreen extends ContainerScreen<AlloyForgeContainer>{
 		this.font.drawString(this.playerInventory.getDisplayName().getFormattedText(), 8.0f, 73.0f, 0x404040);
 	}
 
+	
+	/*Renders gui*/
 	@Override
 	public void render(int mouseX, int mouseY, float partialTicks) {
 		this.renderBackground();

@@ -1,3 +1,8 @@
+/* Skip999
+ * 10/28/20
+ * purpose: interface housing functional methods for AlloyForge recipe
+ */
+
 package com.contInf.BlockLib.recipes;
 
 import javax.annotation.Nonnull;

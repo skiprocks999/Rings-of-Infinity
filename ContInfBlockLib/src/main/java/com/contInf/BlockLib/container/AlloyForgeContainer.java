@@ -1,3 +1,8 @@
+/* Skip999
+ * 10/29/20
+ * Purpose: Contains inventory functionality for AlloyForge
+ */
+
 package com.contInf.BlockLib.container;
 
 import com.contInf.BlockLib.init.BlockInit;
@@ -23,10 +28,13 @@ import net.minecraftforge.items.SlotItemHandler;
 
 public class AlloyForgeContainer extends Container {
 
+	/* Fields */
 	private AlloyForgeTileEntity tileEntity;
 	private IWorldPosCallable canInteractWithCallable;
 	public FunctionalIntReferenceHolder currentSmeltTime;
+	public FunctionalIntReferenceHolder currentBurnTime;
 	
+	/* Constructors */
 	
 	//Server Constructor
 	public AlloyForgeContainer(final int windowId, final PlayerInventory playerInv, 
@@ -56,17 +64,24 @@ public class AlloyForgeContainer extends Container {
 		}
 		
 		//Furnace Slots
-		//Fuel
-		//this.addSlot(new SlotItemHandler(tile.getInventory(), 0, 8, 54));
+		
 		//Input1
 		this.addSlot(new SlotItemHandler(tile.getInventory(), 0, 46, 16));
 		//Input2
 		this.addSlot(new SlotItemHandler(tile.getInventory(), 1, 46, 54));
 		//Output
 		this.addSlot(new SlotItemHandler(tile.getInventory(), 2, 116, 35));
+		//Fuel
+		this.addSlot(new SlotItemHandler(tile.getInventory(), 3, 8, 54));
 		
+		
+		//Tracks current smelt time
 		this.trackInt(currentSmeltTime = new FunctionalIntReferenceHolder(() -> this.tileEntity.currentSmeltTime,
 				value -> this.tileEntity.currentSmeltTime = value));
+		
+		//Tracks current burn time
+		this.trackInt(currentBurnTime = new FunctionalIntReferenceHolder(() -> this.tileEntity.currentBurnTime,
+				value -> this.tileEntity.currentBurnTime = value));
 	}
 	
 	//Client Constructor
@@ -75,6 +90,10 @@ public class AlloyForgeContainer extends Container {
 		this(windowId, playerInv, getTileEntity(playerInv,data));
 	}
 
+	
+	/* Functional Methods */
+	
+	/* Obtains an instance of the AlloyForgeTileEntity*/
 	private static AlloyForgeTileEntity getTileEntity(
 			final PlayerInventory playerInv, final PacketBuffer data) {
 		Objects.requireNonNull(playerInv, "playerInv cannot be null");
@@ -86,12 +105,14 @@ public class AlloyForgeContainer extends Container {
 		throw new IllegalStateException("TileEntity is not correct " + tileAtPos);
 	}
 
+	
 	@Override
 	public boolean canInteractWith(PlayerEntity playerIn) {
 		return isWithinUsableDistance(canInteractWithCallable, playerIn, BlockInit.alloy_forge.get());
 	}
 	
 	
+	/* Transfers in items for inventory slots*/
 	@Nonnull
 	@Override
 	public ItemStack transferStackInSlot(final PlayerEntity player, final int index) {
@@ -123,10 +144,20 @@ public class AlloyForgeContainer extends Container {
 	}
 	
 	
+	/* Scales smelt time int for progress animation*/
 	@OnlyIn(Dist.CLIENT)
 	public int getSmeltProgressionScaled() {
 		return this.currentSmeltTime.get() != 0 && this.tileEntity.maxSmeltTime != 0
 					? this.currentSmeltTime.get() * 36 / this.tileEntity.maxSmeltTime : 0;
+				
+	}
+	
+	
+	/* Scales smelt time int for progress animation*/
+	@OnlyIn(Dist.CLIENT)
+	public int getBurnProgressionScaled() {
+		return this.currentBurnTime.get() != 0 && this.tileEntity.currentBurnTime != 0
+					? 14 - (int)(this.currentBurnTime.get()/this.tileEntity.itemBurnTime) : 14;
 				
 	}
 

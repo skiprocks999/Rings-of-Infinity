@@ -8,6 +8,7 @@
 		"item":"continfitemlib:aluminum_ingot"
 	},
 	"output":{
-		"item":"continfitemlib:ferroallide_steel_ingot"
+		"item":"continfitemlib:ferroallide_steel_ingot",
+		"count":2
 	}
 }

@@ -15,9 +15,13 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class BlockTileEntityTypes {
 	
+	//Deferred Register
 	public static final DeferredRegister<TileEntityType<?>> TILE_ENTITY_TYPES = 
 			new DeferredRegister<>(ForgeRegistries.TILE_ENTITIES,ContInfBlockLib.modID);
 	
+	/* Tile Entity Types */
+	
+	//Alloy Forge Tile Entity
 	public static final RegistryObject<TileEntityType<AlloyForgeTileEntity>> ALLOY_FORGE = 
 			TILE_ENTITY_TYPES.register("alloy_forge", () -> TileEntityType.Builder.create
 					(AlloyForgeTileEntity::new, BlockInit.alloy_forge.get()).build(null));

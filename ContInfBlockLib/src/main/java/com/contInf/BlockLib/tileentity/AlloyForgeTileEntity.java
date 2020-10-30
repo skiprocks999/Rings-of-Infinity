@@ -54,69 +54,95 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 public class AlloyForgeTileEntity extends TileEntity 
 						implements ITickableTileEntity, INamedContainerProvider{
 
+	
+	/* Fields */
+	
+	
 	private ITextComponent customName;
 	public int currentSmeltTime;
 	public final int maxSmeltTime = 200;
-	
 	private AlloyForgeItemHandler inventory; 
+	public int currentBurnTime;
+	public int itemBurnTime = 1;
 	
+	
+	/* Constructors */
+	
+	
+	//Creates a new instance of an AlloyForge entity
 	public AlloyForgeTileEntity(TileEntityType<?> tileEntityTypeIn) {
 		super(tileEntityTypeIn);
 		
-		this.inventory = new AlloyForgeItemHandler(3);
+		this.inventory = new AlloyForgeItemHandler(4);
 	}
 
+	
+	//Creates instance for existing AlloyForge entity
 	public AlloyForgeTileEntity() {
 		this(BlockTileEntityTypes.ALLOY_FORGE.get());
 	}
 
 	
-	/* OVERRIDEN METHODS */
+	/* Functional Methods */
 	
+	
+	//Creates a GUI for the AlloyForge
 	@Override
 	public Container createMenu(
 			final int windowID, final PlayerInventory playerInv, final PlayerEntity playerIn) {
 		return new AlloyForgeContainer(windowID, playerInv, this);
 	}
 
+	
+	/* WHAT THE BLOCK DOES*/
 	@Override
 	public void tick() {
 		//Tells game to read and write from disk
 		boolean dirty = false;
 		
 		if(this.world != null && !this.world.isRemote) {
-			if(this.world.isBlockPowered(this.getPos())) {
+			
+			if(this.currentBurnTime > 0) {
 				ItemStack[] ingredients = new ItemStack[2];
 				ingredients[0] = this.inventory.getStackInSlot(0);
 				ingredients[1] = this.inventory.getStackInSlot(1);
 				if(this.getRecipe(ingredients) != null){
-					if(this.currentSmeltTime != this.maxSmeltTime) {
+					if(this.currentSmeltTime != this.maxSmeltTime && 
+							this.currentBurnTime > this.maxSmeltTime) {
 						this.currentSmeltTime ++;
 						this.world.setBlockState(this.getPos(), this.getBlockState().with(AlloyForge.LIT, true));
 						dirty = true;
 					}else {
 						this.currentSmeltTime = 0;
 						ItemStack output = this.getRecipe(ingredients).getRecipeOutput();
-						this.inventory.insertItem(1, output.copy(),false);
+						this.inventory.insertItem(2, output.copy(),false);
 						this.inventory.decrStackSize(0,1);
 						this.inventory.decrStackSize(1,1);
 						this.world.setBlockState(this.getPos(), this.getBlockState().with(AlloyForge.LIT, false));
 						dirty = true;
 					}
 				}
+				if(this.currentBurnTime > 0) {
+					this.currentBurnTime--;
+				}
 			}
 		}
+		
 		if(dirty) {
 			this.markDirty();
 			this.world.notifyBlockUpdate(this.getPos(), this.getBlockState(), this.getBlockState(), Constants.BlockFlags.BLOCK_UPDATE);
 		}
 	}
 	
+	
+	//Retrieves current name of block for GUI
 	@Override
 	public ITextComponent getDisplayName() {
 		return this.getName();
 	}
 	
+	
+	//Sets custom name for block
 	@Override
 	public CompoundNBT write(CompoundNBT compound) {
 		super.write(compound);
@@ -131,6 +157,8 @@ public class AlloyForgeTileEntity extends TileEntity
 		return compound;
 	}
 	
+	
+	//Retrieves the current name
 	@Override
 	public void read(CompoundNBT compound) {
 		super.read(compound);
@@ -165,7 +193,8 @@ public class AlloyForgeTileEntity extends TileEntity
 		return this.customName;
 	}
 	
-
+	
+	/* Looks for Recipe based on inputs */
 	private AlloyForgeRecipe getRecipe(ItemStack[] stack) {
 		
 		if(stack == null) {
@@ -183,6 +212,8 @@ public class AlloyForgeTileEntity extends TileEntity
 		return null;
 	}
 
+	
+	//Returns all recipes for AlloyForge
 	public static Set<IRecipe<?>> findRecipesbyType(IRecipeType<?> typeIn, World world) {
 		return world != null ? 
 				world.getRecipeManager().getRecipes().
@@ -190,6 +221,8 @@ public class AlloyForgeTileEntity extends TileEntity
 				:Collections.emptySet();
 	}
 	
+	
+	//Determines recipe for client-side
 	@SuppressWarnings("resource")
 	@OnlyIn(Dist.CLIENT)
 	public static Set<IRecipe<?>> findRecipesbyType(IRecipeType<?> typeIn) {
@@ -200,6 +233,8 @@ public class AlloyForgeTileEntity extends TileEntity
 				:Collections.emptySet();
 	}
 	
+	
+	//Determines inputs for particular recipe
 	public static Set<ItemStack> getAllRecipeInputs(IRecipeType<?> typeIn, World world){
 		Set<ItemStack> inputs = new HashSet<ItemStack>();
 		Set<IRecipe<?>> recipes = findRecipesbyType(typeIn, world);
@@ -219,9 +254,14 @@ public class AlloyForgeTileEntity extends TileEntity
 	}
 	
 	
+	//Retireves Inventory for GUI
 	public final IItemHandlerModifiable getInventory() {
 		return this.inventory;
 	}
+	
+	
+	/* Tick Synchronization */
+	
 	
 	@Nullable
 	@Override
@@ -252,6 +292,14 @@ public class AlloyForgeTileEntity extends TileEntity
 	public <T> LazyOptional<T> getCapability(Capability<T> cap, Direction side) {
 		return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.orEmpty(cap, LazyOptional.of(() -> this.inventory));
 	}
+	
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

@@ -1,3 +1,8 @@
+/* Skip999
+ * 10/28/20
+ * purpose: House all custom recipe types for ContInfBlockLib
+ */
+
 package com.contInf.BlockLib.init;
 
 import com.contInf.BlockLib.ContInfBlockLib;
@@ -16,19 +21,28 @@ import net.minecraftforge.registries.ForgeRegistries;
 
 public class RecipeSerializerInit {
 	
+	//Deferred Register
 	public static final DeferredRegister<IRecipeSerializer<?>> RECIPE_SERIALIZER = 
 			new DeferredRegister<>(ForgeRegistries.RECIPE_SERIALIZERS,ContInfBlockLib.modID);
 	
 	
+	/* Recipe Serializer Objects */
+	
+	//Alloy Forge
 	public static final IRecipeSerializer<AlloyForgeRecipe> ALLOY_FORGE_RECIPE_SERIALIZER =
 			new AlloyForgeSerializer();
 	
+	
+	/* Forge Type Registration */
+	
+	//AlloyForge
 	public static final IRecipeType<IAlloyForgeRecipe> ALLOY_FORGE_TYPE = 
 			registerType(IAlloyForgeRecipe.RECIPE_TYPE_ID);
 	
 	
+	/* Register Serializers */
 	
-	
+	//Alloy Forge
 	public static final RegistryObject<IRecipeSerializer<?>> ALLOY_FORGE_SERIALIZER = 
 			RECIPE_SERIALIZER.register("alloy_forge", () -> ALLOY_FORGE_RECIPE_SERIALIZER);
 	
@@ -44,16 +58,13 @@ public class RecipeSerializerInit {
 	
 	
 	
-	
+	/* Functional Methods*/
 	
 
+	@SuppressWarnings("unchecked")
 	private static <T extends IRecipeType<?>> T registerType(ResourceLocation recipeTypeId) {
 		return (T) Registry.register(Registry.RECIPE_TYPE, recipeTypeId, new RecipeType<>());
 	}
-	
-	
-	
-	
 	
 	
 	private static class RecipeType<T extends IRecipe<?>> implements IRecipeType<T>{

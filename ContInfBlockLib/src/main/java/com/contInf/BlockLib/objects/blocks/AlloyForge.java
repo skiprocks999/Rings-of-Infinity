@@ -43,12 +43,16 @@ import net.minecraftforge.api.distmarker.Dist;
 
 public class AlloyForge extends Block{
 	
-	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	
+	/* Fields */
+	
+	public static final DirectionProperty FACING = BlockStateProperties.HORIZONTAL_FACING;
 	public static final BooleanProperty LIT = BooleanProperty.create("lit");
 
-
-	//Constructor
+	
+	/* Constructors */
+	
+	
 	public AlloyForge(Properties properties) {
 		super(properties);
 		this.setDefaultState(this.stateContainer.getBaseState()
@@ -58,48 +62,61 @@ public class AlloyForge extends Block{
 	}
 	
 	
+	/* Functional Methods */
 	
 	
-	
-	/* OVERRIDEN METHODS */
-	
+	//Confirms object is a tile entity
 	@Override
 	public boolean hasTileEntity(BlockState state) {
 		return true;
 	}
 	
+	
+	//Creates an instance of AlloyForge tile entity
 	@Override
 	public TileEntity createTileEntity(BlockState state, IBlockReader world) {
 		return BlockTileEntityTypes.ALLOY_FORGE.get().create();
 	}
 	
+	
+	//Creates a container instance
 	@Override
 	public void fillStateContainer(Builder<Block,BlockState> builder) {
 		super.fillStateContainer(builder);
 		builder.add(FACING,LIT);
 	}
 	
+	
+	//Method for mirroring block for rotation
 	@Override
 	public BlockState mirror(BlockState state, Mirror mirrorIn) {
 		return state.rotate(mirrorIn.toRotation(state.get(FACING)));
 	}
 	
+	
+	//Method for rotating block
 	@Override
 	public BlockState rotate(BlockState state, Rotation rot) {
 		return state.with(FACING,rot.rotate(state.get(FACING)));
 	}
 	
+	
+	//Gets current light value for furnace
 	@SuppressWarnings("deprecation")
 	@Override
 	public int getLightValue(BlockState state) {
 		return state.get(LIT) ? super.getLightValue(state) : 0;
 	}
 	
+	
+	//Determines state of furnace for placement 
 	@Override 
 	public BlockState getStateForPlacement(BlockItemUseContext context) {
 		return this.getDefaultState().with(FACING, context.getPlacementHorizontalFacing().getOpposite());
 	}
 	
+	
+	//Determines if the block has been given a custom name for naming GUI
 	@Override
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, BlockState state, LivingEntity placer, ItemStack stack) {
 		super.onBlockPlacedBy(worldIn, pos, state, placer, stack);
@@ -111,16 +128,22 @@ public class AlloyForge extends Block{
 		}
 	}
 
+	
+	//Ensures block can output to comparator 
 	@Override
 	public boolean hasComparatorInputOverride(BlockState state) {
 		return true;
 	}
 	
+	
+	//Calculates redstone signal for comparator 
 	@Override
 	public int getComparatorInputOverride(BlockState blockState, World worldIn, BlockPos pos) {
 		return Container.calcRedstone(worldIn.getTileEntity(pos));
 	}
 	
+	
+	//Renders particles for lit animation 
 	@Override
 	@OnlyIn(Dist.CLIENT)
 	public void animateTick(BlockState stateIn, World worldIn, BlockPos pos, Random rand) {
@@ -144,6 +167,8 @@ public class AlloyForge extends Block{
 		}
 	}
 
+	
+	//Notifies server and client that furnace has been activated 
 	@Override
 	public ActionResultType onBlockActivated(BlockState state, World worldIn, BlockPos pos, PlayerEntity player,
 			Hand handIn, BlockRayTraceResult hit) {
@@ -157,6 +182,8 @@ public class AlloyForge extends Block{
 		return ActionResultType.SUCCESS;
 	}
 	
+	
+	//Determines state of furnace when dropped
 	@Override
 	public void onReplaced(BlockState state, World worldIn, BlockPos pos, BlockState newState, boolean isMoving) {
 		TileEntity tile = worldIn.getTileEntity(pos);

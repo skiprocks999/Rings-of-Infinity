@@ -1,3 +1,8 @@
+/* Skip999
+ * 10/28/20
+ * Purpose: houses form of AlloyForge recipe
+ */
+
 package com.contInf.BlockLib.recipes;
 
 import org.apache.logging.log4j.LogManager;
@@ -16,12 +21,17 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 
 public class AlloyForgeRecipe implements IAlloyForgeRecipe{
 
+	
+	/* Fields */
 	private Logger logger = LogManager.getLogger(ContInfBlockLib.modID);
 	private final ResourceLocation id;
 	private Ingredient input1;
 	private Ingredient input2;
 	private Ingredient[] inputArray;
 	private final ItemStack output;
+	
+	
+	/* Constructor */
 	
 	
 	public AlloyForgeRecipe(ResourceLocation id, Ingredient input1, Ingredient input2, ItemStack output) {
@@ -35,8 +45,10 @@ public class AlloyForgeRecipe implements IAlloyForgeRecipe{
 	}
 	
 	
-	/* OVERRIDEN METHODS */
+	/* Functional Methods */
 	
+	
+	//Determines if inputs match recipe type
 	@Override
 	public boolean matches(RecipeWrapper inv, World worldIn) {
 		if(this.input1.test(inv.getStackInSlot(0))) {
@@ -52,6 +64,7 @@ public class AlloyForgeRecipe implements IAlloyForgeRecipe{
 		return false;
 	}
 
+	
 	@Override
 	public ItemStack getCraftingResult(RecipeWrapper inv) {
 		return this.output;
