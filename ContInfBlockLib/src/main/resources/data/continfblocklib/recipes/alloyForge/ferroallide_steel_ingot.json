@@ -1,0 +1,13 @@
+{
+	"type" : "continfblocklib:alloy_forge",
+	
+	"input1":{
+		"item":"continfitemlib:blister_steel_ingot"
+	},
+	"input2":{
+		"item":"continfitemlib:aluminum_ingot"
+	},
+	"output":{
+		"item":"continfitemlib:ferroallide_steel_ingot"
+	}
+}

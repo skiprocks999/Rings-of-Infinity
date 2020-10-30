@@ -13,6 +13,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.contInf.BlockLib.init.BlockInit;
+import com.contInf.BlockLib.init.BlockTileEntityTypes;
+import com.contInf.BlockLib.init.ContInfContainerTypes;
+import com.contInf.BlockLib.init.RecipeSerializerInit;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.BlockItem;
@@ -97,6 +100,9 @@ public class ContInfBlockLib {
 		
 		//Initilizes blocks
 		BlockInit.BLOCKS.register(modEventBus);
+		RecipeSerializerInit.RECIPE_SERIALIZER.register(modEventBus);
+		BlockTileEntityTypes.TILE_ENTITY_TYPES.register(modEventBus);
+		ContInfContainerTypes.CONTAINER_TYPES.register(modEventBus);
 		
 		//Creates an instance of the mod
 		instance = this;
@@ -196,7 +202,6 @@ public class ContInfBlockLib {
 			List<Item> items= new ArrayList<Item>();
 			//adds and casts entries in array to a list of items
 			for(int i = 0; i < listOfBlocks.length;i++) {
-				listOfBlocks[i].getClass();
 				items.add(((Block)(listOfBlocks[i])).asItem());
 			}
 	        itemStacks.clear();

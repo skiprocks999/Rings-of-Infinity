@@ -12,6 +12,7 @@ import com.contInf.BlockLib.objects.blocks.HellfireFurnace;
 import com.contInf.BlockLib.objects.blocks.WardingBeacon;
 
 import net.minecraft.block.Block;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.RotatedPillarBlock;
 import net.minecraft.block.SlabBlock;
 import net.minecraft.block.SoundType;
@@ -434,8 +435,8 @@ public class BlockInit {
 	
 	//alloy forge
 	public static final RegistryObject<Block> alloy_forge = 
-			BLOCKS.register("alloy_forge", () -> new AlloyForge(Block.Properties.create(Material.IRON).
-			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+			BLOCKS.register("alloy_forge", () -> new AlloyForge(
+					Block.Properties.from(Blocks.FURNACE)));
 	//warding beacon
 	public static final RegistryObject<Block> warding_beacon = 
 			BLOCKS.register("warding_beacon", () -> new WardingBeacon(Block.Properties.create(Material.IRON).
