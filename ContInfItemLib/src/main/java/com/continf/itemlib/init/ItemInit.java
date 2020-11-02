@@ -37,12 +37,12 @@ public class ItemInit {
 
 	// Ruby
 	public static final RegistryObject<Item> ruby_sword = ITEMS.register("ruby_sword",
-			() -> new SwordItem(ItemTiers.RUBY, 11, -2.2F, 
+			() -> new SwordItem(ItemTiers.RUBY, 9, -2.2F, 
 								new Item.Properties().maxStackSize(1).group(ContInfItemLibToolsGroup.toolsGroupInstance)));
 
 	// Ferroallide
 	public static final RegistryObject<Item> ferroallide_sword = ITEMS.register("ferroallide_sword",
-			() -> new SwordItem(ItemTiers.FERROALLIDE, 10, -2.4F, 
+			() -> new SwordItem(ItemTiers.FERROALLIDE, 7, -2.4F, 
 								new Item.Properties().maxStackSize(1).group(ContInfItemLibToolsGroup.toolsGroupInstance)));
 
 
@@ -104,15 +104,15 @@ public class ItemInit {
 
 	// Ruby 
 	public static final RegistryObject<Item> ruby_pickaxe = ITEMS.register("ruby_pickaxe",
-			() -> new PickaxeItem(ItemTiers.RUBY, 6, -2.0F, 
+			() -> new PickaxeItem(ItemTiers.RUBY, 5, -2.0F, 
 								  new Item.Properties().maxStackSize(1).group(ContInfItemLibToolsGroup.toolsGroupInstance)));
 
 	public static final RegistryObject<Item> ruby_axe = ITEMS.register("ruby_axe",
-			() -> new AxeItem(ItemTiers.RUBY, 10, -2.0F, 
+			() -> new AxeItem(ItemTiers.RUBY, 11, -3.0F, 
 							  new Item.Properties().maxStackSize(1).group(ContInfItemLibToolsGroup.toolsGroupInstance)));
 
 	public static final RegistryObject<Item> ruby_shovel = ITEMS.register("ruby_shovel",
-			() -> new ShovelItem(ItemTiers.RUBY, 6.5F, -2.0F, 
+			() -> new ShovelItem(ItemTiers.RUBY, 4.5F, -2.0F, 
 								 new Item.Properties().maxStackSize(1).group(ContInfItemLibToolsGroup.toolsGroupInstance)));
 
 	public static final RegistryObject<Item> ruby_hoe = ITEMS.register("ruby_hoe",
@@ -129,7 +129,7 @@ public class ItemInit {
 							  new Item.Properties().maxStackSize(1).group(ContInfItemLibToolsGroup.toolsGroupInstance)));
 
 	public static final RegistryObject<Item> ferroallide_shovel = ITEMS.register("ferroallide_shovel",
-			() -> new ShovelItem(ItemTiers.FERROALLIDE, 5.5F, -2.2F, 
+			() -> new ShovelItem(ItemTiers.FERROALLIDE, 3.5F, -2.2F, 
 			                     new Item.Properties().maxStackSize(1).group(ContInfItemLibToolsGroup.toolsGroupInstance)));
 
 	public static final RegistryObject<Item> ferroallide_hoe = ITEMS.register("ferroallide_hoe",
@@ -138,7 +138,7 @@ public class ItemInit {
 
 	// Blast
 	public static final RegistryObject<Item> blast_pickaxe = ITEMS.register("blast_pickaxe",
-			() -> new PickaxeItem(ItemTiers.BLAST, 4, 5.0F,
+			() -> new PickaxeItem(ItemTiers.BLAST, 3, 5.0F,
 			 					  new Item.Properties().maxStackSize(1).group(ContInfItemLibToolsGroup.toolsGroupInstance)));
 		
 	public static final RegistryObject<Item> blast_axe = ITEMS.register("blast_axe",
