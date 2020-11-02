@@ -72,7 +72,7 @@ public class AlloyForgeRecipe implements IAlloyForgeRecipe{
 
 	@Override
 	public ItemStack getRecipeOutput() {
-		logger.debug("Getting recipe output");
+		//logger.debug("Getting recipe output");
 		return this.output;
 	}
 

@@ -5,6 +5,9 @@
 
 package com.contInf.BlockLib.gui;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.contInf.BlockLib.ContInfBlockLib;
 import com.contInf.BlockLib.container.AlloyForgeContainer;
 import com.mojang.blaze3d.systems.RenderSystem;
@@ -19,6 +22,8 @@ public class AlloyForgeScreen extends ContainerScreen<AlloyForgeContainer>{
 	/* Fields */
 	private static final ResourceLocation TEXTURE = new ResourceLocation(ContInfBlockLib.modID,
 			"textures/gui/alloy_forge.png");
+	
+	private static final Logger logger = LogManager.getLogger(ContInfBlockLib.modID);
 	
 	/* Constructors */
 
@@ -43,11 +48,24 @@ public class AlloyForgeScreen extends ContainerScreen<AlloyForgeContainer>{
 		this.minecraft.getTextureManager().bindTexture(TEXTURE);
 		AlloyForgeScreen.blit(this.guiLeft, this.guiTop, 0, 0, this.xSize, this.ySize,256,256);
 		
+		//blit(int x, int y, int textureX,
+		//					int textureY, int width, int height, int textureWidth, int textureHeight);
+		
+		
+
+		//Burn Time
+		double burnTimeFraction = this.container.getBurnProgressionScaled();
+		//logger.debug("burn time fraciton: " + burnTimeFraction);
+		int yOffset = (int)(burnTimeFraction * 14);
+		//logger.debug("current y offset: " + yOffset);
+		
+		this.blit(this.guiLeft + 9, this.guiTop + 39 + yOffset, 176, yOffset, 14, (14 - yOffset));
+
+		
+		//Progress Bar
 		this.blit(this.guiLeft + 66, this.guiTop + 14, 176, 15, 
 				this.container.getSmeltProgressionScaled(), 56);
 		
-		//this.blit(this.guiLeft + 9, this.guiTop + 39, 176, 
-				//this.container.getBurnProgressionScaled(), 190, 14);
 	}
 
 	/*Draws mouse and gui text*/

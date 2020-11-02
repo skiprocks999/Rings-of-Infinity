@@ -5,6 +5,10 @@
 
 package com.contInf.BlockLib.container;
 
+import com.contInf.BlockLib.ContInfBlockLib;
+import com.contInf.BlockLib.container.SlotItemHandlers.AlloyForgeFuelSlotHandler;
+import com.contInf.BlockLib.container.SlotItemHandlers.AlloyForgeInputSlotHandler;
+import com.contInf.BlockLib.container.SlotItemHandlers.AlloyForgeOutputSlotHandler;
 import com.contInf.BlockLib.init.BlockInit;
 import com.contInf.BlockLib.init.ContInfContainerTypes;
 import com.contInf.BlockLib.tileentity.AlloyForgeTileEntity;
@@ -13,6 +17,9 @@ import com.contInf.BlockLib.util.FunctionalIntReferenceHolder;
 import java.util.Objects;
 
 import javax.annotation.Nonnull;
+
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
@@ -24,6 +31,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IWorldPosCallable;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.items.SlotItemHandler;
 
 public class AlloyForgeContainer extends Container {
@@ -33,6 +41,7 @@ public class AlloyForgeContainer extends Container {
 	private IWorldPosCallable canInteractWithCallable;
 	public FunctionalIntReferenceHolder currentSmeltTime;
 	public FunctionalIntReferenceHolder currentBurnTime;
+	private static final Logger logger = LogManager.getLogger(ContInfBlockLib.modID);
 	
 	/* Constructors */
 	
@@ -66,13 +75,13 @@ public class AlloyForgeContainer extends Container {
 		//Furnace Slots
 		
 		//Input1
-		this.addSlot(new SlotItemHandler(tile.getInventory(), 0, 46, 16));
+		this.addSlot(new AlloyForgeInputSlotHandler(tile.getInventory(), 0, 46, 16));
 		//Input2
-		this.addSlot(new SlotItemHandler(tile.getInventory(), 1, 46, 54));
+		this.addSlot(new AlloyForgeInputSlotHandler(tile.getInventory(), 1, 46, 54));
 		//Output
-		this.addSlot(new SlotItemHandler(tile.getInventory(), 2, 116, 35));
+		this.addSlot(new AlloyForgeOutputSlotHandler(tile.getInventory(), 2, 116, 35));
 		//Fuel
-		this.addSlot(new SlotItemHandler(tile.getInventory(), 3, 8, 54));
+		this.addSlot(new AlloyForgeFuelSlotHandler(tile.getInventory(), 3, 8, 54));
 		
 		
 		//Tracks current smelt time
@@ -81,7 +90,9 @@ public class AlloyForgeContainer extends Container {
 		
 		//Tracks current burn time
 		this.trackInt(currentBurnTime = new FunctionalIntReferenceHolder(() -> this.tileEntity.currentBurnTime,
-				value -> this.tileEntity.currentBurnTime = value));
+				value2 -> this.tileEntity.currentBurnTime = value2));
+		
+		//logger.debug("current burn time :" + this.currentBurnTime);
 	}
 	
 	//Client Constructor
@@ -116,6 +127,7 @@ public class AlloyForgeContainer extends Container {
 	@Nonnull
 	@Override
 	public ItemStack transferStackInSlot(final PlayerEntity player, final int index) {
+		
 		ItemStack returnStack = ItemStack.EMPTY;
 		final Slot slot = this.inventorySlots.get(index);
 		if (slot != null && slot.getHasStack()) {
@@ -141,13 +153,15 @@ public class AlloyForgeContainer extends Container {
 			slot.onTake(player, slotStack);
 		}
 		return returnStack;
+		
 	}
 	
 	
 	/* Scales smelt time int for progress animation*/
 	@OnlyIn(Dist.CLIENT)
 	public int getSmeltProgressionScaled() {
-		return this.currentSmeltTime.get() != 0 && this.tileEntity.maxSmeltTime != 0
+		return this.currentSmeltTime.get() !=0 && this.tileEntity.maxSmeltTime != 0 
+				&& this.currentBurnTime.get() > 0
 					? this.currentSmeltTime.get() * 36 / this.tileEntity.maxSmeltTime : 0;
 				
 	}
@@ -155,9 +169,10 @@ public class AlloyForgeContainer extends Container {
 	
 	/* Scales smelt time int for progress animation*/
 	@OnlyIn(Dist.CLIENT)
-	public int getBurnProgressionScaled() {
-		return this.currentBurnTime.get() != 0 && this.tileEntity.currentBurnTime != 0
-					? 14 - (int)(this.currentBurnTime.get()/this.tileEntity.itemBurnTime) : 14;
+	public double getBurnProgressionScaled() {
+		//logger.debug("item burn time: " + AlloyForgeTileEntity.itemBurnTime);
+		return this.currentBurnTime.get() > 0 
+					? 1.0 -((double)this.currentBurnTime.get()/AlloyForgeTileEntity.itemBurnTime) : 1.0;
 				
 	}
 

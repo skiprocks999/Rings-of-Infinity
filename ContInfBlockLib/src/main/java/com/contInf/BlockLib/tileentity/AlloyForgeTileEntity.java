@@ -12,6 +12,9 @@ import java.util.stream.Collectors;
 
 import javax.annotation.Nullable;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 import com.contInf.BlockLib.ContInfBlockLib;
 import com.contInf.BlockLib.container.AlloyForgeContainer;
 import com.contInf.BlockLib.init.BlockTileEntityTypes;
@@ -34,6 +37,7 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
+import net.minecraft.tileentity.AbstractFurnaceTileEntity;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
@@ -44,6 +48,7 @@ import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.common.ForgeHooks;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.common.util.LazyOptional;
@@ -60,11 +65,11 @@ public class AlloyForgeTileEntity extends TileEntity
 	
 	private ITextComponent customName;
 	public int currentSmeltTime;
-	public final int maxSmeltTime = 200;
+	public final int maxSmeltTime = 199;
 	private AlloyForgeItemHandler inventory; 
 	public int currentBurnTime;
-	public int itemBurnTime = 1;
-	
+	public static int itemBurnTime = 1;
+	private static final Logger logger = LogManager.getLogger(ContInfBlockLib.modID);
 	
 	/* Constructors */
 	
@@ -102,29 +107,67 @@ public class AlloyForgeTileEntity extends TileEntity
 		
 		if(this.world != null && !this.world.isRemote) {
 			
-			if(this.currentBurnTime > 0) {
+			//Burn Time Functionality
+			
+			if(!isLit()) {
+				ItemStack[] ingredients = new ItemStack[2];
+				ingredients[0] = this.inventory.getStackInSlot(0);
+				ingredients[1] = this.inventory.getStackInSlot(1);
+				if(this.getRecipe(ingredients) != null) {
+					//logger.debug(this.inventory.getStackInSlot(3));
+					if(this.inventory.getStackInSlot(3) != ItemStack.EMPTY 
+							&& this.inventory.getStackInSlot(2).getCount() < 64) {
+						this.currentBurnTime = ForgeHooks.getBurnTime(this.inventory.getStackInSlot(3));
+						if(isLit()) {
+							itemBurnTime = ForgeHooks.getBurnTime(this.inventory.getStackInSlot(3));
+							this.inventory.decrStackSize(3,1);
+							//logger.debug("burn time set to " + itemBurnTime);
+						}else {
+							itemBurnTime = 1;
+						}
+					}
+				}
+			}
+			
+			//Recipe Functionality 
+			
+			if(isLit()) {
 				ItemStack[] ingredients = new ItemStack[2];
 				ingredients[0] = this.inventory.getStackInSlot(0);
 				ingredients[1] = this.inventory.getStackInSlot(1);
 				if(this.getRecipe(ingredients) != null){
-					if(this.currentSmeltTime != this.maxSmeltTime && 
-							this.currentBurnTime > this.maxSmeltTime) {
-						this.currentSmeltTime ++;
-						this.world.setBlockState(this.getPos(), this.getBlockState().with(AlloyForge.LIT, true));
-						dirty = true;
-					}else {
-						this.currentSmeltTime = 0;
-						ItemStack output = this.getRecipe(ingredients).getRecipeOutput();
-						this.inventory.insertItem(2, output.copy(),false);
-						this.inventory.decrStackSize(0,1);
-						this.inventory.decrStackSize(1,1);
-						this.world.setBlockState(this.getPos(), this.getBlockState().with(AlloyForge.LIT, false));
-						dirty = true;
+					if(this.inventory.getStackInSlot(2).getCount() < 64) {
+						if(this.currentBurnTime - 1 > 0) {
+							if(this.currentSmeltTime != this.maxSmeltTime) {
+															
+								this.currentSmeltTime ++;
+								this.world.setBlockState(this.getPos(), this.getBlockState().with(AlloyForge.LIT, true));
+								if(this.currentBurnTime - 1 == 0) {
+									this.currentSmeltTime = 0;
+								}
+								dirty = true;
+								
+							}else {
+								
+								this.currentSmeltTime = 0;
+								ItemStack output = this.getRecipe(ingredients).getRecipeOutput();
+								this.inventory.insertItem(2, output.copy(),false);
+								this.inventory.decrStackSize(0,1);
+								this.inventory.decrStackSize(1,1);
+								
+							}
+						}
 					}
 				}
-				if(this.currentBurnTime > 0) {
-					this.currentBurnTime--;
+				//logger.debug("current burn time :" + this.currentBurnTime);
+				
+				if(this.currentBurnTime - 1 == 0) {
+					this.world.setBlockState(this.getPos(), this.getBlockState().with(AlloyForge.LIT, false));
+					dirty = true;
 				}
+				
+				this.currentBurnTime--;
+				
 			}
 		}
 		
@@ -294,7 +337,9 @@ public class AlloyForgeTileEntity extends TileEntity
 	}
 	
 	
-	
+	private boolean isLit() {
+		return currentBurnTime > 0;
+	}
 	
 	
 	
