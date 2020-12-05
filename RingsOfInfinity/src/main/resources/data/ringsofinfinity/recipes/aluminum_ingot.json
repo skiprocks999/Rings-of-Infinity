@@ -1,0 +1,1 @@
+{  "type": "minecraft:smelting",  "ingredient": {    "item": "ringsofinfinity:bauxite_ore"  },  "result": "ringsofinfinity:aluminum_ingot",  "experience": 0.7,  "cookingtime": 200}

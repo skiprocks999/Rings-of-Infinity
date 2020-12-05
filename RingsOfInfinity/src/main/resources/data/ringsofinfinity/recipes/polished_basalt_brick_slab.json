@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "bbb"  ],  "key": {    "b": {      "item": "ringsofinfinity:polished_basalt_bricks"    }  },  "result": {    "item": "ringsofinfinity:polished_basalt_brick_slab",    "count": 6  }}

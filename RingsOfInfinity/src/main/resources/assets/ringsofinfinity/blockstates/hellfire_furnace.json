@@ -1,0 +1,1 @@
+{    "variants": 	{        "facing=north": {"model": "ringsofinfinity:block/hellfire_furnace" },        "facing=south": {"model": "ringsofinfinity:block/hellfire_furnace" , "y" : 180 },        "facing=west": {"model": "ringsofinfinity:block/hellfire_furnace", "y" : 270},        "facing=east": {"model": "ringsofinfinity:block/hellfire_furnace", "y" : 90}       }}

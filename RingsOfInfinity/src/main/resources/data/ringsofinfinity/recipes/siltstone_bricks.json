@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "ss",    "ss"  ],  "key": {    "s": {      "item": "ringsofinfinity:siltstone"    }  },  "result": {    "item": "ringsofinfinity:siltstone_bricks",    "count": 4  }}

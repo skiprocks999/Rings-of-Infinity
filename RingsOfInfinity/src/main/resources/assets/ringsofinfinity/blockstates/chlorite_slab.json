@@ -1,0 +1,1 @@
+{    "variants": {        "type=bottom": { "model": "ringsofinfinity:block/chlorite_slab" },        "type=top": { "model": "ringsofinfinity:block/chlorite_slab_top" },        "type=double": { "model": "ringsofinfinity:block/chlorite" }    }}

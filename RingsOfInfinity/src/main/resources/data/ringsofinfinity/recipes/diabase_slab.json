@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "bbb"  ],  "key": {    "b": {      "item": "ringsofinfinity:diabase"    }  },  "result": {    "item": "ringsofinfinity:diabase_slab",    "count": 6  }}

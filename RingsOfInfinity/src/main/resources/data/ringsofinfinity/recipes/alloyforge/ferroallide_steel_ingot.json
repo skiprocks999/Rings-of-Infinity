@@ -1,0 +1,14 @@
+{
+	"type" : "ringsofinfinity:alloy_forge",
+	
+	"input1":{
+		"item":"ringsofinfinity:blister_steel_ingot"
+	},
+	"input2":{
+		"item":"ringsofinfinity:aluminum_ingot"
+	},
+	"output":{
+		"item":"ringsofinfinity:ferroallide_steel_ingot",
+		"count":2
+	}
+}

@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    " rn",    "rNr",    "nr "  ],  "key": {    "N": {      "item": "minecraft:nether_star"    },    "n": {      "item": "minecraft:stick"    },    "r": {      "item": "ringsofinfinity:ruby"    }  },  "result": {    "item": "ringsofinfinity:rod_of_divination",    "count": 1  }}

@@ -1,0 +1,306 @@
+{
+	//Creative Tabs
+	"itemGroup.ROFBlockItemGroupTab": "Contained Infinity Blocks",
+	"itemGroup.ROFItemGroupTab": "Contained Infinity Items",
+	"itemGroup.ROFToolsGroupTab": "Contained Infinity Tools",
+	
+	
+	
+	//BLOCKS
+	
+	
+	
+	
+	//OVERWORLD BLOCKS
+	
+	//OVERWORLD BUILDING BLOCKS
+	//MARBLE
+	"block.ringsofinfinity.marble": "Marble",
+	"block.ringsofinfinity.marble_bricks": "Marble Bricks",
+	"block.ringsofinfinity.polished_marble": "Polished Marble",
+	"block.ringsofinfinity.polished_marble_bricks": "Polished Marble Bricks",
+	"block.ringsofinfinity.marble_stairs": "Marble Stairs",
+	"block.ringsofinfinity.marble_brick_stairs": "Marble Brick Stairs",
+	"block.ringsofinfinity.polished_marble_stairs": "Polished Marble Stairs",
+	"block.ringsofinfinity.polished_marble_brick_stairs": "Polished Marble Brick Stairs",
+	"block.ringsofinfinity.marble_slab": "Marble Slab",
+	"block.ringsofinfinity.marble_brick_slab": "Marble Brick Slab", 
+	"block.ringsofinfinity.polished_marble_slab": "Polished Marble Slab",
+	"block.ringsofinfinity.polished_marble_brick_slab": "Polished Marble Brick Slab",
+	"block.ringsofinfinity.marble_wall": "Marble Wall",
+	"block.ringsofinfinity.marble_brick_wall": "Marble Brick Wall",
+	"block.ringsofinfinity.polished_marble_wall": "Polished Marble Wall",
+	"block.ringsofinfinity.polished_marble_brick_wall": "Polished Marble Brick Wall",
+	//GNEISS
+	"block.ringsofinfinity.gneiss": "Gneiss",
+	"block.ringsofinfinity.gneiss_bricks": "Gneiss Bricks",
+	"block.ringsofinfinity.polished_gneiss": "Polished Gneiss",
+	"block.ringsofinfinity.polished_gneiss_bricks": "Polished Gneiss Bricks",
+	"block.ringsofinfinity.gneiss_stairs": "Gneiss Stairs",
+	"block.ringsofinfinity.gneiss_brick_stairs": "Gneiss Brick Stairs",
+	"block.ringsofinfinity.polished_gneiss_stairs": "Polished Gneiss Stairs",
+	"block.ringsofinfinity.polished_gneiss_brick_stairs": "Polished Gneiss Brick Stairs",
+	"block.ringsofinfinity.gneiss_slab": "Gneiss Slab",
+	"block.ringsofinfinity.gneiss_brick_slab": "Gneiss Brick Slab", 
+	"block.ringsofinfinity.polished_gneiss_slab": "Polished Gneiss Slab",
+	"block.ringsofinfinity.polished_gneiss_brick_slab": "Polished Gneiss Brick Slab",
+	"block.ringsofinfinity.gneiss_wall": "Gneiss Wall",
+	"block.ringsofinfinity.gneiss_brick_wall": "Gneiss Brick Wall",
+	"block.ringsofinfinity.polished_gneiss_wall": "Polished Gneiss Wall",
+	"block.ringsofinfinity.polished_gneiss_brick_wall": "Polished Gneiss Brick Wall",
+	//BRECCIA
+	"block.ringsofinfinity.breccia": "Breccia",
+	"block.ringsofinfinity.breccia_bricks": "Breccia Bricks",
+	"block.ringsofinfinity.polished_breccia": "Polished Breccia",
+	"block.ringsofinfinity.polished_breccia_bricks": "Polished Breccia Bricks",
+	"block.ringsofinfinity.breccia_stairs": "Breccia Stairs",
+	"block.ringsofinfinity.breccia_brick_stairs": "Breccia Brick Stairs",
+	"block.ringsofinfinity.polished_breccia_stairs": "Polished Breccia Stairs",
+	"block.ringsofinfinity.polished_breccia_brick_stairs": "Polished Breccia Brick Stairs",
+	"block.ringsofinfinity.breccia_slab": "Breccia Slab",
+	"block.ringsofinfinity.breccia_brick_slab": "Breccia Brick Slab", 
+	"block.ringsofinfinity.polished_breccia_slab": "Polished Breccia Slab",
+	"block.ringsofinfinity.polished_breccia_brick_slab": "Polished Breccia Brick Slab",
+	"block.ringsofinfinity.breccia_wall": "Breccia Wall",
+	"block.ringsofinfinity.breccia_brick_wall": "Breccia Brick Wall",
+	"block.ringsofinfinity.polished_breccia_wall": "Polished Breccia Wall",
+	"block.ringsofinfinity.polished_breccia_brick_wall": "Polished Breccia Brick Wall",
+	//SILTSTONE
+	"block.ringsofinfinity.siltstone": "Siltstone",
+	"block.ringsofinfinity.siltstone_bricks": "Siltstone Bricks",
+	"block.ringsofinfinity.polished_siltstone": "Polished Siltstone",
+	"block.ringsofinfinity.polished_siltstone_bricks": "Polished Siltstone Bricks",
+	"block.ringsofinfinity.siltstone_stairs": "Siltstone Stairs",
+	"block.ringsofinfinity.siltstone_brick_stairs": "Siltstone Brick Stairs",
+	"block.ringsofinfinity.polished_siltstone_stairs": "Polished Siltstone Stairs",
+	"block.ringsofinfinity.polished_siltstone_brick_stairs": "Polished Siltstone Brick Stairs",
+	"block.ringsofinfinity.siltstone_slab": "Siltstone Slab",
+	"block.ringsofinfinity.siltstone_brick_slab": "Siltstone Brick Slab", 
+	"block.ringsofinfinity.polished_siltstone_slab": "Polished Siltstone Slab",
+	"block.ringsofinfinity.polished_siltstone_brick_slab": "Polished Siltstone Brick Slab",
+	"block.ringsofinfinity.siltstone_wall": "Siltstone Wall",
+	"block.ringsofinfinity.siltstone_brick_wall": "Siltstone Brick Wall",
+	"block.ringsofinfinity.polished_siltstone_wall": "Polished Siltstone Wall",
+	"block.ringsofinfinity.polished_siltstone_brick_wall": "Polished Siltstone Brick Wall",
+	
+	//OVERWORLD ORES
+	"block.ringsofinfinity.rose_gold_ore": "Rose Gold Ore",
+	"block.ringsofinfinity.carbon_infused_iron_ore": "Carbon-Infused Iron Ore",
+	"block.ringsofinfinity.lignite_coal_ore": "Lignite Coal Ore",
+	"block.ringsofinfinity.sapphire_ore": "Sapphire Ore",
+	"block.ringsofinfinity.bauxite_ore": "Bauxite Ore",
+	"block.ringsofinfinity.ruby_ore": "Ruby Ore",
+	"block.ringsofinfinity.sulphur_ore": "Sulphur Ore",
+	
+	//OVERWORLD INGOT BLOCKS
+	"block.ringsofinfinity.block_of_rose_gold": "Block of Rose Gold",
+	"block.ringsofinfinity.block_of_blister_steel": "Block of Blister Steel",
+	"block.ringsofinfinity.block_of_aluminum": "Block of Aluminum",
+	"block.ringsofinfinity.block_of_ferroallide_steel": "Block of Ferroallide Steel",
+	
+	//OVERWORLD GEM BLOCKS
+	"block.ringsofinfinity.block_of_lignite_coal": "Block of Lignite Coal",
+	"block.ringsofinfinity.block_of_sapphire": "Block of Sapphire",
+	"block.ringsofinfinity.block_of_ruby": "Block of Ruby",
+	"block.ringsofinfinity.block_of_sulphur": "Block of Sulphur",
+	
+	//OVERWORLD FUNCTIONAL BLOCKS
+	"block.ringsofinfinity.alloy_forge": "Alloy Forge",
+	"block.ringsofinfinity.warding_beacon": "Warding Beacon",
+	
+	"containerringsofinfinity.alloy_forge": "Alloy Forge",
+	
+	
+	
+	//NETHER BLOCKS
+	
+	//NETHER BUILDING BLOCKS
+	//BASALT
+	"block.ringsofinfinity.basalt": "Gabbro",
+	"block.ringsofinfinity.basalt_bricks": "Gabbro Bricks",
+	"block.ringsofinfinity.polished_basalt": "Polished Gabbro",
+	"block.ringsofinfinity.polished_basalt_bricks": "Polished Gabbro Bricks",
+	"block.ringsofinfinity.basalt_stairs": "Gabbro Stairs",
+	"block.ringsofinfinity.basalt_brick_stairs": "Gabbro Brick Stairs",
+	"block.ringsofinfinity.polished_basalt_stairs": "Polished Gabbro Stairs",
+	"block.ringsofinfinity.polished_basalt_brick_stairs": "Polished Gabbro Brick Stairs",
+	"block.ringsofinfinity.basalt_slab": "Gabbro Slab",
+	"block.ringsofinfinity.basalt_brick_slab": "Gabbro Brick Slab", 
+	"block.ringsofinfinity.polished_basalt_slab": "Polished Gabbro Slab",
+	"block.ringsofinfinity.polished_basalt_brick_slab": "Polished Gabbro Brick Slab",
+	"block.ringsofinfinity.basalt_wall": "Gabbro Wall",
+	"block.ringsofinfinity.basalt_brick_wall": "Gabbro Brick Wall",
+	"block.ringsofinfinity.polished_basalt_wall": "Polished Gabbro Wall",
+	"block.ringsofinfinity.polished_basalt_brick_wall": "Polished Gabbro Brick Wall",
+	//SCORIA
+	"block.ringsofinfinity.scoria": "Scoria",
+	"block.ringsofinfinity.scoria_bricks": "Scoria Bricks",
+	"block.ringsofinfinity.polished_scoria": "Polished Scoria",
+	"block.ringsofinfinity.polished_scoria_bricks": "Polished Scoria Bricks",
+	"block.ringsofinfinity.scoria_stairs": "Scoria Stairs",
+	"block.ringsofinfinity.scoria_brick_stairs": "Scoria Brick Stairs",
+	"block.ringsofinfinity.polished_scoria_stairs": "Polished Scoria Stairs",
+	"block.ringsofinfinity.polished_scoria_brick_stairs": "Polished Scoria Brick Stairs",
+	"block.ringsofinfinity.scoria_slab": "Scoria Slab",
+	"block.ringsofinfinity.scoria_brick_slab": "Scoria Brick Slab", 
+	"block.ringsofinfinity.polished_scoria_slab": "Polished Scoria Slab",
+	"block.ringsofinfinity.polished_scoria_brick_slab": "Polished Scoria Brick Slab",
+	"block.ringsofinfinity.scoria_wall": "Scoria Wall",
+	"block.ringsofinfinity.scoria_brick_wall": "Scoria Brick Wall",
+	"block.ringsofinfinity.polished_scoria_wall": "Polished Scoria Wall",
+	"block.ringsofinfinity.polished_scoria_brick_wall": "Polished Scoria Brick Wall",
+	//DIABASE
+	"block.ringsofinfinity.diabase": "Diabase",
+	"block.ringsofinfinity.diabase_bricks": "Diabase Bricks",
+	"block.ringsofinfinity.polished_diabase": "Polished Diabase",
+	"block.ringsofinfinity.polished_diabase_bricks": "Polished Diabase Bricks",
+	"block.ringsofinfinity.diabase_stairs": "Diabase Stairs",
+	"block.ringsofinfinity.diabase_brick_stairs": "Diabase Brick Stairs",
+	"block.ringsofinfinity.polished_diabase_stairs": "Polished Diabase Stairs",
+	"block.ringsofinfinity.polished_diabase_brick_stairs": "Polished Diabase Brick Stairs",
+	"block.ringsofinfinity.diabase_slab": "Diabase Slab",
+	"block.ringsofinfinity.diabase_brick_slab": "Diabase Brick Slab", 
+	"block.ringsofinfinity.polished_diabase_slab": "Polished Diabase Slab",
+	"block.ringsofinfinity.polished_diabase_brick_slab": "Polished Diabase Brick Slab",
+	"block.ringsofinfinity.diabase_wall": "Diabase Wall",
+	"block.ringsofinfinity.diabase_brick_wall": "Diabase Brick Wall",
+	"block.ringsofinfinity.polished_diabase_wall": "Polished Diabase Wall",
+	"block.ringsofinfinity.polished_diabase_brick_wall": "Polished Diabase Brick Wall",
+	//CHLORITE
+	"block.ringsofinfinity.chlorite": "Chlorite",
+	"block.ringsofinfinity.chlorite_bricks": "Chlorite Bricks",
+	"block.ringsofinfinity.polished_chlorite": "Polished Chlorite",
+	"block.ringsofinfinity.polished_chlorite_bricks": "Polished Chlorite Bricks",
+	"block.ringsofinfinity.chlorite_stairs": "Chlorite Stairs",
+	"block.ringsofinfinity.chlorite_brick_stairs": "Chlorite Brick Stairs",
+	"block.ringsofinfinity.polished_chlorite_stairs": "Polished Chlorite Stairs",
+	"block.ringsofinfinity.polished_chlorite_brick_stairs": "Polished Chlorite Brick Stairs",
+	"block.ringsofinfinity.chlorite_slab": "Chlorite Slab",
+	"block.ringsofinfinity.chlorite_brick_slab": "Chlorite Brick Slab", 
+	"block.ringsofinfinity.polished_chlorite_slab": "Polished Chlorite Slab",
+	"block.ringsofinfinity.polished_chlorite_brick_slab": "Polished Chlorite Brick Slab",
+	"block.ringsofinfinity.chlorite_wall": "Chlorite Wall",
+	"block.ringsofinfinity.chlorite_brick_wall": "Chlorite Brick Wall",
+	"block.ringsofinfinity.polished_chlorite_wall": "Polished Chlorite Wall",
+	"block.ringsofinfinity.polished_chlorite_brick_wall": "Polished Chlorite Brick Wall",
+	//COBRA STONE
+	"block.ringsofinfinity.cobra_stone": "Cobra Stone",
+	"block.ringsofinfinity.cobra_stone_lamp": "Cobra Stone Lamp",
+	//ROSE QUARTZ
+	"block.ringsofinfinity.block_of_rose_quartz": "Block of Rose Quartz",
+	"block.ringsofinfinity.smooth_rose_quartz": "Smooth Rose Quartz",
+	"block.ringsofinfinity.chiseled_rose_quartz": "Chiseled Rose Quartz",
+	"block.ringsofinfinity.rose_quartz_pillar": "Rose Quartz Pillar",
+	"block.ringsofinfinity.rose_quartz_stairs": "Rose Quartz Stairs",
+	"block.ringsofinfinity.smooth_rose_quartz_stairs": "Smooth Rose Quartz Stairs",
+	"block.ringsofinfinity.rose_quartz_slab": "Rose Quartz Slab",
+	"block.ringsofinfinity.smooth_rose_quartz_slab": "Smooth Rose Quartz Slab",
+	"block.ringsofinfinity.rose_quartz_wall": "Rose Quartz Wall",
+	"block.ringsofinfinity.smooth_rose_quartz_wall": "Smooth Rose Quartz Wall", 
+	
+	//NETHER ORES
+	"block.ringsofinfinity.rose_quartz_ore": "Rose Quartz Ore",
+	"block.ringsofinfinity.black_jade_ore": "Black Jade Ore",
+	"block.ringsofinfinity.cobalt_ore": "Cobalt Ore",
+	"block.ringsofinfinity.nickel_ore": "Nickel Ore",
+	
+	//OVERWORLD RESOURCE BLOCKS
+	"block.ringsofinfinity.block_of_black_jade": "Block of Black Jade",
+	"block.ringsofinfinity.block_of_cobalt": "Block of Cobalt",
+	"block.ringsofinfinity.block_of_nickel": "Block of Nickel",
+	"block.ringsofinfinity.block_of_demon_steel": "Block of Demon Steel",
+	
+	//NETHER FUNCTIONAL BLOCKS
+	"block.ringsofinfinity.demonic_alloy_forge": "Demonic Alloy Forge",
+	"block.ringsofinfinity.demonic_warding_beacon": "Demonic Warding Beacon",
+	"block.ringsofinfinity.hellfire_furnace": "Hellfire Furnace",
+	
+	
+	//END BLOCKS
+	
+	//END ORES
+	"block.ringsofinfinity.pink_topaz_ore": "Pink Topaz Ore",
+	"block.ringsofinfinity.purpurite_ore": "Purpurite Ore",
+	
+	//END GEM BLOCKS
+	"block.ringsofinfinity.block_of_pink_topaz": "Block of Pink Topaz",
+	"block.ringsofinfinity.block_of_purpurite": "Block of Purpurite",
+	
+	
+		
+	
+	//ITEMS
+	
+	
+
+	
+	//OVERWORLD ITEMS
+
+	//Armor
+	"item.ringsofinfinity.ruby_sword":"Ruby Sword",
+	"item.ringsofinfinity.ferroallide_sword":"Ferroallide Sword",
+
+	"item.ringsofinfinity.ruby_helmet":"Ruby Helmet",
+	"item.ringsofinfinity.ruby_chestplate":"Ruby Chestplate",
+	"item.ringsofinfinity.ruby_leggings":"Ruby Leggings",
+	"item.ringsofinfinity.ruby_boots":"Ruby Boots",
+
+	"item.ringsofinfinity.ferroallide_helmet":"Ferroallide Helmet",
+	"item.ringsofinfinity.ferroallide_chestplate":"Ferroallide Chestplate",
+	"item.ringsofinfinity.ferroallide_leggings":"Ferroallide Leggings",
+	"item.ringsofinfinity.ferroallide_boots":"Ferroallide Boots",
+
+	"item.ringsofinfinity.slime_boots":"Slime Boots",
+
+	//Tools
+	"item.ringsofinfinity.ruby_pickaxe":"Ruby Pickaxe",
+	"item.ringsofinfinity.ruby_axe":"Ruby Axe",
+	"item.ringsofinfinity.ruby_shovel":"Ruby Shovel",
+	"item.ringsofinfinity.ruby_hoe":"Ruby Hoe",
+
+	"item.ringsofinfinity.ferroallide_pickaxe":"Ferroallide Pickaxe",
+	"item.ringsofinfinity.ferroallide_axe":"Ferroallide Axe",
+	"item.ringsofinfinity.ferroallide_shovel":"Ferroallide Shovel",
+	"item.ringsofinfinity.ferroallide_hoe":"Ferroallide Hoe",
+
+	"item.ringsofinfinity.blast_pickaxe":"Blast Pickaxe",
+	"item.ringsofinfinity.blast_axe":"Blast Axe",
+	
+	//Misc
+	"item.ringsofinfinity.amulet_of_scultari":"Amulet Of Scultari",
+	"item.ringsofinfinity.amulet_of_vulcanus":"Amulet Of Vulcanus",
+	"item.ringsofinfinity.rod_of_divination":"Rod Of Divination",
+
+	//Overworld Gems
+	"item.ringsofinfinity.lignite_coal":"Lignite Coal",
+	"item.ringsofinfinity.sapphire":"Sapphire",
+	"item.ringsofinfinity.ruby":"Ruby",
+	"item.ringsofinfinity.sulphur":"Sulphur Dust",
+	
+	//Overworld Ingots
+	"item.ringsofinfinity.rose_gold_ingot":"Rose Gold Ingot",
+	"item.ringsofinfinity.blister_steel_ingot":"Blister Steel Ingot",
+	"item.ringsofinfinity.aluminum_ingot":"Aluminum Ingot",
+	"item.ringsofinfinity.ferroallide_steel_ingot":"Ferroallide Steel Ingot",
+	
+	//Overworld Misc.
+	"item.ringsofinfinity.cocain":"Cocain",
+	
+	//NETHER ITEMS
+	
+	//Overworld Ingots
+	"item.ringsofinfinity.cobalt_ingot":"Cobalt Ingot",
+	"item.ringsofinfinity.nickel_ingot":"Nickel Ingot",
+	"item.ringsofinfinity.demon_steel_ingot":"Demon Steel Ingot",
+
+	//Nether Gems
+	"item.ringsofinfinity.black_jade":"Black Jade",
+	"item.ringsofinfinity.cobra_stone_dust":"Cobra Stone Dust",
+	"item.ringsofinfinity.rose_quartz": "Rose Quartz",
+	
+	//END ITEMS
+	
+	//End Gems
+	"item.ringsofinfinity.pink_topaz": "Pink Topaz",
+	"item.ringsofinfinity.purpurite": "Purpurite"
+}

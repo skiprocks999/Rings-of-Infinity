@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "iii",    "iii",    "iii"  ],  "key": {    "i": {      "item": "ringsofinfinity:lignite_coal"    }  },  "result": {    "item": "ringsofinfinity:block_of_lignite_coal"  }}

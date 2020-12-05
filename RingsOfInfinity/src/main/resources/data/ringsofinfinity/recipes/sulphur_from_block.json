@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "i"  ],  "key": {    "i": {      "item": "ringsofinfinity:block_of_sulphur"    }  },  "result": {    "item": "ringsofinfinity:sulphur",    "count":9  }}

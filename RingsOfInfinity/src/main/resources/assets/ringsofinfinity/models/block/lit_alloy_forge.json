@@ -1,0 +1,1 @@
+{    "parent": "block/orientable",    "textures": {        "top": "ringsofinfinity:blocks/alloy_forge_top",        "bottom":"ringsofinfinity:blocks/alloy_forge_bottom",        "front": "ringsofinfinity:blocks/lit_alloy_forge_front",        "side": "ringsofinfinity:blocks/alloy_forge_side"    }}

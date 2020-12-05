@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "bbb"  ],  "key": {    "b": {      "item": "ringsofinfinity:chlorite"    }  },  "result": {    "item": "ringsofinfinity:chlorite_slab",    "count": 6  }}

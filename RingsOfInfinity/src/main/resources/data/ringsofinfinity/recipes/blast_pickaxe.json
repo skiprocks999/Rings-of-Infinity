@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "TrT",    " | ",    " | "  ],  "key": {    "r": {      "item": "ringsofinfinity:ruby"    },    "|": {      "item": "minecraft:stick"    },    "T": {      "item": "minecraft:tnt"    }  },  "result": {    "item": "ringsofinfinity:blast_pickaxe",    "count": 1  }}

@@ -1,0 +1,1 @@
+{    "variants": {        "type=bottom": { "model": "ringsofinfinity:block/diabase_slab" },        "type=top": { "model": "ringsofinfinity:block/diabase_slab_top" },        "type=double": { "model": "ringsofinfinity:block/diabase" }    }}

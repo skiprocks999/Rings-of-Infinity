@@ -1,0 +1,1 @@
+{    "parent": "block/stairs",    "textures": {        "bottom": "ringsofinfinity:blocks/polished_chlorite_bricks",        "top": "ringsofinfinity:blocks/polished_chlorite_bricks",        "side": "ringsofinfinity:blocks/polished_chlorite_bricks"    }}
