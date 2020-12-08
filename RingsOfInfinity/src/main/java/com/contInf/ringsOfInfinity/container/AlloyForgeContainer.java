@@ -13,9 +13,9 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.contInf.ringsOfInfinity.RingsOfInfinity;
-import com.contInf.ringsOfInfinity.container.SlotItemHandlers.AlloyForgeFuelSlotHandler;
-import com.contInf.ringsOfInfinity.container.SlotItemHandlers.AlloyForgeInputSlotHandler;
-import com.contInf.ringsOfInfinity.container.SlotItemHandlers.AlloyForgeOutputSlotHandler;
+import com.contInf.ringsOfInfinity.container.SlotItemHandlers.FuelSlotHandler;
+import com.contInf.ringsOfInfinity.container.SlotItemHandlers.InputSlotHandler;
+import com.contInf.ringsOfInfinity.container.SlotItemHandlers.OutputSlotHandler;
 import com.contInf.ringsOfInfinity.init.BlockInit;
 import com.contInf.ringsOfInfinity.init.ContInfContainerTypes;
 import com.contInf.ringsOfInfinity.tileentity.AlloyForgeTileEntity;
@@ -74,14 +74,17 @@ public class AlloyForgeContainer extends Container {
 		
 		//Furnace Slots
 		
+		String[] validInputs = {"blister_steel_ingot","aluminum_ingot"};
+		String[] validFuels = {"coal","lignite_coal"};
+		
 		//Input1
-		this.addSlot(new AlloyForgeInputSlotHandler(tile.getInventory(), 0, 46, 16));
+		this.addSlot(new InputSlotHandler(tile.getInventory(), 0, 46, 16,validInputs));
 		//Input2
-		this.addSlot(new AlloyForgeInputSlotHandler(tile.getInventory(), 1, 46, 54));
+		this.addSlot(new InputSlotHandler(tile.getInventory(), 1, 46, 54,validInputs));
 		//Output
-		this.addSlot(new AlloyForgeOutputSlotHandler(tile.getInventory(), 2, 116, 35));
+		this.addSlot(new OutputSlotHandler(tile.getInventory(), 2, 116, 35));
 		//Fuel
-		this.addSlot(new AlloyForgeFuelSlotHandler(tile.getInventory(), 3, 8, 54));
+		this.addSlot(new FuelSlotHandler(tile.getInventory(), 3, 8, 54,validFuels));
 		
 		
 		//Tracks current smelt time
@@ -161,7 +164,6 @@ public class AlloyForgeContainer extends Container {
 	@OnlyIn(Dist.CLIENT)
 	public int getSmeltProgressionScaled() {
 		return this.currentSmeltTime.get() !=0 && this.tileEntity.maxSmeltTime != 0 
-				&& this.currentBurnTime.get() > 0
 					? this.currentSmeltTime.get() * 36 / this.tileEntity.maxSmeltTime : 0;
 				
 	}

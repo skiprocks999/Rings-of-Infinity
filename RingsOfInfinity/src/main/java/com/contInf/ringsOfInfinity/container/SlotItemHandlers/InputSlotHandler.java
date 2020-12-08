@@ -11,13 +11,15 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class AlloyForgeFuelSlotHandler extends SlotItemHandler {
-	
-	private static final Logger logger = LogManager.getLogger(RingsOfInfinity.modID);
+public class InputSlotHandler extends SlotItemHandler {
 
-	public AlloyForgeFuelSlotHandler(IItemHandler itemHandler, int index, int xPosition, int yPosition) {
+	private static final Logger logger = LogManager.getLogger(RingsOfInfinity.modID);
+	private String[] validInputs = null;
+	
+	public InputSlotHandler(IItemHandler itemHandler, int index, 
+			int xPosition, int yPosition, String[] validInputs) {
 		super(itemHandler, index, xPosition, yPosition);
-		// TODO Auto-generated constructor stub
+		this.validInputs = validInputs;
 	}
 	
 	@Override
@@ -26,12 +28,12 @@ public class AlloyForgeFuelSlotHandler extends SlotItemHandler {
 		String itemName = stack.toString();
 		int spaceLoc = itemName.indexOf(' ');
 		itemName = itemName.substring(spaceLoc + 1);
-		//logger.debug("item name :" + itemName);
-		switch(itemName) {
-		case "coal" : return true;
-		case "lignite_coal": return true;
-		default: return false;
+		for(String validInput:validInputs) {
+			if(validInput.equalsIgnoreCase(itemName)) {
+				return true;
+			}
 		}
+		return false;
 	}
 
 }

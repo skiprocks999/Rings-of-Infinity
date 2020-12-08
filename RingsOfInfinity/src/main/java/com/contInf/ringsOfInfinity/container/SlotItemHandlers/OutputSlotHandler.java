@@ -6,9 +6,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 
-public class AlloyForgeOutputSlotHandler extends SlotItemHandler {
+public class OutputSlotHandler extends SlotItemHandler {
 
-	public AlloyForgeOutputSlotHandler(IItemHandler itemHandler, int index, int xPosition, int yPosition) {
+	public OutputSlotHandler(IItemHandler itemHandler, int index, int xPosition, int yPosition) {
 		super(itemHandler, index, xPosition, yPosition);
 		// TODO Auto-generated constructor stub
 	}

@@ -18,6 +18,7 @@ import org.apache.logging.log4j.Logger;
 import com.contInf.ringsOfInfinity.RingsOfInfinity;
 import com.contInf.ringsOfInfinity.container.AlloyForgeContainer;
 import com.contInf.ringsOfInfinity.init.BlockTileEntityTypes;
+import com.contInf.ringsOfInfinity.init.ItemInit;
 import com.contInf.ringsOfInfinity.init.RecipeSerializerInit;
 import com.contInf.ringsOfInfinity.objects.blocks.AlloyForge;
 import com.contInf.ringsOfInfinity.recipes.AlloyForgeRecipe;
@@ -37,12 +38,12 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.CompoundNBT;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SUpdateTileEntityPacket;
-import net.minecraft.tileentity.AbstractFurnaceTileEntity;
 import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
@@ -64,12 +65,19 @@ public class AlloyForgeTileEntity extends TileEntity
 	
 	
 	private ITextComponent customName;
-	public int currentSmeltTime;
-	public final int maxSmeltTime = 199;
+	
 	private AlloyForgeItemHandler inventory; 
+	
+	public final int maxSmeltTime = 200;
+	public int currentSmeltTime;
 	public int currentBurnTime;
-	public static int itemBurnTime = 1;
+	public static int itemBurnTime = 0;
+	
 	private static final Logger logger = LogManager.getLogger(RingsOfInfinity.modID);
+	
+	private static final CustomFuelType[] validFuels = 
+		{new CustomFuelType(ItemInit.lignite_coal.get(),1600)};
+	
 	
 	/* Constructors */
 	
@@ -102,79 +110,93 @@ public class AlloyForgeTileEntity extends TileEntity
 	/* WHAT THE BLOCK DOES*/
 	@Override
 	public void tick() {
-		//Tells game to read and write from disk
-		boolean dirty = false;
+		
+		
+		boolean currentState = isLit();
+		boolean startedBurning = false;
+		
+		if(isLit()) {
+			this.currentBurnTime--;
+		}
 		
 		if(this.world != null && !this.world.isRemote) {
 			
-			//Burn Time Functionality
+			ItemStack fuelSlot = this.inventory.getStackInSlot(3);
 			
-			if(!isLit()) {
-				ItemStack[] ingredients = new ItemStack[2];
-				ingredients[0] = this.inventory.getStackInSlot(0);
-				ingredients[1] = this.inventory.getStackInSlot(1);
-				if(this.getRecipe(ingredients) != null) {
-					//logger.debug(this.inventory.getStackInSlot(3));
-					if(this.inventory.getStackInSlot(3) != ItemStack.EMPTY 
-							&& this.inventory.getStackInSlot(2).getCount() < 64) {
-						this.currentBurnTime = ForgeHooks.getBurnTime(this.inventory.getStackInSlot(3));
-						if(isLit()) {
-							itemBurnTime = ForgeHooks.getBurnTime(this.inventory.getStackInSlot(3));
-							this.inventory.decrStackSize(3,1);
-							//logger.debug("burn time set to " + itemBurnTime);
-						}else {
-							itemBurnTime = 1;
-						}
+			ItemStack[] ingredients = new ItemStack[2];
+			ingredients[0] = this.inventory.getStackInSlot(0);
+			ingredients[1] = this.inventory.getStackInSlot(1);
+			
+			if(isLit()||
+					(!(ingredients[0].isEmpty()&&ingredients[1].isEmpty()) && !fuelSlot.isEmpty())) {
+				
+				AlloyForgeRecipe validRecipe = this.getRecipe(ingredients);
+				
+				if(!isLit() && validRecipe != null && 
+						(this.inventory.getStackInSlot(2).getCount() < 63)) {
+					
+					this.currentBurnTime = this.getBurnTime(fuelSlot);
+					itemBurnTime = currentBurnTime;
+					
+					if(this.isLit()) {
+						
+						startedBurning = true;
+						this.inventory.decrStackSize(3,1);
+						
 					}
+					
 				}
+			
+			
+				if(this.isLit() && validRecipe!= null) {
+					
+					this.currentSmeltTime ++;
+					
+					if(this.currentSmeltTime == maxSmeltTime) {
+						
+						this.currentSmeltTime = 0;
+						
+						ItemStack output = this.getRecipe(ingredients).getRecipeOutput();
+						this.inventory.insertItem(2, output.copy(),false);
+						this.inventory.decrStackSize(0,1);
+						this.inventory.decrStackSize(1,1);
+						
+						startedBurning = true;
+						
+					}
+					
+				}else {
+					
+					this.currentSmeltTime = 0;
+					
+				}
+				
+			}else if(!this.isLit() && this.currentSmeltTime > 0) {
+				
+				this.currentSmeltTime = MathHelper.clamp(this.currentSmeltTime - 2, 0, this.maxSmeltTime);
+			
 			}
 			
-			//Recipe Functionality 
-			
-			if(isLit()) {
-				ItemStack[] ingredients = new ItemStack[2];
-				ingredients[0] = this.inventory.getStackInSlot(0);
-				ingredients[1] = this.inventory.getStackInSlot(1);
-				if(this.getRecipe(ingredients) != null){
-					if(this.inventory.getStackInSlot(2).getCount() < 64) {
-						if(this.currentBurnTime - 1 > 0) {
-							if(this.currentSmeltTime != this.maxSmeltTime) {
-															
-								this.currentSmeltTime ++;
-								this.world.setBlockState(this.getPos(), this.getBlockState().with(AlloyForge.LIT, true));
-								if(this.currentBurnTime - 1 == 0) {
-									this.currentSmeltTime = 0;
-								}
-								dirty = true;
-								
-							}else {
-								
-								this.currentSmeltTime = 0;
-								ItemStack output = this.getRecipe(ingredients).getRecipeOutput();
-								this.inventory.insertItem(2, output.copy(),false);
-								this.inventory.decrStackSize(0,1);
-								this.inventory.decrStackSize(1,1);
-								
-							}
-						}
-					}
-				}
-				//logger.debug("current burn time :" + this.currentBurnTime);
+			if(currentState != this.isLit()) {
 				
-				if(this.currentBurnTime - 1 == 0) {
-					this.world.setBlockState(this.getPos(), this.getBlockState().with(AlloyForge.LIT, false));
-					dirty = true;
-				}
+				startedBurning = true;
 				
-				this.currentBurnTime--;
+				this.world.setBlockState(this.getPos(), 
+						this.getBlockState().with(AlloyForge.LIT, Boolean.valueOf(this.isLit())));
 				
 			}
 		}
 		
-		if(dirty) {
+		
+		if(startedBurning) {
+			
 			this.markDirty();
-			this.world.notifyBlockUpdate(this.getPos(), this.getBlockState(), this.getBlockState(), Constants.BlockFlags.BLOCK_UPDATE);
+			
+			this.world.notifyBlockUpdate(this.getPos(), 
+					this.getBlockState(), this.getBlockState(), Constants.BlockFlags.BLOCK_UPDATE);
+		
 		}
+		
 	}
 	
 	
@@ -342,7 +364,19 @@ public class AlloyForgeTileEntity extends TileEntity
 	}
 	
 	
-	
+	private int getBurnTime(ItemStack fuel) {
+		
+		int itemBurnTime = ForgeHooks.getBurnTime(fuel);
+		if(itemBurnTime < 1) {
+			for(CustomFuelType customFuel:validFuels) {
+				if(customFuel.equals(fuel)) {
+					itemBurnTime = customFuel.getBurnTime();
+				}
+			}
+		}
+		return itemBurnTime;
+		
+	}
 	
 	
 	
