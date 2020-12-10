@@ -1,4 +1,4 @@
-package com.contInf.ringsOfInfinity.tileentity;
+package com.contInf.ringsOfInfinity.tileentity.tileUtils;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

@@ -439,8 +439,8 @@ public class BlockInit {
 					Block.Properties.from(Blocks.FURNACE)));
 	//warding beacon
 	public static final RegistryObject<Block> warding_beacon = 
-			BLOCKS.register("warding_beacon", () -> new WardingBeacon(Block.Properties.create(Material.IRON).
-			hardnessAndResistance(2.0f, 3.0f).lightValue(15).sound(SoundType.STONE)));
+			BLOCKS.register("warding_beacon", () -> new WardingBeacon(
+					Block.Properties.from(Blocks.BEACON)));
 
 
 	/*NETHER BLOCKS*/

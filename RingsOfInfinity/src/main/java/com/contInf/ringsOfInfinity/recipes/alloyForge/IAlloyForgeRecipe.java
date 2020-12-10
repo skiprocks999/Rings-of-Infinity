@@ -3,7 +3,7 @@
  * purpose: interface housing functional methods for AlloyForge recipe
  */
 
-package com.contInf.ringsOfInfinity.recipes;
+package com.contInf.ringsOfInfinity.recipes.alloyForge;
 
 import javax.annotation.Nonnull;
 

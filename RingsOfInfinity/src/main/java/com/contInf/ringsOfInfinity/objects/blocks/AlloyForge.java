@@ -8,7 +8,7 @@ import java.util.Random;
 
 import com.contInf.ringsOfInfinity.init.BlockTileEntityTypes;
 import com.contInf.ringsOfInfinity.tileentity.AlloyForgeTileEntity;
-import com.contInf.ringsOfInfinity.util.AlloyForgeItemHandler;
+import com.contInf.ringsOfInfinity.util.TileEntityItemHandler;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -189,7 +189,7 @@ public class AlloyForge extends Block{
 		TileEntity tile = worldIn.getTileEntity(pos);
 		if (tile instanceof AlloyForgeTileEntity && state.getBlock() != newState.getBlock()) {
 			AlloyForgeTileEntity alloyFurnace = (AlloyForgeTileEntity) tile;
-			((AlloyForgeItemHandler) alloyFurnace.getInventory()).toNonNullList().forEach(item -> {
+			((TileEntityItemHandler) alloyFurnace.getInventory()).toNonNullList().forEach(item -> {
 				ItemEntity itemEntity = new ItemEntity(worldIn, pos.getX(), pos.getY(), pos.getZ(), item);
 				worldIn.addEntity(itemEntity);
 			});

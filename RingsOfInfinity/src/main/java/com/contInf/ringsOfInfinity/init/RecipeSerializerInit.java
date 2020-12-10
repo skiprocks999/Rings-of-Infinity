@@ -6,9 +6,9 @@
 package com.contInf.ringsOfInfinity.init;
 
 import com.contInf.ringsOfInfinity.RingsOfInfinity;
-import com.contInf.ringsOfInfinity.recipes.AlloyForgeRecipe;
-import com.contInf.ringsOfInfinity.recipes.AlloyForgeSerializer;
-import com.contInf.ringsOfInfinity.recipes.IAlloyForgeRecipe;
+import com.contInf.ringsOfInfinity.recipes.alloyForge.AlloyForgeRecipe;
+import com.contInf.ringsOfInfinity.recipes.alloyForge.AlloyForgeSerializer;
+import com.contInf.ringsOfInfinity.recipes.alloyForge.IAlloyForgeRecipe;
 
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;

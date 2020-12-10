@@ -3,7 +3,7 @@
  * Purpose: houses form of AlloyForge recipe
  */
 
-package com.contInf.ringsOfInfinity.recipes;
+package com.contInf.ringsOfInfinity.recipes.alloyForge;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;

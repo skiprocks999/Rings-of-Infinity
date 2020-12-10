@@ -5,9 +5,9 @@ import net.minecraft.item.Items;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.items.ItemStackHandler;
 
-public class AlloyForgeItemHandler extends ItemStackHandler{
+public class TileEntityItemHandler extends ItemStackHandler{
 	
-	public AlloyForgeItemHandler(int size, ItemStack... stacks) {
+	public TileEntityItemHandler(int size, ItemStack... stacks) {
 		super(size);
 		
 		for(int index = 0; index < stacks.length; index ++) {
