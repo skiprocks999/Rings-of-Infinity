@@ -1,0 +1,1 @@
+{    "variants": {        "type=bottom": { "model": "ringsofinfinity:block/polished_scoria_brick_slab" },        "type=top": { "model": "ringsofinfinity:block/polished_scoria_brick_slab_top" },        "type=double": { "model": "ringsofinfinity:block/polished_scoria_bricks" }    }}

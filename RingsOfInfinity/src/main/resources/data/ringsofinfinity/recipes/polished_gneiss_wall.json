@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "bbb",    "bbb"  ],  "key": {    "b": {      "item": "ringsofinfinity:polished_gneiss"    }  },  "result": {    "item": "ringsofinfinity:polished_gneiss_wall",    "count": 6  }}

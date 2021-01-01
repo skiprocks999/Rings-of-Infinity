@@ -1,0 +1,1 @@
+{    "parent": "block/stairs",    "textures": {        "bottom": "ringsofinfinity:blocks/diabase_bricks",        "top": "ringsofinfinity:blocks/diabase_bricks",        "side": "ringsofinfinity:blocks/diabase_bricks"    }}

@@ -1,0 +1,1 @@
+{  "type": "minecraft:stonecutting",  "ingredient": {    "item": "ringsofinfinity:block_of_rose_quartz"  },  "result": "ringsofinfinity:chiseled_rose_quartz",  "count":1}

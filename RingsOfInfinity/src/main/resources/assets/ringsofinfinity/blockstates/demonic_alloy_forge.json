@@ -1,0 +1,1 @@
+{    "variants": 	{        "facing=north": {"model": "ringsofinfinity:block/demonic_alloy_forge" },        "facing=south": {"model": "ringsofinfinity:block/demonic_alloy_forge" , "y" : 180 },        "facing=west": {"model": "ringsofinfinity:block/demonic_alloy_forge", "y" : 270},        "facing=east": {"model": "ringsofinfinity:block/demonic_alloy_forge", "y" : 90}       }}

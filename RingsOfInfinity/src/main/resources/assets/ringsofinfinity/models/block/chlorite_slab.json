@@ -1,0 +1,1 @@
+{    "parent": "block/slab",    "textures": {        "bottom": "ringsofinfinity:blocks/chlorite",        "top": "ringsofinfinity:blocks/chlorite",        "side": "ringsofinfinity:blocks/chlorite"    }}

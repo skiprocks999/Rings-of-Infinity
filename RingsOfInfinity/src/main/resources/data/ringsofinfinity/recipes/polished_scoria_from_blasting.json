@@ -1,0 +1,1 @@
+{  "type": "minecraft:blasting",  "ingredient": {    "item": "ringsofinfinity:scoria"  },  "result": "ringsofinfinity:polished_scoria",  "experience": 0.1,  "cookingtime": 100}

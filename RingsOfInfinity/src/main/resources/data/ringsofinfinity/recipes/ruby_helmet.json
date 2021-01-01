@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "rrr",    "r r",    "   "  ],  "key": {    "r": {      "item": "ringsofinfinity:ruby"    }  },  "result": {    "item": "ringsofinfinity:ruby_helmet",    "count": 1  }}

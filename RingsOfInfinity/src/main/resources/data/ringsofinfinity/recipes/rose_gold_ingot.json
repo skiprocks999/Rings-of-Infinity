@@ -1,0 +1,1 @@
+{  "type": "minecraft:smelting",  "ingredient": {    "item": "ringsofinfinity:rose_gold_ore"  },  "result": "ringsofinfinity:rose_gold_ingot",  "experience": 0.7,  "cookingtime": 200}

@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "ii",    "ii"  ],  "key": {    "i": {      "item": "ringsofinfinity:cobra_stone_dust"    }  },  "result": {    "item": "ringsofinfinity:cobra_stone"  }}

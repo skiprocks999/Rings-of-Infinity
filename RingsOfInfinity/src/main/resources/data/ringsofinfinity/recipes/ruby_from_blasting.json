@@ -1,0 +1,1 @@
+{  "type": "minecraft:blasting",  "ingredient": {    "item": "ringsofinfinity:ruby_ore"  },  "result": "ringsofinfinity:ruby",  "experience": 0.7,  "cookingtime": 100}

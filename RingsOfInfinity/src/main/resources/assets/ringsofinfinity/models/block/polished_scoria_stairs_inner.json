@@ -1,0 +1,1 @@
+{    "parent": "block/inner_stairs",    "textures": {        "bottom": "ringsofinfinity:blocks/polished_scoria",        "top": "ringsofinfinity:blocks/polished_scoria",        "side": "ringsofinfinity:blocks/polished_scoria"    }}

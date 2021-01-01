@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "i"  ],  "key": {    "i": {      "item": "ringsofinfinity:block_of_pink_topaz"    }  },  "result": {    "item": "ringsofinfinity:pink_topaz",    "count":9  }}
