@@ -1,1 +1,9 @@
-{    "variants": {        "type=bottom": { "model": "ringsofinfinity:block/marble_slab" },        "type=top": { "model": "ringsofinfinity:block/marble_slab_top" },        "type=double": { "model": "ringsofinfinity:block/marble" }    }}
+{
+"variants": {
+
+"type=bottom": { "model": "ringsofinfinity:block/marble_slab" },
+
+"type=top": { "model": "ringsofinfinity:block/marble_slab_top" },
+
+"type=double": { "model": "ringsofinfinity:block/marble" }
+}}

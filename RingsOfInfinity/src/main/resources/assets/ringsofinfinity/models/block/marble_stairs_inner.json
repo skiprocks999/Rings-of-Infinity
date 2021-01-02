@@ -1,1 +1,1 @@
-{    "parent": "block/inner_stairs",    "textures": {        "bottom": "ringsofinfinity:blocks/marble",        "top": "ringsofinfinity:blocks/marble",        "side": "ringsofinfinity:blocks/marble"    }}
+{"parent": "block/inner_stairs","textures": {"bottom": "ringsofinfinity:blocks/marble","top": "ringsofinfinity:blocks/marble","side": "ringsofinfinity:blocks/marble"}}

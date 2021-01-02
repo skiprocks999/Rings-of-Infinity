@@ -1,1 +1,1 @@
-{    "parent": "block/cube_column",    "textures": {        "side": "ringsofinfinity:blocks/chiseled_rose_quartz_block",        "end": "ringsofinfinity:blocks/chiseled_rose_quartz_block_top"    }}
+{"parent": "block/cube_column","textures": {"side": "ringsofinfinity:blocks/chiseled_rose_quartz_block","end": "ringsofinfinity:blocks/chiseled_rose_quartz_block_top"}}

@@ -1,1 +1,9 @@
-{    "variants": {        "type=bottom": { "model": "ringsofinfinity:block/scoria_slab" },        "type=top": { "model": "ringsofinfinity:block/scoria_slab_top" },        "type=double": { "model": "ringsofinfinity:block/scoria" }    }}
+{
+"variants": {
+
+"type=bottom": { "model": "ringsofinfinity:block/scoria_slab" },
+
+"type=top": { "model": "ringsofinfinity:block/scoria_slab_top" },
+
+"type=double": { "model": "ringsofinfinity:block/scoria" }
+}}

@@ -1,1 +1,5 @@
-{    "variants": 	{        "": { "model": "ringsofinfinity:block/block_of_demon_steel" }    }}
+{
+"variants": 	{
+
+"": { "model": "ringsofinfinity:block/block_of_demon_steel" }
+}}

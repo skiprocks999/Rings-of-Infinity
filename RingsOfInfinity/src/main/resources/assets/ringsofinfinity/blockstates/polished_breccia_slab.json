@@ -1,1 +1,9 @@
-{    "variants": {        "type=bottom": { "model": "ringsofinfinity:block/polished_breccia_slab" },        "type=top": { "model": "ringsofinfinity:block/polished_breccia_slab_top" },        "type=double": { "model": "ringsofinfinity:block/polished_breccia" }    }}
+{
+"variants": {
+
+"type=bottom": { "model": "ringsofinfinity:block/polished_breccia_slab" },
+
+"type=top": { "model": "ringsofinfinity:block/polished_breccia_slab_top" },
+
+"type=double": { "model": "ringsofinfinity:block/polished_breccia" }
+}}

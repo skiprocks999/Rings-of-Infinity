@@ -1,1 +1,5 @@
-{    "variants": 	{        "": { "model": "ringsofinfinity:block/polished_basalt_bricks" }    }}
+{
+"variants": 	{
+
+"": { "model": "ringsofinfinity:block/polished_basalt_bricks" }
+}}

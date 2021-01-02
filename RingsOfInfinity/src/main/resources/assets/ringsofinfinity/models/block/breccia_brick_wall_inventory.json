@@ -1,1 +1,1 @@
-{    "parent": "block/wall_inventory",    "textures": {        "wall": "ringsofinfinity:blocks/breccia_bricks"    }}
+{"parent": "block/wall_inventory","textures": {"wall": "ringsofinfinity:blocks/breccia_bricks"}}

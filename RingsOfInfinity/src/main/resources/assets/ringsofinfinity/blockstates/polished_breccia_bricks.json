@@ -1,1 +1,5 @@
-{    "variants": 	{        "": { "model": "ringsofinfinity:block/polished_breccia_bricks" }    }}
+{
+"variants": 	{
+
+"": { "model": "ringsofinfinity:block/polished_breccia_bricks" }
+}}

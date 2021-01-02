@@ -1,1 +1,1 @@
-{    "parent": "block/cube_all",    "textures": {        "all": "ringsofinfinity:blocks/chlorite"    }}
+{"parent": "block/cube_all","textures": {"all": "ringsofinfinity:blocks/chlorite"}}

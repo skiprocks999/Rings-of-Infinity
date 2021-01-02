@@ -1,1 +1,1 @@
-{    "parent": "block/cube_all",    "textures": {        "all": "ringsofinfinity:blocks/marble_bricks"    }}
+{"parent": "block/cube_all","textures": {"all": "ringsofinfinity:blocks/marble_bricks"}}

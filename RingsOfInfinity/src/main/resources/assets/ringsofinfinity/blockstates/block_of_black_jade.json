@@ -1,1 +1,5 @@
-{    "variants": 	{        "": { "model": "ringsofinfinity:block/block_of_black_jade" }    }}
+{
+"variants": 	{
+
+"": { "model": "ringsofinfinity:block/block_of_black_jade" }
+}}

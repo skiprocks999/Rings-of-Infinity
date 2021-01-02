@@ -1,1 +1,9 @@
-{    "variants": {        "type=bottom": { "model": "ringsofinfinity:block/breccia_slab" },        "type=top": { "model": "ringsofinfinity:block/breccia_slab_top" },        "type=double": { "model": "ringsofinfinity:block/breccia" }    }}
+{
+"variants": {
+
+"type=bottom": { "model": "ringsofinfinity:block/breccia_slab" },
+
+"type=top": { "model": "ringsofinfinity:block/breccia_slab_top" },
+
+"type=double": { "model": "ringsofinfinity:block/breccia" }
+}}

@@ -1,1 +1,5 @@
-{    "variants": 	{        "": { "model": "ringsofinfinity:block/carbon_infused_iron_ore" }    }}
+{
+"variants": 	{
+
+"": { "model": "ringsofinfinity:block/carbon_infused_iron_ore" }
+}}

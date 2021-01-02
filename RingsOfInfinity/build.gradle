@@ -14,7 +14,7 @@ apply plugin: 'net.minecraftforge.gradle'
 apply plugin: 'eclipse'
 apply plugin: 'maven-publish'
 
-version = '1.16.4-1.0:alpha'
+version = '1.16.4-1.0alpha'
 group = 'com.continf.ringsofinfinity' // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = 'ringsofinfinity'
 

@@ -1,1 +1,1 @@
-{    "parent": "block/inner_stairs",    "textures": {        "bottom": "ringsofinfinity:blocks/breccia_bricks",        "top": "ringsofinfinity:blocks/breccia_bricks",        "side": "ringsofinfinity:blocks/breccia_bricks"    }}
+{"parent": "block/inner_stairs","textures": {"bottom": "ringsofinfinity:blocks/breccia_bricks","top": "ringsofinfinity:blocks/breccia_bricks","side": "ringsofinfinity:blocks/breccia_bricks"}}

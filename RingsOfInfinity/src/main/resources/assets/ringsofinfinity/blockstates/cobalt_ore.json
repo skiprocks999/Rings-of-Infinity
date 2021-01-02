@@ -1,1 +1,5 @@
-{    "variants": 	{        "": { "model": "ringsofinfinity:block/cobalt_ore" }    }}
+{
+"variants": 	{
+
+"": { "model": "ringsofinfinity:block/cobalt_ore" }
+}}

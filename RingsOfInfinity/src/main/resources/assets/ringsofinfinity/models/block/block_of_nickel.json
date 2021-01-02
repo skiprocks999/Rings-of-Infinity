@@ -1,1 +1,1 @@
-{    "parent": "block/cube_all",    "textures": {        "all": "ringsofinfinity:blocks/block_of_nickel"    }}
+{"parent": "block/cube_all","textures": {"all": "ringsofinfinity:blocks/block_of_nickel"}}

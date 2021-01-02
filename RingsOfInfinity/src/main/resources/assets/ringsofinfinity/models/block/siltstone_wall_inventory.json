@@ -1,1 +1,1 @@
-{    "parent": "block/wall_inventory",    "textures": {        "wall": "ringsofinfinity:blocks/siltstone"    }}
+{"parent": "block/wall_inventory","textures": {"wall": "ringsofinfinity:blocks/siltstone"}}

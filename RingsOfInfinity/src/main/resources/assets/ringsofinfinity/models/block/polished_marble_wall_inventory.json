@@ -1,1 +1,1 @@
-{    "parent": "block/wall_inventory",    "textures": {        "wall": "ringsofinfinity:blocks/polished_marble"    }}
+{"parent": "block/wall_inventory","textures": {"wall": "ringsofinfinity:blocks/polished_marble"}}

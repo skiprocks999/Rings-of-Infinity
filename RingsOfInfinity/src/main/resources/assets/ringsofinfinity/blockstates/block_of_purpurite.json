@@ -1,1 +1,5 @@
-{    "variants": 	{        "": { "model": "ringsofinfinity:block/block_of_purpurite" }    }}
+{
+"variants": 	{
+
+"": { "model": "ringsofinfinity:block/block_of_purpurite" }
+}}

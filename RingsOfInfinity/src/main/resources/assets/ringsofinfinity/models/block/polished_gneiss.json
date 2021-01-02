@@ -1,1 +1,1 @@
-{    "parent": "block/cube_all",    "textures": {        "all": "ringsofinfinity:blocks/polished_gneiss"    }}
+{"parent": "block/cube_all","textures": {"all": "ringsofinfinity:blocks/polished_gneiss"}}

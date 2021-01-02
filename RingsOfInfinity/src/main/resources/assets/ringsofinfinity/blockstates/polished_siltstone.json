@@ -1,1 +1,5 @@
-{    "variants": 	{        "": { "model": "ringsofinfinity:block/polished_siltstone" }    }}
+{
+"variants": 	{
+
+"": { "model": "ringsofinfinity:block/polished_siltstone" }
+}}

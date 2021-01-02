@@ -1,1 +1,5 @@
-{    "variants": 	{        "": { "model": "ringsofinfinity:block/lignite_coal_ore" }    }}
+{
+"variants": 	{
+
+"": { "model": "ringsofinfinity:block/lignite_coal_ore" }
+}}

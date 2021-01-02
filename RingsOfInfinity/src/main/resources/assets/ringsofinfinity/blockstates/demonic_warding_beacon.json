@@ -1,1 +1,5 @@
-{    "variants": 	{        "": { "model": "ringsofinfinity:block/demonic_warding_beacon" }    }}
+{
+"variants": 	{
+
+"": { "model": "ringsofinfinity:block/demonic_warding_beacon" }
+}}

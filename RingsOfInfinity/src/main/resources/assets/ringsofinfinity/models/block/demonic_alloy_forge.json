@@ -1,1 +1,4 @@
-{    "parent": "block/orientable",    "textures": {		"top": "ringsofinfinity:blocks/demonic_alloy_forge_top",		"bottom":"ringsofinfinity:blocks/demonic_alloy_forge_bottom",        "front": "ringsofinfinity:blocks/demonic_alloy_forge_front",		"side":"ringsofinfinity:blocks/demonic_alloy_forge_side"    }}
+{"parent": "block/orientable","textures": {
+"top": "ringsofinfinity:blocks/demonic_alloy_forge_top",
+"bottom":"ringsofinfinity:blocks/demonic_alloy_forge_bottom","front": "ringsofinfinity:blocks/demonic_alloy_forge_front",
+"side":"ringsofinfinity:blocks/demonic_alloy_forge_side"}}

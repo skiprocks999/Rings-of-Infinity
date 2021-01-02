@@ -1,1 +1,5 @@
-{    "variants": 	{        "": { "model": "ringsofinfinity:block/gneiss" }    }}
+{
+"variants": 	{
+
+"": { "model": "ringsofinfinity:block/gneiss" }
+}}

@@ -1,1 +1,1 @@
-{    "parent": "block/stairs",    "textures": {        "bottom": "continfflocklib:blocks/gneiss",        "top": "ringsofinfinity:blocks/gneiss",        "side": "ringsofinfinity:blocks/gneiss"    }}
+{"parent": "block/stairs","textures": {"bottom": "continfflocklib:blocks/gneiss","top": "ringsofinfinity:blocks/gneiss","side": "ringsofinfinity:blocks/gneiss"}}

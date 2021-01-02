@@ -1,1 +1,5 @@
-{    "variants": 	{        "": { "model": "ringsofinfinity:block/cobra_stone" }    }}
+{
+"variants": 	{
+
+"": { "model": "ringsofinfinity:block/cobra_stone" }
+}}

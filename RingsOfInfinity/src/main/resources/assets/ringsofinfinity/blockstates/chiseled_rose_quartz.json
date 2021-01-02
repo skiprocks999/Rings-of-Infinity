@@ -1,1 +1,5 @@
-{    "variants": 	{        "": { "model": "ringsofinfinity:block/chiseled_rose_quartz" }    }}
+{
+"variants": 	{
+
+"": { "model": "ringsofinfinity:block/chiseled_rose_quartz" }
+}}

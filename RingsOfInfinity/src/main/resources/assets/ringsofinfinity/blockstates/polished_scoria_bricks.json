@@ -1,1 +1,5 @@
-{    "variants": 	{        "": { "model": "ringsofinfinity:block/polished_scoria_bricks" }    }}
+{
+"variants": 	{
+
+"": { "model": "ringsofinfinity:block/polished_scoria_bricks" }
+}}

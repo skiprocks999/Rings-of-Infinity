@@ -1,1 +1,1 @@
-{    "parent": "block/slab",    "textures": {        "bottom": "ringsofinfinity:blocks/siltstone",        "top": "ringsofinfinity:blocks/siltstone",        "side": "ringsofinfinity:blocks/siltstone"    }}
+{"parent": "block/slab","textures": {"bottom": "ringsofinfinity:blocks/siltstone","top": "ringsofinfinity:blocks/siltstone","side": "ringsofinfinity:blocks/siltstone"}}
