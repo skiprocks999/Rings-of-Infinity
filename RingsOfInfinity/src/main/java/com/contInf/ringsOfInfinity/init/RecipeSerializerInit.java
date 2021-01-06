@@ -9,6 +9,9 @@ import com.contInf.ringsOfInfinity.RingsOfInfinity;
 import com.contInf.ringsOfInfinity.recipes.alloyForge.AlloyForgeRecipe;
 import com.contInf.ringsOfInfinity.recipes.alloyForge.AlloyForgeSerializer;
 import com.contInf.ringsOfInfinity.recipes.alloyForge.IAlloyForgeRecipe;
+import com.contInf.ringsOfInfinity.recipes.demonicAlloyForge.DemonicAlloyForgeRecipe;
+import com.contInf.ringsOfInfinity.recipes.demonicAlloyForge.DemonicAlloyForgeSerializer;
+import com.contInf.ringsOfInfinity.recipes.demonicAlloyForge.IDemonicAlloyForgeRecipe;
 
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.IRecipeSerializer;
@@ -32,12 +35,18 @@ public class RecipeSerializerInit {
 	public static final IRecipeSerializer<AlloyForgeRecipe> ALLOY_FORGE_RECIPE_SERIALIZER =
 			new AlloyForgeSerializer();
 	
+	//Demonic Alloy Forge
+	public static final IRecipeSerializer<DemonicAlloyForgeRecipe> DEMONIC_ALLOY_FORGE_RECIPE_SERIALIZER = 
+			new DemonicAlloyForgeSerializer();
 	
 	/* Forge Type Registration */
 	
 	//AlloyForge
 	public static final IRecipeType<IAlloyForgeRecipe> ALLOY_FORGE_TYPE = 
 			registerType(IAlloyForgeRecipe.RECIPE_TYPE_ID);
+	
+	public static final IRecipeType<IDemonicAlloyForgeRecipe> DEMONIC_ALLOY_FORGE_TYPE = 
+			registerType(IDemonicAlloyForgeRecipe.RECIPE_TYPE_ID);
 	
 	
 	/* Register Serializers */
@@ -46,6 +55,10 @@ public class RecipeSerializerInit {
 	public static final RegistryObject<IRecipeSerializer<?>> ALLOY_FORGE_SERIALIZER = 
 			RECIPE_SERIALIZER.register("alloy_forge", () -> ALLOY_FORGE_RECIPE_SERIALIZER);
 	
+	//Demonic Alloy Forge 
+	
+	public static final RegistryObject<IRecipeSerializer<?>> DEMONIC_ALLOY_FORGE_SERIALIZER = 
+			RECIPE_SERIALIZER.register("demonic_alloy_forge", () -> DEMONIC_ALLOY_FORGE_RECIPE_SERIALIZER);
 	
 	
 	

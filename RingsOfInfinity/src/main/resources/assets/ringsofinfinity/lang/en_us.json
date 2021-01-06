@@ -212,8 +212,13 @@
 	
 	//NETHER FUNCTIONAL BLOCKS
 	"block.ringsofinfinity.demonic_alloy_forge": "Demonic Alloy Forge",
-	"block.ringsofinfinity.demonic_warding_beacon": "Demonic Warding Beacon",
+	"block.ringsofinfinity.demonic_warding_beacon":"Demonic Warding Beacon",
 	"block.ringsofinfinity.hellfire_furnace": "Hellfire Furnace",
+	
+	"containerringsofinfinity.demonic_alloy_forge": "Demonic Alloy Forge",
+	"containerringsofinfinity.demonic_warding_beacon":"Demonic Warding Beacon",
+	"containerringsofinfinity.hellfire_furnace":"Hellfire Furnace",
+
 	
 	
 	//END BLOCKS

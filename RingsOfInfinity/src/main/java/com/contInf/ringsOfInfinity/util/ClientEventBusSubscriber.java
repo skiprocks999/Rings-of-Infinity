@@ -1,8 +1,12 @@
 package com.contInf.ringsOfInfinity.util;
 
 import com.contInf.ringsOfInfinity.RingsOfInfinity;
+import com.contInf.ringsOfInfinity.client.renderer.DemonicWardingBeaconTileEntityRenderer;
 import com.contInf.ringsOfInfinity.client.renderer.WardingBeaconTileEntityRenderer;
 import com.contInf.ringsOfInfinity.gui.AlloyForgeScreen;
+import com.contInf.ringsOfInfinity.gui.DemonicAlloyForgeScreen;
+import com.contInf.ringsOfInfinity.gui.DemonicWardingBeaconScreen;
+import com.contInf.ringsOfInfinity.gui.HellfireFurnaceScreen;
 import com.contInf.ringsOfInfinity.gui.WardingBeaconScreen;
 import com.contInf.ringsOfInfinity.init.BlockTileEntityTypes;
 import com.contInf.ringsOfInfinity.init.ContInfContainerTypes;
@@ -25,6 +29,12 @@ public class ClientEventBusSubscriber {
 		
 		ScreenManager.registerFactory(ContInfContainerTypes.WARDING_BEACON.get(), WardingBeaconScreen::new);
 		
+		ScreenManager.registerFactory(ContInfContainerTypes.DEMONIC_ALLOY_FORGE.get(), DemonicAlloyForgeScreen::new);
+		
+		ScreenManager.registerFactory(ContInfContainerTypes.DEMONIC_WARDING_BEACON.get(), DemonicWardingBeaconScreen::new);
+		
+		ScreenManager.registerFactory(ContInfContainerTypes.HELLFIRE_FURNACE.get(), HellfireFurnaceScreen::new);
+		
 		
 		
 		
@@ -32,5 +42,11 @@ public class ClientEventBusSubscriber {
 		ClientRegistry.bindTileEntityRenderer(
 				BlockTileEntityTypes.WARDING_BEACON.get(), WardingBeaconTileEntityRenderer::new);
 
+		
+		ClientRegistry.bindTileEntityRenderer(
+				BlockTileEntityTypes.DEMONIC_WARDING_BEACON.get(), DemonicWardingBeaconTileEntityRenderer::new);
+		
+		
+		
 	}
 }

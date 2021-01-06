@@ -1,8 +1,3 @@
-/* Skip999
- * 10/29/20
- * Purpose: Contains inventory functionality for AlloyForge
- */
-
 package com.contInf.ringsOfInfinity.container;
 
 import java.util.Objects;
@@ -14,11 +9,9 @@ import org.apache.logging.log4j.Logger;
 
 import com.contInf.ringsOfInfinity.RingsOfInfinity;
 import com.contInf.ringsOfInfinity.container.SlotItemHandlers.FuelSlotHandler;
-import com.contInf.ringsOfInfinity.container.SlotItemHandlers.InputSlotHandler;
-import com.contInf.ringsOfInfinity.container.SlotItemHandlers.OutputSlotHandler;
 import com.contInf.ringsOfInfinity.init.BlockInit;
 import com.contInf.ringsOfInfinity.init.ContInfContainerTypes;
-import com.contInf.ringsOfInfinity.tileentity.AlloyForgeTileEntity;
+import com.contInf.ringsOfInfinity.tileentity.DemonicWardingBeaconTileEntity;
 import com.contInf.ringsOfInfinity.util.FunctionalIntReferenceHolder;
 
 import net.minecraft.entity.player.PlayerEntity;
@@ -32,10 +25,9 @@ import net.minecraft.util.IWorldPosCallable;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 
-public class AlloyForgeContainer extends Container {
-
+public class DemonicWardingBeaconContainer extends Container {
 	/* Fields */
-	private AlloyForgeTileEntity tileEntity;
+	private DemonicWardingBeaconTileEntity tileEntity;
 	private IWorldPosCallable canInteractWithCallable;
 	public FunctionalIntReferenceHolder currentSmeltTime;
 	public FunctionalIntReferenceHolder currentBurnTime;
@@ -44,9 +36,9 @@ public class AlloyForgeContainer extends Container {
 	/* Constructors */
 	
 	//Server Constructor
-	public AlloyForgeContainer(final int windowId, final PlayerInventory playerInv, 
-			final AlloyForgeTileEntity tile) {
-		super(ContInfContainerTypes.ALLOY_FORGE.get(),windowId);
+	public DemonicWardingBeaconContainer(final int windowId, final PlayerInventory playerInv, 
+			final DemonicWardingBeaconTileEntity tile) {
+		super(ContInfContainerTypes.DEMONIC_WARDING_BEACON.get(),windowId);
 		
 		this.tileEntity = tile;
 		this.canInteractWithCallable = IWorldPosCallable.of(tile.getWorld(), tile.getPos());
@@ -69,35 +61,20 @@ public class AlloyForgeContainer extends Container {
 						startX + (collumn * slotSizePlus2), mainY + (row * slotSizePlus2)));
 			}
 		}
+
+		String[] validFuels = {"sapphire"};
 		
-		//Furnace Slots
-		
-		String[] validInputs = {"blister_steel_ingot","aluminum_ingot"};
-		String[] validFuels = {"coal","lignite_coal"};
-		
-		//Input1
-		this.addSlot(new InputSlotHandler(tile.getInventory(), 0, 46, 16,validInputs));
-		//Input2
-		this.addSlot(new InputSlotHandler(tile.getInventory(), 1, 46, 54,validInputs));
-		//Output
-		this.addSlot(new OutputSlotHandler(tile.getInventory(), 2, 116, 35));
 		//Fuel
-		this.addSlot(new FuelSlotHandler(tile.getInventory(), 3, 8, 54,validFuels));
-		
-		
-		//Tracks current smelt time
-		this.trackInt(currentSmeltTime = new FunctionalIntReferenceHolder(() -> this.tileEntity.currentSmeltTime,
-				value -> this.tileEntity.currentSmeltTime = value));
+		this.addSlot(new FuelSlotHandler(tile.getInventory(), 0, 12, 34,validFuels));
 		
 		//Tracks current burn time
 		this.trackInt(currentBurnTime = new FunctionalIntReferenceHolder(() -> this.tileEntity.currentBurnTime,
-				value2 -> this.tileEntity.currentBurnTime = value2));
-		
-		//logger.debug("current burn time :" + this.currentBurnTime);
+				value -> this.tileEntity.currentBurnTime = value));
+
 	}
 	
 	//Client Constructor
-	public AlloyForgeContainer(final int windowId, final PlayerInventory playerInv, 
+	public DemonicWardingBeaconContainer(final int windowId, final PlayerInventory playerInv, 
 			final PacketBuffer data) {
 		this(windowId, playerInv, getTileEntity(playerInv,data));
 	}
@@ -106,13 +83,13 @@ public class AlloyForgeContainer extends Container {
 	/* Functional Methods */
 	
 	/* Obtains an instance of the AlloyForgeTileEntity*/
-	private static AlloyForgeTileEntity getTileEntity(
+	private static DemonicWardingBeaconTileEntity getTileEntity(
 			final PlayerInventory playerInv, final PacketBuffer data) {
 		Objects.requireNonNull(playerInv, "playerInv cannot be null");
 		Objects.requireNonNull(data, "data cannot be null");
 		final TileEntity tileAtPos = playerInv.player.world.getTileEntity(data.readBlockPos());
-		if (tileAtPos instanceof AlloyForgeTileEntity) {
-			return (AlloyForgeTileEntity) tileAtPos;
+		if (tileAtPos instanceof DemonicWardingBeaconTileEntity) {
+			return (DemonicWardingBeaconTileEntity) tileAtPos;
 		}
 		throw new IllegalStateException("TileEntity is not correct " + tileAtPos);
 	}
@@ -120,7 +97,7 @@ public class AlloyForgeContainer extends Container {
 	
 	@Override
 	public boolean canInteractWith(PlayerEntity playerIn) {
-		return isWithinUsableDistance(canInteractWithCallable, playerIn, BlockInit.alloy_forge.get());
+		return isWithinUsableDistance(canInteractWithCallable, playerIn, BlockInit.demonic_warding_beacon.get());
 	}
 	
 	
@@ -157,23 +134,12 @@ public class AlloyForgeContainer extends Container {
 		
 	}
 	
-	
-	/* Scales smelt time int for progress animation*/
+	//Scales smelt time int for progress animation
 	@OnlyIn(Dist.CLIENT)
-	public int getSmeltProgressionScaled() {
-		return this.currentSmeltTime.get() !=0 && this.tileEntity.maxSmeltTime != 0 
-					? this.currentSmeltTime.get() * 36 / this.tileEntity.maxSmeltTime : 0;
-				
-	}
-	
-	
-	/* Scales smelt time int for progress animation*/
-	@OnlyIn(Dist.CLIENT)
-	public double getBurnProgressionScaled() {
-		//logger.debug("item burn time: " + AlloyForgeTileEntity.itemBurnTime);
+	public int getBurnProgressionScaled() {
+		
 		return this.currentBurnTime.get() > 0 
-					? 1.0 -((double)this.currentBurnTime.get()/AlloyForgeTileEntity.itemBurnTime) : 1.0;
+					? this.currentBurnTime.get()*144/DemonicWardingBeaconTileEntity.itemBurnTime : 0;
 				
 	}
-
 }

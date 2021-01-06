@@ -877,16 +877,16 @@ public class BlockInit {
 	
 	//demonic alloy forge
 	public static final RegistryObject<Block> demonic_alloy_forge = 
-			BLOCKS.register("demonic_alloy_forge", () -> new DemonicAlloyForge(Block.Properties.create(Material.IRON).
-			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+			BLOCKS.register("demonic_alloy_forge", () -> new DemonicAlloyForge(
+					Block.Properties.from(Blocks.FURNACE)));
 	//demonic warding beacon
 	public static final RegistryObject<Block> demonic_warding_beacon = 
-			BLOCKS.register("demonic_warding_beacon", () -> new DemonicWardingBeacon(Block.Properties.create(Material.IRON).
-			hardnessAndResistance(2.0f, 3.0f).setLightLevel((lightlevel) -> 15).sound(SoundType.STONE)));
+			BLOCKS.register("demonic_warding_beacon", () -> new DemonicWardingBeacon(
+					Block.Properties.from(Blocks.BEACON)));
 	//hellfire furnace
 	public static final RegistryObject<Block> hellfire_furnace = 
-			BLOCKS.register("hellfire_furnace", () -> new HellfireFurnace(Block.Properties.create(Material.IRON).
-			hardnessAndResistance(2.0f, 3.0f).sound(SoundType.STONE)));
+			BLOCKS.register("hellfire_furnace", () -> new HellfireFurnace(
+					Block.Properties.from(Blocks.FURNACE)));
 	
 	
 	/*END BLOCKS*/

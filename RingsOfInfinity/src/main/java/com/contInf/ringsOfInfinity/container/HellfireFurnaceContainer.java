@@ -1,8 +1,3 @@
-/* Skip999
- * 10/29/20
- * Purpose: Contains inventory functionality for AlloyForge
- */
-
 package com.contInf.ringsOfInfinity.container;
 
 import java.util.Objects;
@@ -13,12 +8,10 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import com.contInf.ringsOfInfinity.RingsOfInfinity;
-import com.contInf.ringsOfInfinity.container.SlotItemHandlers.FuelSlotHandler;
-import com.contInf.ringsOfInfinity.container.SlotItemHandlers.InputSlotHandler;
 import com.contInf.ringsOfInfinity.container.SlotItemHandlers.OutputSlotHandler;
 import com.contInf.ringsOfInfinity.init.BlockInit;
 import com.contInf.ringsOfInfinity.init.ContInfContainerTypes;
-import com.contInf.ringsOfInfinity.tileentity.AlloyForgeTileEntity;
+import com.contInf.ringsOfInfinity.tileentity.HellfireFurnaceTileEntity;
 import com.contInf.ringsOfInfinity.util.FunctionalIntReferenceHolder;
 
 import net.minecraft.entity.player.PlayerEntity;
@@ -31,11 +24,12 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.IWorldPosCallable;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
+import net.minecraftforge.items.SlotItemHandler;
 
-public class AlloyForgeContainer extends Container {
+public class HellfireFurnaceContainer extends Container{
 
 	/* Fields */
-	private AlloyForgeTileEntity tileEntity;
+	private HellfireFurnaceTileEntity tileEntity;
 	private IWorldPosCallable canInteractWithCallable;
 	public FunctionalIntReferenceHolder currentSmeltTime;
 	public FunctionalIntReferenceHolder currentBurnTime;
@@ -44,9 +38,9 @@ public class AlloyForgeContainer extends Container {
 	/* Constructors */
 	
 	//Server Constructor
-	public AlloyForgeContainer(final int windowId, final PlayerInventory playerInv, 
-			final AlloyForgeTileEntity tile) {
-		super(ContInfContainerTypes.ALLOY_FORGE.get(),windowId);
+	public HellfireFurnaceContainer(final int windowId, final PlayerInventory playerInv, 
+			final HellfireFurnaceTileEntity tile) {
+		super(ContInfContainerTypes.HELLFIRE_FURNACE.get(),windowId);
 		
 		this.tileEntity = tile;
 		this.canInteractWithCallable = IWorldPosCallable.of(tile.getWorld(), tile.getPos());
@@ -72,17 +66,12 @@ public class AlloyForgeContainer extends Container {
 		
 		//Furnace Slots
 		
-		String[] validInputs = {"blister_steel_ingot","aluminum_ingot"};
-		String[] validFuels = {"coal","lignite_coal"};
-		
 		//Input1
-		this.addSlot(new InputSlotHandler(tile.getInventory(), 0, 46, 16,validInputs));
-		//Input2
-		this.addSlot(new InputSlotHandler(tile.getInventory(), 1, 46, 54,validInputs));
+		this.addSlot(new SlotItemHandler(tile.getInventory(), 0, 56, 17));
 		//Output
-		this.addSlot(new OutputSlotHandler(tile.getInventory(), 2, 116, 35));
+		this.addSlot(new OutputSlotHandler(tile.getInventory(), 1, 115, 34));
 		//Fuel
-		this.addSlot(new FuelSlotHandler(tile.getInventory(), 3, 8, 54,validFuels));
+		this.addSlot(new SlotItemHandler(tile.getInventory(), 2, 56, 53));
 		
 		
 		//Tracks current smelt time
@@ -93,11 +82,10 @@ public class AlloyForgeContainer extends Container {
 		this.trackInt(currentBurnTime = new FunctionalIntReferenceHolder(() -> this.tileEntity.currentBurnTime,
 				value2 -> this.tileEntity.currentBurnTime = value2));
 		
-		//logger.debug("current burn time :" + this.currentBurnTime);
 	}
 	
 	//Client Constructor
-	public AlloyForgeContainer(final int windowId, final PlayerInventory playerInv, 
+	public HellfireFurnaceContainer(final int windowId, final PlayerInventory playerInv, 
 			final PacketBuffer data) {
 		this(windowId, playerInv, getTileEntity(playerInv,data));
 	}
@@ -106,13 +94,13 @@ public class AlloyForgeContainer extends Container {
 	/* Functional Methods */
 	
 	/* Obtains an instance of the AlloyForgeTileEntity*/
-	private static AlloyForgeTileEntity getTileEntity(
+	private static HellfireFurnaceTileEntity getTileEntity(
 			final PlayerInventory playerInv, final PacketBuffer data) {
 		Objects.requireNonNull(playerInv, "playerInv cannot be null");
 		Objects.requireNonNull(data, "data cannot be null");
 		final TileEntity tileAtPos = playerInv.player.world.getTileEntity(data.readBlockPos());
-		if (tileAtPos instanceof AlloyForgeTileEntity) {
-			return (AlloyForgeTileEntity) tileAtPos;
+		if (tileAtPos instanceof HellfireFurnaceTileEntity) {
+			return (HellfireFurnaceTileEntity) tileAtPos;
 		}
 		throw new IllegalStateException("TileEntity is not correct " + tileAtPos);
 	}
@@ -120,7 +108,7 @@ public class AlloyForgeContainer extends Container {
 	
 	@Override
 	public boolean canInteractWith(PlayerEntity playerIn) {
-		return isWithinUsableDistance(canInteractWithCallable, playerIn, BlockInit.alloy_forge.get());
+		return isWithinUsableDistance(canInteractWithCallable, playerIn, BlockInit.hellfire_furnace.get());
 	}
 	
 	
@@ -162,7 +150,7 @@ public class AlloyForgeContainer extends Container {
 	@OnlyIn(Dist.CLIENT)
 	public int getSmeltProgressionScaled() {
 		return this.currentSmeltTime.get() !=0 && this.tileEntity.maxSmeltTime != 0 
-					? this.currentSmeltTime.get() * 36 / this.tileEntity.maxSmeltTime : 0;
+					? this.currentSmeltTime.get() * 26 / this.tileEntity.maxSmeltTime : 0;
 				
 	}
 	
@@ -172,8 +160,9 @@ public class AlloyForgeContainer extends Container {
 	public double getBurnProgressionScaled() {
 		//logger.debug("item burn time: " + AlloyForgeTileEntity.itemBurnTime);
 		return this.currentBurnTime.get() > 0 
-					? 1.0 -((double)this.currentBurnTime.get()/AlloyForgeTileEntity.itemBurnTime) : 1.0;
+					? 1.0 -((double)this.currentBurnTime.get()/HellfireFurnaceTileEntity.itemBurnTime) : 1.0;
 				
 	}
+
 
 }
