@@ -54,7 +54,7 @@ public class HellfireFurnaceScreen extends ContainerScreen<HellfireFurnaceContai
 		int yOffset = (int)(burnTimeFraction * 16);
 		//logger.debug("current y offset: " + yOffset);
 		
-		this.blit(matrixStack,this.guiLeft + 55, this.guiTop + 36 + yOffset, 176, yOffset, 16, (16 - yOffset));
+		this.blit(matrixStack,this.guiLeft + 55, this.guiTop + 35 + yOffset, 176, yOffset, 18, (16 - yOffset));
 
 		
 		//Progress Bar

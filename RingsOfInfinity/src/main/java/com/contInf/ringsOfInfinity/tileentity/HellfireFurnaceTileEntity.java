@@ -23,13 +23,14 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.world.ClientWorld;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
-import net.minecraft.inventory.IInventory;
 import net.minecraft.inventory.ItemStackHelper;
 import net.minecraft.inventory.container.Container;
 import net.minecraft.inventory.container.INamedContainerProvider;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.AbstractCookingRecipe;
+import net.minecraft.item.crafting.FurnaceRecipe;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.item.crafting.IRecipeSerializer;
 import net.minecraft.item.crafting.IRecipeType;
 import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.nbt.CompoundNBT;
@@ -41,6 +42,7 @@ import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.registry.Registry;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
 import net.minecraft.world.World;
@@ -57,33 +59,37 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 public class HellfireFurnaceTileEntity extends TileEntity 
 				implements ITickableTileEntity, INamedContainerProvider{
 
-/* Fields */
+	/* Fields */
 	
 	
 	private ITextComponent customName;
 	
 	private TileEntityItemHandler inventory; 
 	
-	public int maxSmeltTime;
+	private static final int SPEED_MODIFIER = 8;
+	
+	private static String currentFuel;
+	
+	public static int maxSmeltTime;
 	public int currentSmeltTime;
 	public int currentBurnTime;
 	public static int itemBurnTime = 0;
 	
 	private static final Logger logger = LogManager.getLogger(RingsOfInfinity.modID);
 	
-	private final IRecipeType<? extends AbstractCookingRecipe> recipeType; 
+	private IRecipeType<?> furnaceRecipeType = 
+			Registry.RECIPE_TYPE.getOrDefault(IRecipeSerializer.SMELTING.getRegistryName());
 	
-	private static final CustomFuelType[] validFuels = 
-		{new CustomFuelType(ItemInit.lignite_coal.get(),1600)};
-	
+	private static final CustomFuelType[] validFuels =
+		{new CustomFuelType(ItemInit.lignite_coal.get(),1600),
+		 new CustomFuelType(ItemInit.black_jade.get(),10000)};
 	
 	/* Constructors */
 	
 	
 	//Creates a new instance of an AlloyForge entity
 	public HellfireFurnaceTileEntity(TileEntityType<?> tileEntityTypeIn) {
-		super(tileEntityTypeIn);
-		this.recipeType = IRecipeType.SMELTING; 
+		super(tileEntityTypeIn); 
 		this.inventory = new TileEntityItemHandler(3);
 	}
 
@@ -123,10 +129,10 @@ public class HellfireFurnaceTileEntity extends TileEntity
 			ItemStack ingredient = this.inventory.getStackInSlot(0);
 			
 			if(isLit()||(!ingredient.isEmpty() && !fuelSlot.isEmpty())) {
+
+				IRecipe<?> validRecipe = this.getRecipe(ingredient);
 				
-				AbstractCookingRecipe validRecipe = this.getRecipe(ingredient);
-				
-				if(!isLit() && validRecipe != null && 
+				if(!isLit() && validRecipe != null&& 
 						(this.inventory.getStackInSlot(1).getCount() < 63)) {
 					
 					this.currentBurnTime = this.getBurnTime(fuelSlot);
@@ -135,7 +141,13 @@ public class HellfireFurnaceTileEntity extends TileEntity
 					if(this.isLit()) {
 						
 						startedBurning = true;
-						this.inventory.decrStackSize(2,1);
+						
+						if(this.isLit()) {
+							
+							startedBurning = true;
+							this.inventory.decrStackSize(2,1);
+							
+						}
 						
 					}
 					
@@ -144,17 +156,17 @@ public class HellfireFurnaceTileEntity extends TileEntity
 			
 				if(this.isLit() && validRecipe!= null) {
 					
-					this.maxSmeltTime = this.getMaxSmeltTime();
 					this.currentSmeltTime ++;
+					maxSmeltTime = this.getMaxSmeltTime();
 					
 					if(this.currentSmeltTime == maxSmeltTime) {
 						
 						this.currentSmeltTime = 0;
+						maxSmeltTime = 0;
 						
 						ItemStack output = this.getRecipe(ingredient).getRecipeOutput();
-						this.inventory.insertItem(2, output.copy(),false);
+						this.inventory.insertItem(1, output.copy(),false);
 						this.inventory.decrStackSize(0,1);
-						this.inventory.decrStackSize(1,1);
 						
 						startedBurning = true;
 						
@@ -168,7 +180,7 @@ public class HellfireFurnaceTileEntity extends TileEntity
 				
 			}else if(!this.isLit() && this.currentSmeltTime > 0) {
 				
-				this.currentSmeltTime = MathHelper.clamp(this.currentSmeltTime - 2, 0, this.maxSmeltTime);
+				this.currentSmeltTime = MathHelper.clamp(this.currentSmeltTime - 2, 0, maxSmeltTime);
 			
 			}
 			
@@ -195,52 +207,46 @@ public class HellfireFurnaceTileEntity extends TileEntity
 	}
 	
 	
-	/*
-	 * THE CAST TO IInventory DOES NOT WORK!!!
-	 */
-	
-	@SuppressWarnings("unchecked")
-	private int getMaxSmeltTime() {
-		return this.world.getRecipeManager().getRecipe((IRecipeType<AbstractCookingRecipe>)this.recipeType, (IInventory)this.getInventory(), this.world).map(AbstractCookingRecipe::getCookTime).orElse(200);
-	}
-	
-	public void read(BlockState state, CompoundNBT compound) {
-	      super.read(state, compound);
-	      if(compound.contains("CustomName",Constants.NBT.TAG_STRING)) {
-				this.customName = ITextComponent.Serializer.getComponentFromJson(compound.getString("CustomName"));
-			}
-	      NonNullList<ItemStack> inv = NonNullList.withSize(this.inventory.getSlots(), ItemStack.EMPTY);
-			ItemStackHelper.loadAllItems(compound, inv);
-			this.inventory.setNonNullList(inv);
-	      
-	      this.currentBurnTime = compound.getInt("BurnTime");
-	      this.currentSmeltTime = compound.getInt("CookTime");
-	      this.maxSmeltTime = compound.getInt("CookTimeTotal");
-	   }
-
-	public CompoundNBT write(CompoundNBT compound) {
-		super.write(compound);
-		if(this.customName != null) {
-			compound.putString("CustomName", ITextComponent.Serializer.toJson(this.customName));
-		}
-		NonNullList<ItemStack> inv = NonNullList.withSize(this.inventory.getSlots(), ItemStack.EMPTY);
-		ItemStackHelper.loadAllItems(compound, inv);
-		this.inventory.setNonNullList(inv);
-	    compound.putInt("BurnTime", this.currentBurnTime);
-	    compound.putInt("CookTime", this.currentSmeltTime);
-	    compound.putInt("CookTimeTotal", this.maxSmeltTime);
-
-	    return compound;
-	}
-		
-	
-	/* CUSTOM NAME */
-	
 	//Retrieves current name of block for GUI
 	@Override
 	public ITextComponent getDisplayName() {
 		return this.getName();
 	}
+	
+	
+	//Sets custom name for block
+	@Override
+	public CompoundNBT write(CompoundNBT compound) {
+		super.write(compound);
+		if(this.customName != null) {
+			compound.putString("CustomName", ITextComponent.Serializer.toJson(this.customName));
+		}
+		
+		ItemStackHelper.saveAllItems(compound, this.inventory.toNonNullList());
+		
+		compound.putInt("CurrentSmeltTime", this.currentSmeltTime);
+		
+		return compound;
+	}
+	
+	
+	//Retrieves the current name
+	@Override
+	public void read(BlockState state, CompoundNBT compound) {
+		super.read(state,compound);
+		if(compound.contains("CustomName",Constants.NBT.TAG_STRING)) {
+			this.customName = ITextComponent.Serializer.getComponentFromJson(compound.getString("CustomName"));
+		}
+		
+		NonNullList<ItemStack> inv = NonNullList.withSize(this.inventory.getSlots(), ItemStack.EMPTY);
+		ItemStackHelper.loadAllItems(compound, inv);
+		this.inventory.setNonNullList(inv);
+		
+		this.currentSmeltTime = compound.getInt("CurrentSmeltTime");
+	}
+	
+	
+	/* CUSTOM NAME */
 	
 	public void setCustomName(ITextComponent name) {
 		this.customName = name;
@@ -261,14 +267,15 @@ public class HellfireFurnaceTileEntity extends TileEntity
 	
 	
 	/* Looks for Recipe based on inputs */
-	private AbstractCookingRecipe getRecipe(ItemStack stack) {
+	private FurnaceRecipe getRecipe(ItemStack stack) {
 		
 		if(stack == null) {
 			return null;
 		}
-		Set<IRecipe<?>> recipes = findRecipesbyType(recipeType, this.world);
+		
+		Set<IRecipe<?>> recipes = findRecipesbyType(furnaceRecipeType, this.world);
 		for(IRecipe<?> IRecipes: recipes) {
-			AbstractCookingRecipe recipe = (AbstractCookingRecipe) IRecipes;
+			FurnaceRecipe recipe = (FurnaceRecipe) IRecipes;
 			if(recipe.matches(new RecipeWrapper(this.inventory), this.world)) {
 				return recipe;
 			}
@@ -319,6 +326,7 @@ public class HellfireFurnaceTileEntity extends TileEntity
 	}
 	
 	
+	
 	//Retireves Inventory for GUI
 	public final IItemHandlerModifiable getInventory() {
 		return this.inventory;
@@ -366,6 +374,11 @@ public class HellfireFurnaceTileEntity extends TileEntity
 	
 	private int getBurnTime(ItemStack fuel) {
 		
+		String itemName = fuel.toString();
+		currentFuel = itemName.substring(itemName.indexOf(' ') + 1);
+		
+		logger.debug("Current Fuel " + currentFuel);
+		
 		int itemBurnTime = ForgeHooks.getBurnTime(fuel);
 		if(itemBurnTime < 1) {
 			for(CustomFuelType customFuel:validFuels) {
@@ -377,8 +390,21 @@ public class HellfireFurnaceTileEntity extends TileEntity
 		return itemBurnTime;
 	}
 	
+	private int getMaxSmeltTime() {
+	    
+		@SuppressWarnings("unchecked")
+		int defaultSmeltTime = this.world.getRecipeManager().
+				getRecipe((IRecipeType<AbstractCookingRecipe>)this.furnaceRecipeType, 
+						new RecipeWrapper(this.inventory), this.world)
+				.map(AbstractCookingRecipe::getCookTime).orElse(200);
+		
+		switch(currentFuel) {
+		
+			case("black_jade")  :	return defaultSmeltTime / defaultSmeltTime;
+			default             :	return defaultSmeltTime / SPEED_MODIFIER;
+		}
+		
+	}
+	
 
-	
-	
-	
 }
