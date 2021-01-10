@@ -40,6 +40,7 @@ import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.IIntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.registry.Registry;
@@ -68,12 +69,12 @@ public class HellfireFurnaceTileEntity extends TileEntity
 	
 	private static final int SPEED_MODIFIER = 8;
 	
-	private static String currentFuel;
+	private String currentFuel = "";
 	
-	public static int maxSmeltTime;
+	public int maxSmeltTime;
 	public int currentSmeltTime;
 	public int currentBurnTime;
-	public static int itemBurnTime = 0;
+	public int itemBurnTime;
 	
 	private static final Logger logger = LogManager.getLogger(RingsOfInfinity.modID);
 	
@@ -83,6 +84,41 @@ public class HellfireFurnaceTileEntity extends TileEntity
 	private static final CustomFuelType[] validFuels =
 		{new CustomFuelType(ItemInit.lignite_coal.get(),1600),
 		 new CustomFuelType(ItemInit.black_jade.get(),10000)};
+	
+	protected final IIntArray hellfireFurnaceData = new IIntArray() {
+		
+	      public int get(int index) {
+	         switch(index) {
+	         case 0:          return HellfireFurnaceTileEntity.this.currentSmeltTime;
+	         case 1:          return HellfireFurnaceTileEntity.this.currentBurnTime;
+	         case 2:          return HellfireFurnaceTileEntity.this.itemBurnTime;
+	         case 3:		  return HellfireFurnaceTileEntity.this.maxSmeltTime;
+	         default:         return 0;
+	         }
+	      }
+
+	      public void set(int index, int value) {
+	         switch(index) {
+	         case 0:          HellfireFurnaceTileEntity.this.currentSmeltTime = value;
+	                          break;
+	         case 1:          HellfireFurnaceTileEntity.this.currentBurnTime = value;
+	         				  break;
+	         case 2:          HellfireFurnaceTileEntity.this.itemBurnTime = value;
+	         				  break;
+	         case 3:          HellfireFurnaceTileEntity.this.maxSmeltTime = value;
+	         }
+
+	      }
+
+	      public int size() {
+	         return 4;
+	      }
+	   };
+	
+	
+	
+	
+	
 	
 	/* Constructors */
 	
@@ -136,7 +172,7 @@ public class HellfireFurnaceTileEntity extends TileEntity
 						(this.inventory.getStackInSlot(1).getCount() < 63)) {
 					
 					this.currentBurnTime = this.getBurnTime(fuelSlot);
-					itemBurnTime = currentBurnTime;
+					this.itemBurnTime = this.currentBurnTime;
 					
 					if(this.isLit()) {
 						
@@ -157,12 +193,12 @@ public class HellfireFurnaceTileEntity extends TileEntity
 				if(this.isLit() && validRecipe!= null) {
 					
 					this.currentSmeltTime ++;
-					maxSmeltTime = this.getMaxSmeltTime();
+					this.maxSmeltTime = this.getMaxSmeltTime();
 					
 					if(this.currentSmeltTime == maxSmeltTime) {
 						
 						this.currentSmeltTime = 0;
-						maxSmeltTime = 0;
+						//this.maxSmeltTime = 0;
 						
 						ItemStack output = this.getRecipe(ingredient).getRecipeOutput();
 						this.inventory.insertItem(1, output.copy(),false);
@@ -225,6 +261,11 @@ public class HellfireFurnaceTileEntity extends TileEntity
 		ItemStackHelper.saveAllItems(compound, this.inventory.toNonNullList());
 		
 		compound.putInt("CurrentSmeltTime", this.currentSmeltTime);
+		compound.putInt("CurrentBurnTime", this.currentBurnTime);
+		compound.putInt("ItemBurnTime",this.itemBurnTime);
+		compound.putInt("MaxSmeltTime", this.maxSmeltTime);
+		
+		compound.putString("CurrentFuel", this.currentFuel);
 		
 		return compound;
 	}
@@ -243,6 +284,11 @@ public class HellfireFurnaceTileEntity extends TileEntity
 		this.inventory.setNonNullList(inv);
 		
 		this.currentSmeltTime = compound.getInt("CurrentSmeltTime");
+		this.currentBurnTime = compound.getInt("CurrentBurnTime");
+		this.itemBurnTime = compound.getInt("ItemBurnTime");
+		this.maxSmeltTime = compound.getInt("MaxSmeltTime");
+		
+		this.currentFuel = compound.getString("CurrentFuel");
 	}
 	
 	
@@ -406,5 +452,10 @@ public class HellfireFurnaceTileEntity extends TileEntity
 		
 	}
 	
+	public int getItemBurnTime() {
+		return this.itemBurnTime;
+	}
+	
+
 
 }

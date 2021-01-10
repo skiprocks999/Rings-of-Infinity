@@ -44,6 +44,7 @@ import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.IIntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.text.ITextComponent;
@@ -73,12 +74,40 @@ public class AlloyForgeTileEntity extends TileEntity
 	public final int maxSmeltTime = 200;
 	public int currentSmeltTime;
 	public int currentBurnTime;
-	public static int itemBurnTime = 0;
+	public int itemBurnTime;
 	
 	private static final Logger logger = LogManager.getLogger(RingsOfInfinity.modID);
 	
 	private static final CustomFuelType[] validFuels = 
 		{new CustomFuelType(ItemInit.lignite_coal.get(),1600)};
+	
+	
+	protected final IIntArray alloyForgeData = new IIntArray() {
+		
+	      public int get(int index) {
+	         switch(index) {
+	         case 0:          return AlloyForgeTileEntity.this.currentSmeltTime;
+	         case 1:          return AlloyForgeTileEntity.this.currentBurnTime;
+	         case 2:          return AlloyForgeTileEntity.this.itemBurnTime;
+	         default:         return 0;
+	         }
+	      }
+
+	      public void set(int index, int value) {
+	         switch(index) {
+	         case 0:         AlloyForgeTileEntity.this.currentSmeltTime = value;
+	                         break;
+	         case 1:         AlloyForgeTileEntity.this.currentBurnTime = value;
+	         				 break;
+	         case 2:         AlloyForgeTileEntity.this.itemBurnTime = value;
+	         }
+
+	      }
+
+	      public int size() {
+	         return 3;
+	      }
+	   };
 	
 	
 	/* Constructors */
@@ -138,7 +167,7 @@ public class AlloyForgeTileEntity extends TileEntity
 						(this.inventory.getStackInSlot(2).getCount() < 63)) {
 					
 					this.currentBurnTime = this.getBurnTime(fuelSlot);
-					itemBurnTime = currentBurnTime;
+					this.itemBurnTime = this.currentBurnTime;
 					
 					if(this.isLit()) {
 						
@@ -220,6 +249,8 @@ public class AlloyForgeTileEntity extends TileEntity
 		ItemStackHelper.saveAllItems(compound, this.inventory.toNonNullList());
 		
 		compound.putInt("CurrentSmeltTime", this.currentSmeltTime);
+		compound.putInt("CurrentBurnTime",this.currentBurnTime);
+		compound.putInt("ItemBurnTime", this.itemBurnTime);
 		
 		return compound;
 	}
@@ -238,6 +269,8 @@ public class AlloyForgeTileEntity extends TileEntity
 		this.inventory.setNonNullList(inv);
 		
 		this.currentSmeltTime = compound.getInt("CurrentSmeltTime");
+		this.currentBurnTime = compound.getInt("CurrentBurnTime");
+		this.itemBurnTime = compound.getInt("ItemBurnTime");
 	}
 	
 	
@@ -380,7 +413,9 @@ public class AlloyForgeTileEntity extends TileEntity
 		
 	}
 	
-	
+	public int getItemBurnTime() {
+		return this.itemBurnTime;
+	}
 	
 	
 }

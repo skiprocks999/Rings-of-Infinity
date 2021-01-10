@@ -1,6 +1,6 @@
 package com.contInf.ringsOfInfinity.tileentity;
 
-import java.util.Arrays;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.annotation.Nullable;
@@ -20,7 +20,6 @@ import com.google.common.collect.Lists;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.Blocks;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.player.PlayerInventory;
 import net.minecraft.inventory.ItemStackHelper;
@@ -34,11 +33,11 @@ import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.IIntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
 import net.minecraft.util.text.TranslationTextComponent;
-import net.minecraft.world.gen.Heightmap;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.api.distmarker.OnlyIn;
 import net.minecraftforge.common.capabilities.Capability;
@@ -58,7 +57,7 @@ public class WardingBeaconTileEntity extends TileEntity
 	private TileEntityItemHandler inventory; 
 	
 	public int currentBurnTime;
-	public static int itemBurnTime = 0;
+	public int itemBurnTime;
 	
 	private int ticksSinceLastBeamCheck = 0;
 	
@@ -72,6 +71,36 @@ public class WardingBeaconTileEntity extends TileEntity
 	
 	private static final CustomFuelType[] validFuels = 
 		{new CustomFuelType(ItemInit.sapphire.get(),200)};//set to 20000
+	
+	protected final IIntArray wardingBeaconData = new IIntArray() {
+		
+	      public int get(int index) {
+	         switch(index) {
+	         case 0:          return WardingBeaconTileEntity.this.currentBurnTime;
+	         case 1:          return WardingBeaconTileEntity.this.itemBurnTime;
+	         case 2:		  return WardingBeaconTileEntity.this.ticksSinceLastBeamCheck;
+	         default:         return 0;
+	         }
+	      }
+
+	      public void set(int index, int value) {
+	         switch(index) {
+	         case 0:          WardingBeaconTileEntity.this.currentBurnTime = value;
+	                          break;
+	         case 1:          WardingBeaconTileEntity.this.itemBurnTime = value;
+	         				  break;
+	         case 2:          WardingBeaconTileEntity.this.ticksSinceLastBeamCheck = value;
+	         }
+
+	      }
+
+	      public int size() {
+	         return 3;
+	      }
+	   };
+	
+	
+	
 	
 	
 	/* Constructors */
@@ -122,7 +151,7 @@ public class WardingBeaconTileEntity extends TileEntity
 				if(!isLit()) {
 					
 					this.currentBurnTime = getBurnTime(fuelSlot);
-					itemBurnTime = this.currentBurnTime;
+					this.itemBurnTime = this.currentBurnTime;
 					
 					if(this.isLit()) {
 						
@@ -134,14 +163,14 @@ public class WardingBeaconTileEntity extends TileEntity
 				
 				if(isLit()) {
 					
-					ticksSinceLastBeamCheck++;
-					if(ticksSinceLastBeamCheck == 10) {
+					this.ticksSinceLastBeamCheck++;
+					if(this.ticksSinceLastBeamCheck == 10) {
 						
 						int beaconXCoord = this.pos.getX();
 						int beaconYCoord = this.pos.getY();
 						int beaconZCoord = this.pos.getZ();
 						
-						newBeamSegments = Lists.newArrayList();
+						this.newBeamSegments = Lists.newArrayList();
 						
 						this.lastBlockChecked = new BlockPos(beaconXCoord,beaconYCoord + 1,beaconZCoord);
 						
@@ -149,19 +178,19 @@ public class WardingBeaconTileEntity extends TileEntity
 						
 						for(int i = lastBlockChecked.getY(); i < this.world.getHeight(); i ++) {
 							
-							//BlockState currentBlockState = this.world.getBlockState(lastBlockChecked);
+							BlockState currentBlockState = this.world.getBlockState(lastBlockChecked);
 							//Block currentBlock = currentBlockState.getBlock();
 							//logger.debug("Current Block Height: " + lastBlockChecked.getY());
 							
-							float[] blockBeamColorMultipliers = new float[] {0.0f};
-									//urrentBlockState.getBeaconColorMultiplier(world, lastBlockChecked, getPos());
+							float[] blockBeamColorMultipliers = {1.0F,1.0F,1.0F};
+									//currentBlockState.getBeaconColorMultiplier(this.world, lastBlockChecked, this.getPos());
 							
 							//logger.debug("color multipliers: " + Arrays.toString(blockBeamColorMultipliers));
 							
 							if(blockBeamColorMultipliers!= null) {
 								
 								newBeamSegment = new BeamSegment(blockBeamColorMultipliers,lastBlockChecked.getY());
-								newBeamSegments.add(newBeamSegment);
+								this.newBeamSegments.add(newBeamSegment);
 								
 							}/*else {
 								
@@ -173,13 +202,15 @@ public class WardingBeaconTileEntity extends TileEntity
 								
 							}
 							*/
-							lastBlockChecked = lastBlockChecked.up();
+							this.lastBlockChecked = this.lastBlockChecked.up();
 						}
 						
-						oldBeamSegments = newBeamSegments;
+						this.oldBeamSegments = this.newBeamSegments;
 						
-						ticksSinceLastBeamCheck = 0;
+						this.ticksSinceLastBeamCheck = 0;
 					}
+				}else {
+					this.oldBeamSegments = Lists.newArrayList();
 				}
 			}
 			if(currentState != this.isLit()) {
@@ -211,7 +242,7 @@ public class WardingBeaconTileEntity extends TileEntity
 	
 	@OnlyIn(Dist.CLIENT)
 	public double getMaxRenderDistanceSquared() {
-		return 65536.0D;
+		return 256.0D;
 	}
 	
 	//Retrieves current name of block for GUI
@@ -229,10 +260,43 @@ public class WardingBeaconTileEntity extends TileEntity
 			compound.putString("CustomName", ITextComponent.Serializer.toJson(this.customName));
 		}
 		
+		
 		ItemStackHelper.saveAllItems(compound, this.inventory.toNonNullList());
 		
-		//compound.putInt("CurrentSmeltTime", this.currentSmeltTime);
+		compound.putInt("CurrentBurnTime", this.currentBurnTime);
+		compound.putInt("ItemBurnTime", this.itemBurnTime);
+		compound.putInt("TicksSinceLastBeamCheck", this.ticksSinceLastBeamCheck);
 		
+		/*
+		 * Begin the Autism
+		 */
+		
+		
+		//get the individual components out of the BeamSegment List
+		ArrayList<Integer> beamHeight = new ArrayList<>();
+		ArrayList<float[]> beamColors = new ArrayList<float[]>();
+		for(BeamSegment beamSegment:oldBeamSegments) {
+			beamHeight.add(beamSegment.getHeight());
+			beamColors.add(beamSegment.getColors());
+		}
+		
+		//Convert the Integer List to an int Array
+		int[] beamHeightInt = new int[beamHeight.size()];
+		for(int i = 0;i < beamHeight.size();i++) {
+			beamHeightInt[i] = beamHeight.get(i).intValue();
+		}
+		compound.putIntArray("BeamHeightArray", beamHeightInt);
+		
+		//Convert the float[] Array List to a long[] Array
+		long[] longArray = new long[3];
+		for(int i = 0;i<beamColors.size();i++) {
+			for(int j = 0; j < 3;j++) {
+				longArray[j] = (long)beamColors.get(i)[j];
+			}
+			compound.putLongArray("BeamColorArray" + i, longArray);
+		}
+		
+
 		return compound;
 	}
 	
@@ -249,7 +313,33 @@ public class WardingBeaconTileEntity extends TileEntity
 		ItemStackHelper.loadAllItems(compound, inv);
 		this.inventory.setNonNullList(inv);
 		
-		//this.currentSmeltTime = compound.getInt("CurrentSmeltTime");
+		this.currentBurnTime = compound.getInt("CurrentBurnTime");
+		this.itemBurnTime = compound.getInt("ItemBurnTime");
+		this.ticksSinceLastBeamCheck = compound.getInt("TicksSinceLastBeamCheck");
+		
+		/*
+		 * Begin the Autism 
+		 */
+		
+		
+		//Retrieves the int array of beam heights
+		int[] beamHeightInt = compound.getIntArray("BeamHeightArray");
+		
+		//Retrieves a list of beam color floats
+		float[] floatArr = new float[3];
+		ArrayList<float[]> beamColors = new ArrayList<>();
+		for(int i = 0;i < beamHeightInt.length;i++) {
+			for(int j = 0; j < floatArr.length;j++) {
+				floatArr[j] = (float)compound.getLongArray("BeamColorArray" + i)[j];
+			}
+			beamColors.add(floatArr);
+		}
+		
+		//re-assembles the oldBeamSegments
+		for(int i = 0; i < beamHeightInt.length;i++) {
+			oldBeamSegments.add(new BeamSegment(beamColors.get(i),beamHeightInt[i]));
+		}
+		
 	}
 	
 	
@@ -285,9 +375,7 @@ public class WardingBeaconTileEntity extends TileEntity
 	@Nullable
 	@Override
 	public SUpdateTileEntityPacket getUpdatePacket() {
-		CompoundNBT nbt = new CompoundNBT();
-		this.write(nbt);
-		return new SUpdateTileEntityPacket(this.pos, 0, nbt);
+		return new SUpdateTileEntityPacket(this.pos, 3, this.getUpdateTag());
 	}
 
 	@Override
@@ -332,6 +420,8 @@ public class WardingBeaconTileEntity extends TileEntity
 	}
 	
 	
-	
+	public int getItemBurnTime() {
+		return this.itemBurnTime;
+	}
 	
 }

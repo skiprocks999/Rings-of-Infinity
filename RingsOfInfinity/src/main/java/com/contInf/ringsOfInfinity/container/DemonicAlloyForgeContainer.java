@@ -167,7 +167,7 @@ public class DemonicAlloyForgeContainer extends Container {
 	public double getBurnProgressionScaled() {
 		//logger.debug("item burn time: " + AlloyForgeTileEntity.itemBurnTime);
 		return this.currentBurnTime.get() > 0 
-					? 1.0 -((double)this.currentBurnTime.get()/DemonicAlloyForgeTileEntity.itemBurnTime) : 1.0;
+					? 1.0 -((double)this.currentBurnTime.get()/this.tileEntity.itemBurnTime) : 1.0;
 				
 	}
 }

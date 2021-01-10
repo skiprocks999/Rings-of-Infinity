@@ -1,46 +1,59 @@
 package com.contInf.ringsOfInfinity.jeiPlugin;
 
-import javax.annotation.Nonnull;
+import java.util.Objects;
+import java.util.Set;
 
 import com.contInf.ringsOfInfinity.RingsOfInfinity;
+import com.contInf.ringsOfInfinity.init.BlockInit;
+import com.contInf.ringsOfInfinity.init.RecipeSerializerInit;
+import com.contInf.ringsOfInfinity.jeiPlugin.AlloyForge.AlloyForgeRecipeCategory;
+import com.contInf.ringsOfInfinity.recipes.alloyForge.IAlloyForgeRecipe;
+import com.google.common.collect.ImmutableSet;
 
 import mezz.jei.api.IModPlugin;
-import mezz.jei.api.recipe.IRecipeManager;
+import mezz.jei.api.JeiPlugin;
+import mezz.jei.api.registration.IRecipeCatalystRegistration;
 import mezz.jei.api.registration.IRecipeCategoryRegistration;
 import mezz.jei.api.registration.IRecipeRegistration;
-import mezz.jei.api.runtime.IJeiRuntime;
 import net.minecraft.client.Minecraft;
-import net.minecraft.item.crafting.RecipeManager;
+import net.minecraft.client.world.ClientWorld;
+import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
-import net.minecraft.world.World;
 
-public class AmuOfInfJEIPlugin implements IModPlugin {
-
-	private static final ResourceLocation ID = new ResourceLocation(RingsOfInfinity.modID,"jei_plugin");
+@JeiPlugin
+public class AmuOfInfJEIPlugin implements IModPlugin
+{
 	
-	public void registerCategories(IRecipeCategoryRegistration registry) {
-		registry.addRecipeCategories(
-				new AlloyForgeRecipeCategoty(registry.getJeiHelpers().getGuiHelper()));
-	}
-	
-	public void registerRecipes(@Nonnull IRecipeRegistration registry) {
-		World world = Minecraft.getInstance().world;
-		registry.addRecipes(
-				AmOfInfRecipeTypes.getRecipes(world,AmOfInfRecipeTypes.ALLOY_FORGE).values(), 
-				AlloyForgeRecipeCatagory.ID);
-	}
-	
-	//For hiding recipes I believe
-	public void onRuntimeAvailable(IJeiRuntime jeiRuntime) {
-		//IRecipeManager recipeRegistry = jeiRuntime.getRecipeManager();
-		//@SuppressWarnings("resource")
-		//RecipeManager recipeManager = Minecraft.getInstance().world.getRecipeManager();
-		
+	@Override
+	public ResourceLocation getPluginUid() 
+	{
+		return new ResourceLocation(RingsOfInfinity.modID, "jei_plugin");
 	}
 	
 	@Override
-	public ResourceLocation getPluginUid() {
-		return ID;
+	public void registerRecipeCatalysts(IRecipeCatalystRegistration registration)
+	{
+		registration.addRecipeCatalyst(new ItemStack(BlockInit.alloy_forge.get()), AlloyForgeRecipeCategory.UID);
+	}
+	
+	@Override
+	public void registerRecipes(IRecipeRegistration registration) 
+	{
+		// TO DO: move the recipes lists in a separate utility class
+		Minecraft mc = Minecraft.getInstance();
+		ClientWorld world = Objects.requireNonNull(mc.world);
+		
+		Set<IAlloyForgeRecipe> alloyForgeRecipes = 
+				ImmutableSet.copyOf(world.getRecipeManager().getRecipesForType(RecipeSerializerInit.ALLOY_FORGE_TYPE));
+		
+		registration.addRecipes(alloyForgeRecipes, AlloyForgeRecipeCategory.UID);
+		
 	}
 
+	@Override
+	public void registerCategories(IRecipeCategoryRegistration registration) 
+	{
+		registration.addRecipeCategories(new AlloyForgeRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+		
+	}
 }

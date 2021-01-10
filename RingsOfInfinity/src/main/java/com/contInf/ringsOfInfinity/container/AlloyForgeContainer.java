@@ -172,7 +172,7 @@ public class AlloyForgeContainer extends Container {
 	public double getBurnProgressionScaled() {
 		//logger.debug("item burn time: " + AlloyForgeTileEntity.itemBurnTime);
 		return this.currentBurnTime.get() > 0 
-					? 1.0 -((double)this.currentBurnTime.get()/AlloyForgeTileEntity.itemBurnTime) : 1.0;
+					? 1.0 -((double)this.currentBurnTime.get()/this.tileEntity.itemBurnTime) : 1.0;
 				
 	}
 

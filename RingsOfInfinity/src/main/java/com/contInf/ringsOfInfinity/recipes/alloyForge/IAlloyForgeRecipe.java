@@ -18,8 +18,11 @@ import net.minecraftforge.items.wrapper.RecipeWrapper;
 
 public interface IAlloyForgeRecipe extends IRecipe<RecipeWrapper>{
 	
+	public static final String GROUP = "alloy_forge";
+	
+	
 	//Defines resource location for recipe type
-	ResourceLocation RECIPE_TYPE_ID = new ResourceLocation(RingsOfInfinity.modID,"alloy_forge");
+	ResourceLocation RECIPE_TYPE_ID = new ResourceLocation(RingsOfInfinity.modID,GROUP);
 	
 	//returns type at location of resource
 	@Nonnull
@@ -27,7 +30,6 @@ public interface IAlloyForgeRecipe extends IRecipe<RecipeWrapper>{
 	default IRecipeType<?> getType(){
 		return Registry.RECIPE_TYPE.getOrDefault(RECIPE_TYPE_ID);
 		
-		//return Registry.RECIPE_TYPE.getValue(RECIPE_TYPE_ID).get();
 	}
 	
 	@Override

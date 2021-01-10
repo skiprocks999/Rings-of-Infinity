@@ -31,6 +31,7 @@ import net.minecraft.tileentity.ITickableTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.tileentity.TileEntityType;
 import net.minecraft.util.Direction;
+import net.minecraft.util.IIntArray;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.ITextComponent;
@@ -43,8 +44,7 @@ import net.minecraftforge.common.util.LazyOptional;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandlerModifiable;
 
-public class DemonicWardingBeaconTileEntity extends TileEntity 
-	implements ITickableTileEntity, INamedContainerProvider{
+public class DemonicWardingBeaconTileEntity extends TileEntity implements ITickableTileEntity, INamedContainerProvider{
 	
 	/* Fields */
 	
@@ -54,7 +54,7 @@ public class DemonicWardingBeaconTileEntity extends TileEntity
 	private TileEntityItemHandler inventory; 
 	
 	public int currentBurnTime;
-	public static int itemBurnTime = 0;
+	public int itemBurnTime;
 	
 	private int ticksSinceLastBeamCheck = 0;
 	
@@ -67,7 +67,37 @@ public class DemonicWardingBeaconTileEntity extends TileEntity
 	
 	
 	private static final CustomFuelType[] validFuels = 
-		{new CustomFuelType(ItemInit.sapphire.get(),200)};//set to 20000
+		{new CustomFuelType(ItemInit.sapphire.get(),200), //set to 25000
+		 new CustomFuelType(ItemInit.black_jade.get(), 50000)};
+	
+	
+	protected final IIntArray demonicWardingBeaconData = new IIntArray() {
+		
+	      public int get(int index) {
+	         switch(index) {
+	         case 0:          return DemonicWardingBeaconTileEntity.this.currentBurnTime;
+	         case 1:          return DemonicWardingBeaconTileEntity.this.itemBurnTime;
+	         case 2:          return DemonicWardingBeaconTileEntity.this.ticksSinceLastBeamCheck;
+	         default:         return 0;
+	         }
+	      }
+
+	      public void set(int index, int value) {
+	         switch(index) {
+	         case 0:          DemonicWardingBeaconTileEntity.this.currentBurnTime = value;
+	                          break;
+	         case 1:          DemonicWardingBeaconTileEntity.this.itemBurnTime = value;
+	         				  break;
+	         case 2:          DemonicWardingBeaconTileEntity.this.ticksSinceLastBeamCheck = value;
+	         }
+
+	      }
+
+	      public int size() {
+	         return 3;
+	      }
+	   };
+	
 	
 	
 	/* Constructors */
@@ -118,7 +148,7 @@ public class DemonicWardingBeaconTileEntity extends TileEntity
 				if(!isLit()) {
 					
 					this.currentBurnTime = getBurnTime(fuelSlot);
-					itemBurnTime = this.currentBurnTime;
+					this.itemBurnTime = this.currentBurnTime;
 					
 					if(this.isLit()) {
 						
@@ -130,7 +160,7 @@ public class DemonicWardingBeaconTileEntity extends TileEntity
 				
 				if(isLit()) {
 					
-					ticksSinceLastBeamCheck++;
+					this.ticksSinceLastBeamCheck++;
 					if(ticksSinceLastBeamCheck == 10) {
 						
 						int beaconXCoord = this.pos.getX();
@@ -157,7 +187,7 @@ public class DemonicWardingBeaconTileEntity extends TileEntity
 							if(blockBeamColorMultipliers!= null) {
 								
 								newBeamSegment = new BeamSegment(blockBeamColorMultipliers,lastBlockChecked.getY());
-								newBeamSegments.add(newBeamSegment);
+								this.newBeamSegments.add(newBeamSegment);
 								
 							}/*else {
 								
@@ -169,12 +199,12 @@ public class DemonicWardingBeaconTileEntity extends TileEntity
 								
 							}
 							*/
-							lastBlockChecked = lastBlockChecked.up();
+							this.lastBlockChecked = this.lastBlockChecked.up();
 						}
 						
-						oldBeamSegments = newBeamSegments;
+						this.oldBeamSegments = this.newBeamSegments;
 						
-						ticksSinceLastBeamCheck = 0;
+						this.ticksSinceLastBeamCheck = 0;
 					}
 				}
 			}
@@ -227,7 +257,9 @@ public class DemonicWardingBeaconTileEntity extends TileEntity
 		
 		ItemStackHelper.saveAllItems(compound, this.inventory.toNonNullList());
 		
-		//compound.putInt("CurrentSmeltTime", this.currentSmeltTime);
+		compound.putInt("CurrentBurnTime", this.currentBurnTime);
+		compound.putInt("ItemBurnTime", this.itemBurnTime);
+		compound.putInt("TicksSinceLastBeamCheck",this.ticksSinceLastBeamCheck);
 		
 		return compound;
 	}
@@ -245,7 +277,9 @@ public class DemonicWardingBeaconTileEntity extends TileEntity
 		ItemStackHelper.loadAllItems(compound, inv);
 		this.inventory.setNonNullList(inv);
 		
-		//this.currentSmeltTime = compound.getInt("CurrentSmeltTime");
+		this.currentBurnTime = compound.getInt("CurrentBurnTime");
+		this.itemBurnTime = compound.getInt("ItemBurnTime");
+		this.ticksSinceLastBeamCheck = compound.getInt("TicksSinceLastBeamCheck");
 	}
 	
 	
@@ -325,5 +359,9 @@ public class DemonicWardingBeaconTileEntity extends TileEntity
 		}
 		return itemBurnTime;
 		
+	}
+	
+	public int getItemBurnTime() {
+		return this.itemBurnTime;
 	}
 }

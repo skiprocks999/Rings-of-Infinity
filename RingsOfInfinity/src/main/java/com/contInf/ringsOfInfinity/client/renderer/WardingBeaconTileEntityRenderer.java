@@ -42,9 +42,9 @@ public class WardingBeaconTileEntityRenderer extends TileEntityRenderer<WardingB
 		long gameTime = tileEntityIn.getWorld().getGameTime();
 		List<BeamSegment> beamSegments = tileEntityIn.getBeamSegments();
 		int currentHeight = 0;
-		for(int k = 0; k < beamSegments.size(); k++) {
+		for(int k = 0; k < beamSegments.size() - 1; k++) {
 	         BeamSegment currentBeamSegment = beamSegments.get(k);
-	         currentHeight = currentBeamSegment.getHeight();
+	         currentHeight = currentBeamSegment.getHeight() - 1;
 	         renderBeamSegment(matrixStackIn, bufferIn, partialTicks, gameTime, 0, 
 	        		currentHeight, currentBeamSegment.getColors());
 	         logger.debug("rendering beam at y = " + currentHeight);

@@ -139,7 +139,7 @@ public class DemonicWardingBeaconContainer extends Container {
 	public int getBurnProgressionScaled() {
 		
 		return this.currentBurnTime.get() > 0 
-					? this.currentBurnTime.get()*144/DemonicWardingBeaconTileEntity.itemBurnTime : 0;
+					? this.currentBurnTime.get()*144/this.tileEntity.itemBurnTime : 0;
 				
 	}
 }

@@ -140,7 +140,7 @@ public class WardingBeaconContainer extends Container{
 	public int getBurnProgressionScaled() {
 		
 		return this.currentBurnTime.get() > 0 
-					? this.currentBurnTime.get()*123/WardingBeaconTileEntity.itemBurnTime : 0;
+					? this.currentBurnTime.get()*123/this.tileEntity.itemBurnTime : 0;
 				
 	}
 	
