@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    " i ",    "iGi",    " i "  ],  "key": {    "i": {      "item": "ringsofinfinity:cobra_stone_dust"    },"G": {      "item": "minecraft:glass"    }  },  "result": {    "item": "ringsofinfinity:cobra_stone_lamp"  }}

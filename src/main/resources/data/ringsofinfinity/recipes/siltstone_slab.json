@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "bbb"  ],  "key": {    "b": {      "item": "ringsofinfinity:siltstone"    }  },  "result": {    "item": "ringsofinfinity:siltstone_slab",    "count": 6  }}

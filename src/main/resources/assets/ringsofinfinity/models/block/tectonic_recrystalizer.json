@@ -1,0 +1,8 @@
+{
+"parent": "block/orientable",
+	"textures": {	
+		"top": "ringsofinfinity:blocks/tectonic_recrystalizer_top",	
+		"side": "ringsofinfinity:blocks/tectonic_recrystalizer_side",
+		"bottom":"ringsofinfinity:blocks/tectonic_recrystalizer_bottom"
+	}
+}

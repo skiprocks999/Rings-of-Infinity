@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "ii",    "ii"  ],  "key": {    "i": {      "item": "ringsofinfinity:rose_quartz"    }  },  "result": {    "item": "ringsofinfinity:block_of_rose_quartz"  }}

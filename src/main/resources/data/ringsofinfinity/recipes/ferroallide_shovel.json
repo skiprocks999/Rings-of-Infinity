@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    " f ",    " | ",    " | "  ],  "key": {    "f": {      "item": "ringsofinfinity:ferroallide_steel_ingot"    },    "|": {      "item": "minecraft:stick"    }  },  "result": {    "item": "ringsofinfinity:ferroallide_shovel",    "count": 1  }}

@@ -1,0 +1,8 @@
+{
+	"type": "minecraft:stonecutting",
+	"ingredient": {
+		"item": "ringsofinfinity:basalt_bricks"
+	},
+	"result": "ringsofinfinity:basalt_brick_wall",
+	"count": 1
+}

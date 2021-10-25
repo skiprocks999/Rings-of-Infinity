@@ -1,0 +1,8 @@
+{
+"parent": "block/orientable",
+	"textures": {	
+		"top": "ringsofinfinity:blocks/ethereal_corruptor_top",	
+		"side": "ringsofinfinity:blocks/ethereal_corruptor_side",
+		"bottom":"ringsofinfinity:blocks/ethereal_corruptor_bottom"
+	}
+}

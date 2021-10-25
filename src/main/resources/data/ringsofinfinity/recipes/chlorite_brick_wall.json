@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "bbb",    "bbb"  ],  "key": {    "b": {      "item": "ringsofinfinity:chlorite_bricks"    }  },  "result": {    "item": "ringsofinfinity:chlorite_brick_wall",    "count": 6  }}

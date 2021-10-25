@@ -1,0 +1,1 @@
+{  "type": "minecraft:blasting",  "ingredient": {    "item": "ringsofinfinity:pink_topaz_ore"  },  "result": "ringsofinfinity:pink_topaz",  "experience": 0.7,  "cookingtime": 100}

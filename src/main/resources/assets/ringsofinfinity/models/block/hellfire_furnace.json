@@ -1,0 +1,4 @@
+{"parent": "block/orientable","textures": {
+"top": "ringsofinfinity:blocks/hellfire_furnace_top",
+"bottom":"ringsofinfinity:blocks/hellfire_furnace_top","front": "ringsofinfinity:blocks/hellfire_furnace_front",
+"side":"ringsofinfinity:blocks/hellfire_furnace_side"}}

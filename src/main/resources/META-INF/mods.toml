@@ -1,0 +1,31 @@
+#TOML folder for RingsOfInfinity
+
+modLoader="javafml" 
+loaderVersion="[35,)" 
+license = "All Rights Reserved"
+
+[[mods]] 
+modId="ringsofinfinity" #mandatory
+version="0.1" #mandatory
+displayName="RingsOfInfinity" 
+authors="skip999, ContainedShadow" 
+
+description='''
+This mod is a practical joke that went to far. Please send help :C
+'''
+
+[[dependencies.ringsofinfinity]] #optional
+    modId="forge" 
+    mandatory=true 
+    versionRange="[35,)" 
+    ordering="NONE"
+    side="BOTH"
+
+[[dependencies.ringsofinfinity]]
+    modId="minecraft"
+    mandatory=true
+    versionRange="[1.16.4]"
+    ordering="NONE"
+    side="BOTH"
+ 
+

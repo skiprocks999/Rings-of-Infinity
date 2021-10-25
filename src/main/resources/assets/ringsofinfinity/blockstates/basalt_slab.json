@@ -1,0 +1,9 @@
+{
+"variants": {
+
+"type=bottom": { "model": "ringsofinfinity:block/basalt_slab" },
+
+"type=top": { "model": "ringsofinfinity:block/basalt_slab_top" },
+
+"type=double": { "model": "ringsofinfinity:block/basalt" }
+}}

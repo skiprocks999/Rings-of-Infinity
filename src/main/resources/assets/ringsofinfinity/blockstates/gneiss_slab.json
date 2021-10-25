@@ -1,0 +1,9 @@
+{
+"variants": {
+
+"type=bottom": { "model": "ringsofinfinity:block/gneiss_slab" },
+
+"type=top": { "model": "ringsofinfinity:block/gneiss_slab_top" },
+
+"type=double": { "model": "ringsofinfinity:block/gneiss" }
+}}

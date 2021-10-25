@@ -1,0 +1,21 @@
+{
+"variants": {
+
+"facing=north,lit=false":  { "model": "ringsofinfinity:block/demonic_alloy_forge" },
+
+"facing=east,lit=false":   { "model": "ringsofinfinity:block/demonic_alloy_forge", "y": 90 },
+
+"facing=south,lit=false":   { "model": "ringsofinfinity:block/demonic_alloy_forge", "y": 180 },
+
+"facing=west,lit=false":   { "model": "ringsofinfinity:block/demonic_alloy_forge", "y": 270 },
+
+
+
+"facing=north,lit=true":  { "model": "ringsofinfinity:block/lit_demonic_alloy_forge" },
+
+"facing=east,lit=true":   { "model": "ringsofinfinity:block/lit_demonic_alloy_forge", "y": 90 },
+
+"facing=south,lit=true":   { "model": "ringsofinfinity:block/lit_demonic_alloy_forge", "y": 180 },
+
+"facing=west,lit=true":   { "model": "ringsofinfinity:block/lit_demonic_alloy_forge", "y": 270 }
+}}

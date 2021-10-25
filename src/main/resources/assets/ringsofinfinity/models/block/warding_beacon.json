@@ -1,0 +1,1 @@
+{"parent": "block/orientable","textures": {	"top": "ringsofinfinity:blocks/warding_beacon_top",	"front":"ringsofinfinity:blocks/warding_beacon_side","side": "ringsofinfinity:blocks/warding_beacon_side","bottom":"ringsofinfinity:blocks/obsidian"}}

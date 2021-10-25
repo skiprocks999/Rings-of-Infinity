@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "bbb",    "bbb"  ],  "key": {    "b": {      "item": "ringsofinfinity:marble_bricks"    }  },  "result": {    "item": "ringsofinfinity:marble_brick_wall",    "count": 6  }}

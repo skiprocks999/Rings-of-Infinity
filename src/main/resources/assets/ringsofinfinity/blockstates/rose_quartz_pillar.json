@@ -1,0 +1,9 @@
+{
+"variants": {
+
+"axis=y":  { "model": "ringsofinfinity:block/rose_quartz_pillar" },
+
+"axis=z":   { "model": "ringsofinfinity:block/rose_quartz_pillar", "x": 90 },
+
+"axis=x":   { "model": "ringsofinfinity:block/rose_quartz_pillar", "x": 90, "y": 90 }
+}}

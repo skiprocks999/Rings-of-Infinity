@@ -1,0 +1,32 @@
+{  "type": "minecraft:crafting_shaped",  
+
+	"pattern": ["pDp",    
+				"ANG",    
+				"pSp"],  
+				
+	"key": {
+		"p": {
+			"item": "ringsofinfinity:purpurite"
+		},    
+		"A": {      
+			"item": "minecraft:andesite"
+		},    
+		"D": {      
+			"item": "minecraft:diorite"
+		},
+		"G": {      
+			"item": "minecraft:granite"
+		}, 
+		"S": {      
+			"item": "minecraft:sandstone"
+		}, 
+		"N": {      
+			"item": "minecraft:netherite_block"
+		} 
+	},  
+	
+	
+	"result": {    
+		"item": "ringsofinfinity:tectonic_recrystalizer"  
+	}
+}

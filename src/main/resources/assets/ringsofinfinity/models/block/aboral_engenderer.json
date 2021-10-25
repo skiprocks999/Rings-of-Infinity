@@ -1,0 +1,9 @@
+{
+"parent": "block/orientable",
+	"textures": {	
+		"top": "ringsofinfinity:blocks/aboral_engenderer_top",	
+		"side": "ringsofinfinity:blocks/aboral_engenderer_side",
+		"front":"ringsofinfinity:blocks/aboral_engenderer_front",
+		"bottom":"ringsofinfinity:blocks/aboral_engenderer_bottom"
+	}
+}

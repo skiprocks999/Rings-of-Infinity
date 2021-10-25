@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "i"  ],  "key": {    "i": {      "item": "ringsofinfinity:block_of_nickel"    }  },  "result": {    "item": "ringsofinfinity:nickel_ingot",    "count":9  }}

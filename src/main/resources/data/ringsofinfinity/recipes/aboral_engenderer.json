@@ -1,0 +1,32 @@
+{  "type": "minecraft:crafting_shaped",  
+
+	"pattern": ["pBp",    
+				"OPJ",    
+				"pAp"],  
+				
+	"key": {
+		"p": {
+			"item": "ringsofinfinity:purpurite"
+		},    
+		"B": {      
+			"item": "minecraft:birch_log"
+		},    
+		"O": {      
+			"item": "minecraft:oak_log"
+		},
+		"J": {      
+			"item": "minecraft:jungle_log"
+		}, 
+		"A": {      
+			"item": "minecraft:acacia_log"
+		}, 
+		"P": {      
+			"item": "ringsofinfinity:block_of_pink_topaz"
+		} 
+	},  
+	
+	
+	"result": {    
+		"item": "ringsofinfinity:aboral_engenderer"  
+	}
+}

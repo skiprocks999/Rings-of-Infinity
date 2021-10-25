@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "bbb",    "bbb"  ],  "key": {    "b": {      "item": "ringsofinfinity:scoria"    }  },  "result": {    "item": "ringsofinfinity:scoria_wall",    "count": 6  }}

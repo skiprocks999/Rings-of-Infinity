@@ -1,0 +1,17 @@
+{
+	"type" : "ringsofinfinity:demonic_alloy_forge",
+	
+	"input1":{
+		"item":"ringsofinfinity:cobalt_ingot"
+	},
+	"input2":{
+		"item":"ringsofinfinity:nickel_ingot"
+	},
+	"input3":{
+		"item":"ringsofinfinity:ferroallide_steel_ingot"
+	},
+	"output":{
+		"item":"ringsofinfinity:demon_steel_ingot",
+		"count":1
+	}
+}

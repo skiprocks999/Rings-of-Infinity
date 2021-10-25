@@ -1,0 +1,32 @@
+{  "type": "minecraft:crafting_shaped",  
+
+	"pattern": ["pCp",    
+				"ZJS",    
+				"pNp"],  
+				
+	"key": {
+		"p": {
+			"item": "ringsofinfinity:purpurite"
+		},    
+		"Z": {      
+			"item": "minecraft:zombie_head"
+		},    
+		"C": {      
+			"item": "minecraft:creeper_head"
+		},
+		"S": {      
+			"item": "minecraft:skelliton_skull"
+		}, 
+		"N": {      
+			"item": "minecraft:nether_star"
+		}, 
+		"J": {      
+			"item": "ringsofinfinity:block_of_black_jade"
+		} 
+	},  
+	
+	
+	"result": {    
+		"item": "ringsofinfinity:ethereal_corruptor"  
+	}
+}

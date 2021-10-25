@@ -1,0 +1,1 @@
+{  "type": "minecraft:crafting_shaped",  "pattern": [    "bb",    "bb"  ],  "key": {    "b": {      "item": "ringsofinfinity:basalt"    }  },  "result": {    "item": "ringsofinfinity:basalt_bricks",    "count": 4  }}

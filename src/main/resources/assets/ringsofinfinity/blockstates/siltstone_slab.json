@@ -1,0 +1,9 @@
+{
+"variants": {
+
+"type=bottom": { "model": "ringsofinfinity:block/siltstone_slab" },
+
+"type=top": { "model": "ringsofinfinity:block/siltstone_slab_top" },
+
+"type=double": { "model": "ringsofinfinity:block/siltstone" }
+}}
